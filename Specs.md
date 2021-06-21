@@ -2,6 +2,8 @@
 
 ## Divs with custom class
 
+ID: CUSTOM_CLASS
+
 Extension:  [markdown-it-container](https://github.com/markdown-it/markdown-it-container)
 
 MD:
@@ -22,6 +24,8 @@ content
 
 ## Bold
 
+ID: BOLD
+
 Extension: None
 
 MD:
@@ -38,12 +42,14 @@ HTML:
 
 ## Italic
 
+ID: ITALIC
+
 Extension: None
 
 MD:
 
 ```md
-*content* | _content_
+*content*
 ```
 
 HTML:
@@ -53,6 +59,8 @@ HTML:
 ```
 
 ## Strikethrough
+
+ID: STRIKETHROUGH
 
 Extension:
 
@@ -70,6 +78,8 @@ HTML:
 
 ## Image with size
 
+ID: IMAGE_SIZE
+
 Extension: https://www.npmjs.com/package/markdown-it-imsize
 
 MD:
@@ -85,6 +95,8 @@ HTML:
 ```
 
 ## (WIP) collapsible
+
+ID: COLLAPSIBLE
 
 Extension: https://www.npmjs.com/package/@gerhobbelt/markdown-it-collapsible
 
@@ -108,6 +120,8 @@ hidden-content
 
 ## Abbreviations
 
+ID: ABBREVIATIONS
+
 Extension: https://www.npmjs.com/package/@gerhobbelt/markdown-it-abbr
 
 MD:
@@ -120,4 +134,46 @@ HTML:
 
 ```html
 <abbr title="title">TERM</abbr>
+```
+
+## Underline
+
+ID: UNDERLINE
+
+Extension: https://www.npmjs.com/package/markdown-it-underline
+
+MD:
+
+```md
+_content_
+```
+
+HTML:
+
+```html
+<u>content</u>
+```
+
+## Spoiler
+
+ID: SPOILER
+
+Extension: https://www.npmjs.com/package/@traptitech/markdown-it-spoiler
+
+MD:
+
+```md
+!!content!!
+```
+
+HTML:
+
+```html
+<span class="spoiler">content</span>
+```
+
+CSS:
+
+```css
+// something lol
 ```
