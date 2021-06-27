@@ -2,7 +2,7 @@
 content
 :::
 
-**content** | __content__
+**content**
 
 *content*
 
@@ -15,7 +15,13 @@ hidden-content
 +++
 
 [TERM]: title
-
 _content_
 
 !!content!!
+
+# content 
+## content
+### content
+#### content
+##### content
+###### content
