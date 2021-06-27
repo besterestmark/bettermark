@@ -22,7 +22,7 @@ std::string readfile(const char *filename)
   throw(errno);
 }
 
-//TODO: implement CUSTOM_CLASS and ABBREVIATIONS
+//TODO: implement CUSTOM_CLASS and COLLAPSIBLE
 std::string reg_parse(std::string text){
   std::regex BOLD(R"(\*\*(.*)\*\*)");
   std::regex ITALIC(R"(\*(.*)\*)");
