@@ -31,13 +31,13 @@ Extension: None
 MD:
 
 ```md
-**content** | __content__
+**content**
 ```
 
 HTML:
 
 ```html
-<strong> content </strong> | <b> content <b>
+<strong> content </strong>
 ```
 
 ## Italic
@@ -55,7 +55,7 @@ MD:
 HTML:
 
 ```html
-<em> content </em> | <i> content <i>
+<em> content </em>
 ```
 
 ## Strikethrough
@@ -73,7 +73,7 @@ MD:
 HTML:
 
 ```html
-<del>content</del> | <s>content</s>
+<s>content</s>
 ```
 
 ## Image with size

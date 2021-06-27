@@ -1,3 +1,4 @@
+
 ::: className
 content
 :::
@@ -14,7 +15,7 @@ content
 hidden-content
 +++
 
-[TERM]: title
+*[TERM]: title
 _content_
 
 !!content!!
