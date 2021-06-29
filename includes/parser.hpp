@@ -5,8 +5,6 @@
 #include <regex>
 #include <string>
 
-#include <stdio.h>
-
 inline std::string readfile(const char *filename) {
   std::ifstream in(filename, std::ios::in | std::ios::binary);
   if (in) {
@@ -23,21 +21,19 @@ inline std::string readfile(const char *filename) {
 
 // TODO: implement CUSTOM_CLASS and COLLAPSIBLE
 inline std::string reg_parse(std::string text) {
-  std::regex CUSTOM_CLASS(R"()");
-  std::regex BOLD(R"(\*\*(.*)\*\*)");
-  std::regex ITALIC(R"(\*(.*)\*)");
-  std::regex STRIKETHROUGH(R"(~~(.*)~~)");
-  std::regex IMAGE_SIZE(R"(!\[(.*)\]\((.*) (.*) =(.*?)x(.*?)\))");
-  std::regex COLLAPSIBLE(R"()");
-  std::regex ABBREVIATIONS(R"(\*\[(.*)\]:\s(.*))");
-  std::regex UNDERLINE(R"(_(.*)_)");
-  std::regex SPOILER(R"(!!(.*)!!)");
-  std::regex HEADING_1(R"(#\s(.*))");
-  std::regex HEADING_2(R"(##\s(.*))");
-  std::regex HEADING_3(R"(###\s(.*))");
-  std::regex HEADING_4(R"(####\s(.*))");
-  std::regex HEADING_5(R"(#####\s(.*))");
-  std::regex HEADING_6(R"(######\s(.*))");
+  std::regex BOLD(R"(\*\*(.+)\*\*)");
+  std::regex ITALIC(R"(\*(.+)\*)");
+  std::regex STRIKETHROUGH(R"(~~(.+)~~)");
+  std::regex IMAGE_SIZE(R"(!\[(.+)\]\((.+) (.+) =(.+)x(.+)\))");
+  std::regex ABBREVIATIONS(R"(\*\[(.+)\]:\s(.+))");
+  std::regex UNDERLINE(R"(_(.+)_)");
+  std::regex SPOILER(R"(!!(.+)!!)");
+  std::regex HEADING_1(R"(#\s(.+))");
+  std::regex HEADING_2(R"(##\s(.+))");
+  std::regex HEADING_3(R"(###\s(.+))");
+  std::regex HEADING_4(R"(####\s(.+))");
+  std::regex HEADING_5(R"(#####\s(.+))");
+  std::regex HEADING_6(R"(######\s(.+))");
   text = regex_replace(text, HEADING_6, "<h6>$1</h6>");
   text = regex_replace(text, HEADING_5, "<h5>$1</h5>");
   text = regex_replace(text, HEADING_4, "<h4>$1</h4>");
