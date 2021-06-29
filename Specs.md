@@ -1,5 +1,3 @@
-# Chad besterestmark moment
-
 ## Divs with custom class
 
 ID: CUSTOM_CLASS
@@ -217,3 +215,101 @@ HTML:
 <h5>content</h5>
 <h6>content</h6>
 ```
+
+## Unordered list
+
+Extension: NONE
+
+IDs:
+
+LIST_MINUS
+
+LIST_ASTERISK
+
+LIST_PLUS
+
+MD:
+
+```md
+- content
+* content
++ content
+```
+
+HTML:
+
+```html
+<ul>
+	<li>content</li>
+	<li>content</li>
+	<li>content</li>
+</ul>
+```
+
+## Lettered ordered list
+
+ID: LIST_LETTER
+
+Extension: NONE
+
+MD:
+
+```md
+a. content
+b. content
+c. content
+```
+
+HTML:
+
+```html
+<ol type="a">
+	<li>content</li>
+	<li>content</li>
+	<li>content</li>
+</ol>
+```
+
+--- NOTE: list stuff ---
+
+## Blockquote
+
+ID: BLOCKQUOTE
+
+Extension: NONE
+
+MD:
+
+```md
+> content
+```
+
+HTML:
+
+```html
+<blockquote>content</blockquote>
+```
+
+NOTE: space after `>` is optional but recommended, also they should nest if there are multiple >>
+
+## Fenced Blockquote
+
+ID: BLOCKQUOTE_FENCED
+
+Extension: NONE
+
+MD:
+
+```md
+<<<
+content
+>>>
+```
+
+HTML:
+
+```html
+<blockquote>content</blockquote>
+
+```
+
