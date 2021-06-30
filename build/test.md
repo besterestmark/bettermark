@@ -45,3 +45,23 @@ c. content
 <<<
 content
 >>>
+
+:# left-aligned content
+:#: centred content
+#: right-aligned content
+
+i. content
+ii. content
+iii. content
+
+I. content
+II. content
+III. content
+
+A. content
+B. content
+C. content
+
+1. content
+2. content
+3. content
