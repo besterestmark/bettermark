@@ -42,9 +42,9 @@ c. content
 
 > content
 
-<<<
+<<< [title][link]
 content
->>>
+<<<
 
 :# left-aligned content
 :#: centred content
