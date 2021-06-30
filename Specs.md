@@ -303,7 +303,7 @@ Extension: NONE
 MD:
 
 ```md
-<<<
+>>> [title](link)
 content
 >>>
 ```
@@ -311,7 +311,9 @@ content
 HTML:
 
 ```html
-<blockquote>content</blockquote>
+<blockquote cite="link" title="title">
+content
+</blockquote>
 
 ```
 
