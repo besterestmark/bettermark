@@ -205,15 +205,17 @@ MD:
 ###### content
 ```
 
+ align="left"
+
 HTML:
 
 ```html
-<h1>content</h1>
-<h2>content</h2>
-<h3>content</h3>
-<h4>content</h4>
-<h5>content</h5>
-<h6>content</h6>
+<h1 align="left">content</h1>
+<h2 align="left">content</h2>
+<h3 align="left">content</h3>
+<h4 align="left">content</h4>
+<h5 align="left">content</h5>
+<h6 align="left">content</h6>
 ```
 
 ## Unordered list
@@ -246,9 +248,9 @@ HTML:
 </ul>
 ```
 
-## Lettered ordered list
+## Lowercase Lettered ordered list
 
-ID: LIST_LETTER
+ID: LIST_LETTER_LOWERCASE
 
 Extension: NONE
 
@@ -311,5 +313,131 @@ HTML:
 ```html
 <blockquote>content</blockquote>
 
+```
+
+## Aligned headings
+
+IDs:
+
+HEADING_[**NUMBER**]_LEFT
+HEADING_[**NUMBER]_CENTER
+HEADING_[**NUMBER**]_RIGHT
+
+Extension: NONE
+
+MD:
+
+```md
+:# left-aligned content
+:#: centred content
+#: right-aligned content
+```
+
+HTML:
+
+```html
+<h1 align="left">left-aligned content</h1>
+<h1 align="center">centered content</h1>
+<h1 align="right">right-aligned content</h1>
+```
+
+NOTE: Default is left aligned aka no `:`
+
+## Roman lowercase lettering list
+
+ID: LIST_ROMAN_LOWERCASE
+
+Extension: PANDOC
+
+MD:
+
+```md
+i. content
+ii. content
+iii. content
+```
+
+HTML:
+
+```html
+<ol type="i">
+  <li>content</li>
+  <li>content</li>
+  <li>content</li>
+</ol>
+```
+
+## Roman uppercase lettering list
+
+ID: LIST_ROMAN_UPPERCASE
+
+Extension: PANDOC
+
+MD:
+
+```md
+I. content
+II. content
+III. content
+```
+
+HTML:
+
+```html
+<ol type="I">
+  <li>content</li>
+  <li>content</li>
+  <li>content</li>
+</ol>
+```
+
+## Uppercase Lettered ordered list
+
+ID: LIST_LETTER_UPPERCASE
+
+Extension: NONE
+
+MD:
+
+```md
+A. content
+B. content
+C. content
+```
+
+HTML:
+
+```html
+<ol type="A">
+	<li>content</li>
+	<li>content</li>
+	<li>content</li>
+</ol>
+```
+
+NOTE: Could interfere with names that have shortened first names, maybe escape them with \\ {.WARNING}
+
+## Numbered ordered list
+
+ID: LIST_NUMBERED
+
+Extension: NONE
+
+MD:
+
+```md
+1. content
+2. content
+3. content
+```
+
+HTML:
+
+```html
+<ol type="A">
+	<li>content</li>
+	<li>content</li>
+	<li>content</li>
+</ol>
 ```
 
