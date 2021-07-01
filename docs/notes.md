@@ -31,12 +31,32 @@
 	+ [x] done
 	+ [/] in progress
   + [-] disabled
-  + ---------------
   + Support +/-/* for it as well
 - `--- content ---` makes text be inside something like an hr
--
 
 ## Concerns
 
 - Headings
-  + match with whitespace before `:# im anepic chad with a space`
+  + match with whitespace before `    :# im an epic chad with a space` // FIXED
+
+## Options
+
+- SHORT_MODE
+  + <blockquote> vs <q> (inline)
+  + <strong> vs <b> (inlne)
+  + <em> vs <i> (inline)
+  + <span> vs <div> (FOR SPOILERS)
+
+## TODO
+
+- PRELUDE VARS
+  + &DATE&
+  + &MONTH&
+  + &YEAR&
+
+## Warnings
+
+- Whitespace before heading
+- No empty line around/after headings
+- No space after blockquote [UNLESS ANOTHER BLOCKQUOTE]
+
