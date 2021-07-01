@@ -35,7 +35,7 @@ MD:
 HTML:
 
 ```html
-<strong> content </strong>
+<strong>content</strong>
 ```
 
 ## Italic
@@ -74,22 +74,106 @@ HTML:
 <s>content</s>
 ```
 
-## Image with size
+## Images & images with size
 
-ID: IMAGE_SIZE
+IDs:
+
+IMG_ALT
+
+IMG_TITLE
+
+IMG_LINK
+
+IMG_SIZE
+
+IMG_SIZE_LINK
+
+IMG_TITLE_SIZE
+
+IMG_TITLE_LINK
+
+IMG_ALT_TITLE
+
+IMG_ALT_LINK
+
+IMG_ALT_SIZE
+
+IMG_ALT_TITLE_SIZE
+
+IMG_ALT_LINK_SIZ
+
+IMG_ALT_TITLE_LINK
+
+IMG_TITLE_LINK_SIZE
+
+IMG_ALT_TITLE_LINK_SIZE
 
 Extension: https://www.npmjs.com/package/markdown-it-imsize
 
 MD:
 
 ```md
-![alt](link "onhover" =WidthxHeight)
+![alt](link)
+
+![](link "title")
+
+![](link +onclick.link)
+
+![](link =WidthxHeight)
+
+![](link +onclick.link =WidthxHeight)
+
+![](link "title" =WidthxHeight)
+
+![](link "title" +onclick.link)
+
+![alt](link "title")
+
+![alt](link +onclick.link)
+
+![alt](link =WidthxHeight)
+
+![alt](link "title" =WidthxHeight)
+
+![alt](link +onclick.link =WidthxHeight)
+
+![alt](link "title" +onclick.link)
+
+![](link "title" +onclick.link =WidthxHeight)
+
+![alt](link "title" +onclick.link =WidthxHeight)
 ```
 
 HTML:
 
 ```html
-<img src="link" title="onhover" alt="alt" width="Width" height="Height">
+<img src="link" alt="alt"/>
+
+<img src="link" title="title"/>
+
+<a href="onclick.link"><img src="link"/></a>
+
+<img src="link" width="Width" height="Height"/>
+
+<a href="onclick.link"><img src="link" width="Width" height="Height"/></a>
+
+<img src="link" title="title" width="Width" height="Height"/>
+
+<a href="onclick.link"><img src="link" title="title"/></a>
+
+<img src="link" title="title" alt="alt"/>
+
+<a href="onclick.link"><img src="link" alt="alt"/></a>
+
+<img src="link" title="title" alt="alt" width="Width" height="Height"/>
+
+<a href="onclick.link"><img src="link" alt="alt" width="Width" height="Height"/></a>
+
+<a href="onclick.link"><img src="link" title="title" alt="alt"/></a>
+
+<a href="onclick.link"><img src="link" title="title" width="Width" height="Height"/></a>
+
+<a href="onclick.link"><img src="link" title="title" alt="alt" width="Width" height="Height"/></a>
 ```
 
 ## (WIP) collapsible
@@ -296,14 +380,34 @@ NOTE: space after `>` is optional but recommended, also they should nest if ther
 
 ## Fenced Blockquote
 
-ID: BLOCKQUOTE_FENCED
+IDs:
+
+BLOCKQUOTE_FENCE_NONE
+
+BLOCKQUOTE_FENCE_CITE
+
+BLOCKQUOTE_FENCE_CITE_AND_TITLE
+
+BLOCKQUOTE_FENCE_TITLE
 
 Extension: NONE
 
 MD:
 
 ```md
+>>>
+content
+>>>
+
+>>> (link)
+content
+>>>
+
 >>> [title](link)
+content
+>>>
+
+>>> [title]
 content
 >>>
 ```
@@ -311,7 +415,19 @@ content
 HTML:
 
 ```html
+<blockquote>
+content
+</blockquote>
+
+<blockquote cite="link">
+content
+</blockquote>
+
 <blockquote cite="link" title="title">
+content
+</blockquote>
+
+<blockquote title="title">
 content
 </blockquote>
 
@@ -443,3 +559,31 @@ HTML:
 </ol>
 ```
 
+## (WIP) Task lists
+
+ID: TASK_LIST
+
+Extension: GFM
+
+MD:
+
+```md
+- [ ] not done content
+- [x] done content
+- [/] in progress content
+- [-] disabled content
+```
+
+HTML:
+
+```html
+<!-- PAIN -->
+```
+
+CSS:
+
+```css
+// something lol
+```
+
+NOTE: Apply custom class to checkboxes so they're easier to style
