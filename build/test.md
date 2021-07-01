@@ -8,7 +8,36 @@ content
 
 ~~content~~
 
-![alt](link "onhover" =WidthxHeight)
+![alt](link)
+
+![](link "title")
+
+![](link +onclick.link)
+
+![](link =WidthxHeight)
+
+![](link +onclick.link =WidthxHeight)
+
+![](link "title" =WidthxHeight)
+
+![](link "title" +onclick.link)
+
+![alt](link "title")
+
+![alt](link +onclick.link)
+
+![alt](link =WidthxHeight)
+
+![alt](link "title" =WidthxHeight)
+
+![alt](link +onclick.link =WidthxHeight)
+
+![alt](link "title" +onclick.link)
+
+![](link "title" +onclick.link =WidthxHeight)
+
+![alt](link "title" +onclick.link =WidthxHeight)
+`
 
 +++ summary
 hidden-content
@@ -42,11 +71,11 @@ c. content
 
 > content
 
-<<< [title][link]
+>>> [title](link)
 content
-<<<
+>>>
 
-:# left-aligned content
+# left-aligned content
 :#: centred content
 #: right-aligned content
 
@@ -65,3 +94,4 @@ C. content
 1. content
 2. content
 3. content
+
