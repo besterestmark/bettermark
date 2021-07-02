@@ -58,5 +58,5 @@
 
 - Whitespace before heading
 - No empty line around/after headings
+- Duplicating heading
 - No space after blockquote [UNLESS ANOTHER BLOCKQUOTE]
-
