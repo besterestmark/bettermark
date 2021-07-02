@@ -111,20 +111,20 @@ inline std::string fence_parse(std::string text) {
     }
 
     else if ((this_line.rfind("#### ", 0) == 0)){
-      return_buf+="<h4>"+this_line.substr(4, line_siz)+"</h4>";
+      return_buf+="<h4>"+this_line.substr(5, line_siz)+"</h4>";
     }
     else if ((this_line.rfind("### ", 0) == 0)){
-      return_buf+="<h3>"+this_line.substr(3, line_siz)+"</h3>";
+      return_buf+="<h3>"+this_line.substr(4, line_siz)+"</h3>";
     }
 
     else if ((this_line.rfind("## ", 0) == 0)){
-      return_buf+="<h2>"+this_line.substr(2, line_siz)+"</h2>";
+      return_buf+="<h2>"+this_line.substr(3, line_siz)+"</h2>";
     }
     else if ((this_line.rfind("# ", 0) == 0)){
-      return_buf+="<h1>"+this_line.substr(1, line_siz)+"</h1>";
+      return_buf+="<h1>"+this_line.substr(2, line_siz)+"</h1>";
     }
     else if ((this_line.rfind("> ", 0) == 0)){
-      return_buf+="<blockquote>"+this_line.substr(1, line_siz)+"</blockquote>";
+      return_buf+="<blockquote>"+this_line.substr(2, line_siz)+"</blockquote>";
     }
 
     else{
@@ -134,6 +134,7 @@ inline std::string fence_parse(std::string text) {
   }
   return return_buf;
 }
+
 inline std::string main_parse(const char *filename) {
   std::string file_c = readfile(filename);
   return fence_parse(file_c);
