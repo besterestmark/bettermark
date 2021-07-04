@@ -1,0 +1,34 @@
+---
+BasedOnStyle: Google
+AllowAllArgumentsOnNextLine: 'true'
+AllowAllConstructorInitializersOnNextLine: 'true'
+AllowAllParametersOfDeclarationOnNextLine: 'true'
+AllowShortFunctionsOnASingleLine: None
+AlwaysBreakBeforeMultilineStrings: 'true'
+AlwaysBreakTemplateDeclarations: 'Yes'
+BinPackArguments: 'false'
+BinPackParameters: 'false'
+BreakAfterJavaFieldAnnotations: 'true'
+BreakBeforeBinaryOperators: NonAssignment
+BreakBeforeBraces: Attach
+BreakConstructorInitializers: AfterColon
+BreakInheritanceList: AfterColon
+ConstructorInitializerAllOnOneLineOrOnePerLine: 'true'
+DerivePointerAlignment: 'true'
+FixNamespaceComments: 'true'
+IncludeBlocks: Regroup
+IndentPPDirectives: AfterHash
+IndentWrappedFunctionNames: 'false'
+JavaScriptWrapImports: 'true'
+KeepEmptyLinesAtTheStartOfBlocks: 'false'
+MaxEmptyLinesToKeep: '2'
+PointerAlignment: Left
+ReflowComments: 'true'
+SortIncludes: 'true'
+SpaceBeforeAssignmentOperators: 'true'
+SpaceBeforeParens: ControlStatements
+SpacesBeforeTrailingComments: '1'
+Standard: Auto
+UseTab: Never
+
+...
