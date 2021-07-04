@@ -10,7 +10,8 @@ typedef uint16_t u16;
 typedef uint32_t u32;
 typedef uint64_t u64;
 
-inline std::string readfile(const char *filename) {
+inline std::string readfile(const char *filename)
+{
   std::ifstream in(filename, std::ios::in | std::ios::binary);
   if (in) {
     std::string contents;
@@ -24,7 +25,8 @@ inline std::string readfile(const char *filename) {
   throw(errno);
 }
 
-inline std::string reg_converter(std::string text) {
+inline std::string reg_converter(std::string text) 
+{
   std::regex BOLD(R"(\*\*(.+)\*\*)");
   std::regex ITALIC(R"(\*(.+)\*)");
   std::regex STRIKETHROUGH(R"(~~(.+)~~)");
@@ -50,7 +52,8 @@ struct ACTIVE_BLOCK{
   bool BLOCKQUOTE_FENCED=false;
 };
 
-inline std::string fence_converter(std::string text) {
+inline std::string fence_converter(std::string text)
+{
   std::string return_buf;
   ACTIVE_BLOCK special_state;
 
@@ -121,7 +124,8 @@ inline std::string fence_converter(std::string text) {
   }
 }
 
-inline std::string main_parse(const char *filename) {
+inline std::string main_parse(const char *filename) 
+{
   std::string file_c = readfile(filename);
   return fence_parse(file_c);
 }
