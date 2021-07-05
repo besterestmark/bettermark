@@ -6,5 +6,6 @@ Markdown flavor with all the bloat
 $ mkdir build
 $ cd build
 $ cmake ..
+$ mv ./compile_commands.json ../ 
 $ make
 ```
