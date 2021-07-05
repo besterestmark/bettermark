@@ -127,5 +127,5 @@ inline std::string fence_converter(std::string text)
 inline std::string main_parse(const char *filename) 
 {
   std::string file_c = readfile(filename);
-  return fence_parse(file_c);
+  return fence_converter(file_c);
 }
