@@ -3,8 +3,9 @@ Markdown flavor with all the bloat
 
 ### Building
 ```
-$ mkdir _build
-$ cd _build
-$ mv complile_commands.json ..
+$ mkdir build
+$ cd build
+$ cmake ..
+$ mv ./compile_commands.json ../ 
 $ make
 ```
