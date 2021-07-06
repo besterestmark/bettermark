@@ -693,3 +693,69 @@ CSS:
 ```
 
 NOTE: Apply custom class to checkboxes so they're easier to style
+
+## Horizontal Rules
+
+IDs:
+
+HORIZONTAL_RULE_HYPHENS
+
+HORIZONTAL_RULE_WORDS
+
+Extension: NONE
+
+MD:
+
+```md
+---
+
+--- content ---
+```
+
+HTML:
+
+```html
+<hr class="hr-def">
+
+<hr class="hr-words">
+```
+
+CSS:
+
+```css
+/* something */
+```
+
+## (WIP) Links
+
+IDs:
+
+LINK_ANCHOR
+
+LINK_REFERENCE
+
+LINK_AUTOMATIC_URL
+
+LINK_AUTOMATIC_EMAIL
+
+Extension: NONE
+
+```md
+[visible-text](link)
+
+[[[!!!WILL ADD LATER!!!]]]
+
+link
+
+content@ema.il
+```
+
+```html
+<a href="link">visible-text</a>
+
+[[[!!!WILL ADD LATER!!!]]]	
+
+<a href="link">link</a>
+
+<a href="mailto:content@ema.il">content@ema.il</a>
+```
