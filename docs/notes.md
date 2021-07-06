@@ -1,7 +1,7 @@
 ## HTML
 
-- Have <title> tag for search engine optimization
-- Have DOCTYPE
+- Have `<title>` tag for search engine optimization
+- Have !DOCTYPE
 - No inline js or style
 - option for minified everything (html, css and js if any)
   + option to not use the js libraries (if any)
@@ -26,12 +26,6 @@
 	+ TOC 1|2|3|4|5|6 for depth of headings shown (Default is TOC6 aka the most)
 	+ Syntax maybe `[TOC(1|2|3|4|5|6)]`
   + cool https://github.com/3r3bu5x9/Prismatic-Night#table-of-contents
-- TODOs
-  + [ ] not done
-	+ [x] done
-	+ [/] in progress
-  + [-] disabled
-  + Support +/-/* for it as well
 - `--- content ---` makes text be inside something like an hr
 
 ## Concerns
@@ -49,14 +43,9 @@
 
 ## TODO
 
-- PRELUDE VARS
-  + &DATE&
-  + &MONTH&
-  + &YEAR&
-
 ## Warnings
 
 - Whitespace before heading
-- No empty line around/after headings
+- Lack of empty line around/after headings
 - Duplicating heading
-- No space after blockquote [UNLESS ANOTHER BLOCKQUOTE]
+- Lack of space after blockquote [UNLESS ANOTHER BLOCKQUOTE]
