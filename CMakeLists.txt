@@ -11,6 +11,6 @@ set (CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 include_directories(includes)
 
-file(GLOB SOURCES src/*.cpp)
+file(GLOB SOURCES src/*)
 
 add_executable(${EXEC} ${SOURCES})
