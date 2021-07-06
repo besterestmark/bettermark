@@ -356,31 +356,11 @@ HTML:
 </ol>
 ```
 
---- NOTE: list stuff ---
-
-## Blockquote
-
-ID: BLOCKQUOTE
-
-Extension: NONE
-
-MD:
-
-```md
-> content
-```
-
-HTML:
-
-```html
-<blockquote>content</blockquote>
-```
-
-NOTE: space after `>` is optional but recommended, also they should nest if there are multiple >>
-
-## Fenced Blockquote
+## Blockquotes
 
 IDs:
+
+BLOCKQUOTE
 
 BLOCKQUOTE_FENCE_NONE
 
@@ -395,26 +375,30 @@ Extension: NONE
 MD:
 
 ```md
->>>
-content
->>>
+> content
 
->>> (link)
+<<<
 content
->>>
+<<<
 
->>> [title](link)
+<<< (link)
 content
->>>
+<<<
 
->>> [title]
+<<< [title](link)
 content
->>>
+<<<
+
+<<< [title]
+content
+<<<
 ```
 
 HTML:
 
 ```html
+<blockquote>content</blockquote>
+
 <blockquote>
 content
 </blockquote>
