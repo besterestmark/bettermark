@@ -1,23 +1,19 @@
-## Divs with custom class
+## Italic
 
-ID: CUSTOM_CLASS
+ID: ITALIC
 
-Extension:  [markdown-it-container](https://github.com/markdown-it/markdown-it-container)
+Extension: None
 
 MD:
 
 ```md
-::: class-name
-content
-:::
+*content*
 ```
 
 HTML:
 
 ```html
-<div class="class-name">
-content
-</div>
+<em> content </em>
 ```
 
 ## Bold
@@ -38,24 +34,6 @@ HTML:
 <strong>content</strong>
 ```
 
-## Italic
-
-ID: ITALIC
-
-Extension: None
-
-MD:
-
-```md
-*content*
-```
-
-HTML:
-
-```html
-<em> content </em>
-```
-
 ## Strikethrough
 
 ID: STRIKETHROUGH
@@ -72,150 +50,6 @@ HTML:
 
 ```html
 <s>content</s>
-```
-
-## Images & images with size
-
-IDs:
-
-IMG_ALT
-
-IMG_TITLE
-
-IMG_LINK
-
-IMG_SIZE
-
-IMG_SIZE_LINK
-
-IMG_TITLE_SIZE
-
-IMG_TITLE_LINK
-
-IMG_ALT_TITLE
-
-IMG_ALT_LINK
-
-IMG_ALT_SIZE
-
-IMG_ALT_TITLE_SIZE
-
-IMG_ALT_LINK_SIZ
-
-IMG_ALT_TITLE_LINK
-
-IMG_TITLE_LINK_SIZE
-
-IMG_ALT_TITLE_LINK_SIZE
-
-Extension: https://www.npmjs.com/package/markdown-it-imsize
-
-MD:
-
-```md
-![alt](link)
-
-![](link "title")
-
-![](link +onclick.link)
-
-![](link =WidthxHeight)
-
-![](link +onclick.link =WidthxHeight)
-
-![](link "title" =WidthxHeight)
-
-![](link "title" +onclick.link)
-
-![alt](link "title")
-
-![alt](link +onclick.link)
-
-![alt](link =WidthxHeight)
-
-![alt](link "title" =WidthxHeight)
-
-![alt](link +onclick.link =WidthxHeight)
-
-![alt](link "title" +onclick.link)
-
-![](link "title" +onclick.link =WidthxHeight)
-
-![alt](link "title" +onclick.link =WidthxHeight)
-```
-
-HTML:
-
-```html
-<img src="link" alt="alt"/>
-
-<img src="link" title="title"/>
-
-<a href="onclick.link"><img src="link"/></a>
-
-<img src="link" width="Width" height="Height"/>
-
-<a href="onclick.link"><img src="link" width="Width" height="Height"/></a>
-
-<img src="link" title="title" width="Width" height="Height"/>
-
-<a href="onclick.link"><img src="link" title="title"/></a>
-
-<img src="link" title="title" alt="alt"/>
-
-<a href="onclick.link"><img src="link" alt="alt"/></a>
-
-<img src="link" title="title" alt="alt" width="Width" height="Height"/>
-
-<a href="onclick.link"><img src="link" alt="alt" width="Width" height="Height"/></a>
-
-<a href="onclick.link"><img src="link" title="title" alt="alt"/></a>
-
-<a href="onclick.link"><img src="link" title="title" width="Width" height="Height"/></a>
-
-<a href="onclick.link"><img src="link" title="title" alt="alt" width="Width" height="Height"/></a>
-```
-
-## (WIP) collapsible
-
-ID: COLLAPSIBLE
-
-Extension: https://www.npmjs.com/package/@gerhobbelt/markdown-it-collapsible
-
-MD:
-
-```md
-+++ summary
-hidden-content
-+++
-```
-
-HTML:
-
-```html
-<details><summary>summary</summary>
-hidden-content
-</details>
-```
-
-### Note: this syntax is meh and should probably be changed {.WARNING}
-
-## Abbreviations
-
-ID: ABBREVIATIONS
-
-Extension: https://www.npmjs.com/package/@gerhobbelt/markdown-it-abbr
-
-MD:
-
-```md
-*[TERM]: title
-```
-
-HTML:
-
-```html
-<abbr title="title">TERM</abbr>
 ```
 
 ## Underline
@@ -422,60 +256,140 @@ HTML:
 
 ```
 
-
-
-## Unordered list
-
-Extension: NONE
+## (WIP) Links
 
 IDs:
 
-LIST_MINUS
+LINK_ANCHOR
 
-LIST_ASTERISK
+LINK_REFERENCE
 
-LIST_PLUS
+LINK_AUTOMATIC_URL
 
-MD:
-
-```md
-- content
-* content
-+ content
-```
-
-HTML:
-
-```html
-<ul>
-	<li>content</li>
-	<li>content</li>
-	<li>content</li>
-</ul>
-```
-
-## Lowercase Lettered ordered list
-
-ID: LIST_LETTER_LOWERCASE
+LINK_AUTOMATIC_EMAIL
 
 Extension: NONE
 
+```md
+[visible-text](link)
+
+[[[!!!WILL ADD LATER!!!]]]
+
+link
+
+content@ema.il
+```
+
+```html
+<a href="link">visible-text</a>
+
+[[[!!!WILL ADD LATER!!!]]]	
+
+<a href="link">link</a>
+
+<a href="mailto:content@ema.il">content@ema.il</a>
+```
+
+## Images
+
+IDs:
+
+IMG_ALT
+
+IMG_TITLE
+
+IMG_LINK
+
+IMG_SIZE
+
+IMG_SIZE_LINK
+
+IMG_TITLE_SIZE
+
+IMG_TITLE_LINK
+
+IMG_ALT_TITLE
+
+IMG_ALT_LINK
+
+IMG_ALT_SIZE
+
+IMG_ALT_TITLE_SIZE
+
+IMG_ALT_LINK_SIZ
+
+IMG_ALT_TITLE_LINK
+
+IMG_TITLE_LINK_SIZE
+
+IMG_ALT_TITLE_LINK_SIZE
+
+Extension: https://www.npmjs.com/package/markdown-it-imsize
+
 MD:
 
 ```md
-a. content
-b. content
-c. content
+![alt](link)
+
+![](link "title")
+
+![](link +onclick.link)
+
+![](link =WidthxHeight)
+
+![](link +onclick.link =WidthxHeight)
+
+![](link "title" =WidthxHeight)
+
+![](link "title" +onclick.link)
+
+![alt](link "title")
+
+![alt](link +onclick.link)
+
+![alt](link =WidthxHeight)
+
+![alt](link "title" =WidthxHeight)
+
+![alt](link +onclick.link =WidthxHeight)
+
+![alt](link "title" +onclick.link)
+
+![](link "title" +onclick.link =WidthxHeight)
+
+![alt](link "title" +onclick.link =WidthxHeight)
 ```
 
 HTML:
 
 ```html
-<ol type="a">
-	<li>content</li>
-	<li>content</li>
-	<li>content</li>
-</ol>
+<img src="link" alt="alt"/>
+
+<img src="link" title="title"/>
+
+<a href="onclick.link"><img src="link"/></a>
+
+<img src="link" width="Width" height="Height"/>
+
+<a href="onclick.link"><img src="link" width="Width" height="Height"/></a>
+
+<img src="link" title="title" width="Width" height="Height"/>
+
+<a href="onclick.link"><img src="link" title="title"/></a>
+
+<img src="link" title="title" alt="alt"/>
+
+<a href="onclick.link"><img src="link" alt="alt"/></a>
+
+<img src="link" title="title" alt="alt" width="Width" height="Height"/>
+
+<a href="onclick.link"><img src="link" alt="alt" width="Width" height="Height"/></a>
+
+<a href="onclick.link"><img src="link" title="title" alt="alt"/></a>
+
+<a href="onclick.link"><img src="link" title="title" width="Width" height="Height"/></a>
+
+<a href="onclick.link"><img src="link" title="title" alt="alt" width="Width" height="Height"/></a>
 ```
 
 ## Blockquotes
@@ -539,117 +453,73 @@ content
 
 ```
 
-## Aligned headings
+## Lists 
+
+### Unordered lists
+
+Extension: NONE
 
 IDs:
 
-HEADING_[**NUMBER**]_LEFT
-HEADING_[**NUMBER]_CENTER
-HEADING_[**NUMBER**]_RIGHT
+LIST_MINUS
+
+LIST_ASTERISK
+
+LIST_PLUS
+
+MD:
+
+```md
+- content
+* content
++ content
+```
+
+HTML:
+
+```html
+<ul>
+	<li>content</li>
+	<li>content</li>
+	<li>content</li>
+</ul>
+```
+
+### Ordered lists
+
+IDs:
+
+LIST_LETTER_LOWERCASE
+
+LIST_LETTER_UPPERACSE
+
+LIST_ROMAN_LOWERCASE
+
+LIST_ROMAN_UPPERCASE
+
+LIST_NUMBER
 
 Extension: NONE
 
 MD:
 
 ```md
-:# left-aligned content
-:#: centred content
-#: right-aligned content
-```
+a. content
+b. content
+c. content
 
-HTML:
-
-```html
-<h1 align="left">left-aligned content</h1>
-<h1 align="center">centered content</h1>
-<h1 align="right">right-aligned content</h1>
-```
-
-NOTE: Default is left aligned aka no `:`
-
-## Roman lowercase lettering list
-
-ID: LIST_ROMAN_LOWERCASE
-
-Extension: PANDOC
-
-MD:
-
-```md
-i. content
-ii. content
-iii. content
-```
-
-HTML:
-
-```html
-<ol type="i">
-  <li>content</li>
-  <li>content</li>
-  <li>content</li>
-</ol>
-```
-
-## Roman uppercase lettering list
-
-ID: LIST_ROMAN_UPPERCASE
-
-Extension: PANDOC
-
-MD:
-
-```md
-I. content
-II. content
-III. content
-```
-
-HTML:
-
-```html
-<ol type="I">
-  <li>content</li>
-  <li>content</li>
-  <li>content</li>
-</ol>
-```
-
-## Uppercase Lettered ordered list
-
-ID: LIST_LETTER_UPPERCASE
-
-Extension: NONE
-
-MD:
-
-```md
 A. content
 B. content
 C. content
-```
 
-HTML:
+i. content
+ii. content
+iii. content
 
-```html
-<ol type="A">
-	<li>content</li>
-	<li>content</li>
-	<li>content</li>
-</ol>
-```
+I. content
+II. content
+III. content
 
-NOTE: Could interfere with names that have shortened first names, maybe escape them with \\ {.WARNING}
-
-## Numbered ordered list
-
-ID: LIST_NUMBERED
-
-Extension: NONE
-
-MD:
-
-```md
 1. content
 2. content
 3. content
@@ -658,7 +528,31 @@ MD:
 HTML:
 
 ```html
+<ol type="a">
+	<li>content</li>
+	<li>content</li>
+	<li>content</li>
+</ol>
+
 <ol type="A">
+	<li>content</li>
+	<li>content</li>
+	<li>content</li>
+</ol>
+
+<ol type="i">
+	<li>content</li>
+	<li>content</li>
+	<li>content</li>
+</ol>
+
+<ol type="I">
+	<li>content</li>
+	<li>content</li>
+	<li>content</li>
+</ol>
+
+<ol>
 	<li>content</li>
 	<li>content</li>
 	<li>content</li>
@@ -667,7 +561,31 @@ HTML:
 
 ## (WIP) Task lists
 
-ID: TASK_LIST
+ID: 
+
+LIST_TASK_NOT_DONE_MINUS 
+
+LIST_TASK_NOT_DONE_ASTERISK 
+
+LIST_TASK_NOT_DONE_PLUS 
+
+LIST_TASK_DONE_MINUS 
+
+LIST_TASK_DONE_ASTERISK 
+
+LIST_TASK_DONE_PLUS 
+
+LIST_TASK_PROGRESS_MINUS 
+
+LIST_TASK_PROGRESS_ASTERISK 
+
+LIST_TASK_PROGRESS_PLUS 
+
+LIST_TASK_DISABLED_MINUS 
+
+LIST_TASK_DISABLED_ASTERISK 
+
+LIST_TASK_DISABLED_PLUS 
 
 Extension: GFM
 
@@ -675,9 +593,28 @@ MD:
 
 ```md
 - [ ] not done content
+
+* [ ] not done content
+
++ [ ] not done content
+
 - [x] done content
+
+* [x] done content
+
++ [x] done content
+
 - [/] in progress content
+
+* [/] in progress content
+
++ [/] in progress content
+
 - [-] disabled content
+
+* [-] disabled content
+
++ [-] disabled content
 ```
 
 HTML:
@@ -689,7 +626,7 @@ HTML:
 CSS:
 
 ```css
-// something lol
+/* something */
 ```
 
 NOTE: Apply custom class to checkboxes so they're easier to style
@@ -726,36 +663,64 @@ CSS:
 /* something */
 ```
 
-## (WIP) Links
+## Abbreviations
 
-IDs:
+ID: ABBREVIATION 
 
-LINK_ANCHOR
+Extension: https://www.npmjs.com/package/@gerhobbelt/markdown-it-abbr
 
-LINK_REFERENCE
-
-LINK_AUTOMATIC_URL
-
-LINK_AUTOMATIC_EMAIL
-
-Extension: NONE
+MD:
 
 ```md
-[visible-text](link)
-
-[[[!!!WILL ADD LATER!!!]]]
-
-link
-
-content@ema.il
+*[TERM]: title
 ```
 
+HTML:
+
 ```html
-<a href="link">visible-text</a>
+<abbr title="title">TERM</abbr>
+```
 
-[[[!!!WILL ADD LATER!!!]]]	
+## Divs with custom class
 
-<a href="link">link</a>
+ID: CUSTOM_CLASS
 
-<a href="mailto:content@ema.il">content@ema.il</a>
+Extension:  [markdown-it-container](https://github.com/markdown-it/markdown-it-container)
+
+MD:
+
+```md
+::: className
+content
+:::
+```
+
+HTML:
+
+```html
+<div class="className">
+content
+</div>
+```
+
+## (WIP) collapsible
+
+ID: COLLAPSIBLE
+
+Extension: https://www.npmjs.com/package/@gerhobbelt/markdown-it-collapsible
+
+MD:
+
+```md
++++ summary
+hidden-content
++++
+```
+
+HTML:
+
+```html
+<details><summary>summary</summary>
+hidden-content
+</details>
 ```
