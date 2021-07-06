@@ -264,43 +264,165 @@ CSS:
 
 IDs:
 
-HEADING_1  
+HEADING_1 
 
-HEADING_2  
+HEADING_1_LEFT 
 
-HEADING_3  
+HEADING_1_CENTER 
 
-HEADING_4  
+HEADING_1_RIGHT 
 
-HEADING_5  
+HEADING_2 
 
-HEADING_6
+HEADING_2_LEFT 
+
+HEADING_2_CENTER 
+
+HEADING_2_RIGHT 
+
+HEADING_3 
+
+HEADING_3_LEFT 
+
+HEADING_3_CENTER 
+
+HEADING_3_RIGHT 
+
+HEADING_4 
+
+HEADING_4_LEFT 
+
+HEADING_4_CENTER 
+
+HEADING_4_RIGHT 
+
+HEADING_5 
+
+HEADING_5_LEFT 
+
+HEADING_5_CENTER 
+
+HEADING_5_RIGHT 
+
+HEADING_6 
+
+HEADING_6_LEFT 
+
+HEADING_6_CENTER 
+
+HEADING_6_RIGHT 
 
 Extension: NONE
 
 MD:
 
 ```md
-# content 
-## content
-### content
-#### content
-##### content
-###### content
-```
 
- align="left"
+# content
+
+:# content
+
+:#: content
+
+#: content
+
+## content
+
+:## content
+
+:##: content
+
+##: content
+
+### content
+
+:### content
+
+:###: content
+
+###: content
+
+#### content
+
+:#### content
+
+:####: content
+
+####: content
+
+##### content
+
+:##### content
+
+:#####: content
+
+#####: content
+
+###### content
+
+
+:###### content
+
+:######: content
+
+######: content
+
+```
 
 HTML:
 
 ```html
+<h1>content</h1>
+
 <h1 align="left">content</h1>
+
+<h1 align="center">content</h1>
+
+<h1 align="right">content</h1>
+
+<h2>content</h2>
+
 <h2 align="left">content</h2>
+
+<h2 align="center">content</h2>
+
+<h2 align="right">content</h2>
+
+<h3>content</h3>
+
 <h3 align="left">content</h3>
+
+<h3 align="center">content</h3>
+
+<h3 align="right">content</h3>
+
+<h4>content</h4>
+
 <h4 align="left">content</h4>
+
+<h4 align="center">content</h4>
+
+<h4 align="right">content</h4>
+
+<h5>content</h5>
+
 <h5 align="left">content</h5>
+
+<h5 align="center">content</h5>
+
+<h5 align="right">content</h5>
+
+<h6>content</h6>
+
 <h6 align="left">content</h6>
+
+<h6 align="center">content</h6>
+
+<h6 align="right">content</h6>
+
 ```
+
+
 
 ## Unordered list
 
