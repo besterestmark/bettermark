@@ -7,7 +7,7 @@ Extension:  [markdown-it-container](https://github.com/markdown-it/markdown-it-c
 MD:
 
 ```md
-::: className
+::: class-name
 content
 :::
 ```
@@ -15,7 +15,7 @@ content
 HTML:
 
 ```html
-<div class="className">
+<div class="class-name">
 content
 </div>
 ```
