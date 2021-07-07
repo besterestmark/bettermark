@@ -151,7 +151,6 @@ Extension: NONE
 MD:
 
 ```md
-
 # content
 
 :# content
@@ -194,13 +193,11 @@ MD:
 
 ###### content
 
-
 :###### content
 
 :######: content
 
 ######: content
-
 ```
 
 HTML:
@@ -253,7 +250,6 @@ HTML:
 <h6 align="center">content</h6>
 
 <h6 align="right">content</h6>
-
 ```
 
 ## (WIP) Links
@@ -508,17 +504,17 @@ a. content
 b. content
 c. content
 
-A. content
-B. content
-C. content
+a. content
+b. content
+c. content
 
 i. content
 ii. content
 iii. content
 
-I. content
-II. content
-III. content
+i. content
+ii. content
+iii. content
 
 1. content
 2. content
@@ -679,6 +675,37 @@ HTML:
 
 ```html
 <abbr title="title">TERM</abbr>
+```
+
+
+## Code blocks
+
+IDs:
+
+CODE_INLINE
+
+CODE_FENCED
+
+Extension: NONE
+
+MD:
+
+~~~~
+`content`
+
+```
+content
+```
+~~~~
+
+HTML:
+
+```html
+<code>content</code>
+
+<pre><code class="language-[LANG]">
+content
+</code></pre>
 ```
 
 ## Divs with custom class
