@@ -112,24 +112,27 @@ content
 <<<
 
 - content
+
 * content
+
 + content
 
-a. content
-b. content
-c. content
 
 a. content
 b. content
 c. content
 
-i. content
-ii. content
-iii. content
+A. content
+B. content
+C. content
 
 i. content
 ii. content
 iii. content
+
+I. content
+II. content
+III. content
 
 1. content
 2. content
@@ -165,6 +168,12 @@ iii. content
 
 *[TERM]: title
 
+`content`	
+
+```
+content
+```
+ 
 ::: className
 content
 :::
