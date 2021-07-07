@@ -3,7 +3,7 @@
 
 ## General info
 
-- Uses C++14, a widely supported version of C++
+- Uses C++14, a very widely supported version of C++
 - Faster than most JavaScript parsers
 - Extremely extensible CSS-wise
   + Multiple already available themes like [Gruvbox](https://github.com/morhetz/gruvbox) and [Lantern-theme](https://github.com/Gitleptune/lantern-theme)
@@ -31,7 +31,7 @@ Everything that has support or will be supported soon can be seen in [todo.md](h
 
 ## Comparison between BetterMark and CommonMark
 
-The benchmark file [test.md](https://github.com/besterestmark/bettermark/blob/master/docs/test.md) was parsed 500 times with both Bmark and Cmark, with Cmark coming on top by `4`s in total or `~125`ms per parse.
+The benchmark file [test.md](https://github.com/besterestmark/bettermark/blob/master/docs/test.md) was parsed 500 times with both Bmark and Cmark, with Cmark coming on top by `4` s in total or `~125` ms per parse.
 
 |  Flavour   | Amount of features supported | test.md x 500 | test.md x 1 | 50mb x 500 | 50mb x 1 | Avg. Time/Feature |
 | :--------: | :--------------------------: | :-----------: | :---------: | :--------: | :------: | :---------------: |
@@ -48,3 +48,7 @@ $ cmake ..
 $ mv ./compile_commands.json ../ 
 $ make
 ```
+
+## Credits
+
+- [highlight.js](https://highlightjs.org) for code block syntax highlighting
