@@ -1,12 +1,3 @@
----
-name: Feature Request
-about: Suggest new syntax/feature
-title: ''
-labels: ''
-assignees: ''
-
----
-
 ## Name
 
 IDs:
