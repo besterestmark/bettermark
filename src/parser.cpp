@@ -10,7 +10,7 @@ typedef uint16_t u16;
 typedef uint32_t u32;
 typedef uint64_t u64;
 
-std::string 
+  std::string 
 readfile(const char *filename)
 {
   std::ifstream in(filename, std::ios::in | std::ios::binary);
@@ -26,7 +26,7 @@ readfile(const char *filename)
   throw(errno);
 }
 
-std::string 
+  std::string 
 reg_converter(std::string text) 
 {
   std::regex BOLD(R"(\*\*(.+)\*\*)");
@@ -52,12 +52,13 @@ struct ACTIVE_BLOCK{
   bool COLLAPSIBLE=false;
   bool CUSTOM_CLASS=false;
   bool BLOCKQUOTE_FENCED=false;
+  bool CODE_FENCED=false;
 
   bool BOLD=false;
   bool ITALIC=false;
 };
 
-std::string 
+  std::string 
 fence_converter(std::string text)
 {
   std::string return_buf;
@@ -73,86 +74,87 @@ fence_converter(std::string text)
     }
 
     cur_line = text.substr(start, end - start);
-    unsigned long line_siz = cur_line.size()-1;
+    int line_siz = cur_line.size()-1;
     bool no_exp = false;
 
 
-    if ((cur_line.rfind("+++", 0) == 0)){
-      if (special_state.COLLAPSIBLE) return_buf+="</details>\n";
-      else                           return_buf+="<details><summary>"+cur_line.substr(4, line_siz)+"</summary>\n";
-      special_state.COLLAPSIBLE= !special_state.COLLAPSIBLE ;
+
+
+    if(!special_state.CODE_FENCED){
+      if ((cur_line.rfind("+++", 0) == 0)){
+        if (special_state.COLLAPSIBLE) return_buf+="</details>\n";
+        else                           return_buf+="<details><summary>"+cur_line.substr(4, line_siz)+"</summary>\n";
+        special_state.COLLAPSIBLE= !special_state.COLLAPSIBLE ;
+      } 
+      else if ((cur_line.rfind(":::", 0) == 0)){
+        if (special_state.CUSTOM_CLASS) return_buf+="</div>\n";
+        else                            return_buf+="<div class=\""+cur_line.substr(4, line_siz)+"\">\n";
+        special_state.CUSTOM_CLASS=!special_state.CUSTOM_CLASS;
+      }
+
+      else if ((cur_line.rfind("<<<", 0) == 0)){
+        if (special_state.BLOCKQUOTE_FENCED) return_buf+="</blockquote>\n";
+        else                                 return_buf+="<blockquote>\n";
+        special_state.BLOCKQUOTE_FENCED = !special_state.BLOCKQUOTE_FENCED;
+      }
+
+      else if (cur_line.rfind(":###### ", 0) == 0) return_buf+="<h6 align=\"left\">"+cur_line.substr(8, line_siz)+"</h6>\n";
+      else if (cur_line.rfind(":##### ",  0) == 0) return_buf+="<h5 align=\"left\">"+cur_line.substr(7, line_siz)+"</h5>\n";
+      else if (cur_line.rfind(":#### ",   0) == 0) return_buf+="<h4 align=\"left\">"+cur_line.substr(6, line_siz)+"</h4>\n";
+      else if (cur_line.rfind(":### ",    0) == 0) return_buf+="<h3 align=\"left\">"+cur_line.substr(5, line_siz)+"</h3>\n";
+      else if (cur_line.rfind(":## ",     0) == 0) return_buf+="<h2 align=\"left\">"+cur_line.substr(4, line_siz)+"</h2>\n";
+      else if (cur_line.rfind(":# ",      0) == 0) return_buf+="<h1 align=\"left\">"+cur_line.substr(3, line_siz)+"</h1>\n";
+
+      else if (cur_line.rfind("######: ", 0) == 0) return_buf+="<h6 align=\"right\">"+cur_line.substr(8, line_siz)+"</h6>\n";
+      else if (cur_line.rfind("#####: ",  0) == 0) return_buf+="<h5 align=\"right\">"+cur_line.substr(7, line_siz)+"</h5>\n";
+      else if (cur_line.rfind("####: ",   0) == 0) return_buf+="<h4 align=\"right\">"+cur_line.substr(6, line_siz)+"</h4>\n";
+      else if (cur_line.rfind("###: ",    0) == 0) return_buf+="<h3 align=\"right\">"+cur_line.substr(5, line_siz)+"</h3>\n";
+      else if (cur_line.rfind("##: ",     0) == 0) return_buf+="<h2 align=\"right\">"+cur_line.substr(4, line_siz)+"</h2>\n";
+      else if (cur_line.rfind("#: ",      0) == 0) return_buf+="<h1 align=\"right\">"+cur_line.substr(3, line_siz)+"</h1>\n";
+
+      else if (cur_line.rfind(":######: ", 0) == 0) return_buf+="<h6 align=\"center\">"+cur_line.substr(9, line_siz)+"</h6>\n";
+      else if (cur_line.rfind(":#####: ",  0) == 0) return_buf+="<h5 align=\"center\">"+cur_line.substr(8, line_siz)+"</h5>\n";
+      else if (cur_line.rfind(":####: ",   0) == 0) return_buf+="<h4 align=\"center\">"+cur_line.substr(7, line_siz)+"</h4>\n";
+      else if (cur_line.rfind(":###: ",    0) == 0) return_buf+="<h3 align=\"center\">"+cur_line.substr(6, line_siz)+"</h3>\n";
+      else if (cur_line.rfind(":##: ",     0) == 0) return_buf+="<h2 align=\"center\">"+cur_line.substr(5, line_siz)+"</h2>\n";
+      else if (cur_line.rfind(":#: ",      0) == 0) return_buf+="<h1 align=\"center\">"+cur_line.substr(4, line_siz)+"</h1>\n";
+
+      else if (cur_line.rfind("###### ", 0) == 0) return_buf+="<h6>"+cur_line.substr(7, line_siz)+"</h6>\n";
+      else if (cur_line.rfind("##### ",  0) == 0) return_buf+="<h5>"+cur_line.substr(6, line_siz)+"</h5>\n";
+      else if (cur_line.rfind("#### ",   0) == 0) return_buf+="<h4>"+cur_line.substr(5, line_siz)+"</h4>\n";
+      else if (cur_line.rfind("### ",    0) == 0) return_buf+="<h3>"+cur_line.substr(4, line_siz)+"</h3>\n";
+      else if (cur_line.rfind("## ",     0) == 0) return_buf+="<h2>"+cur_line.substr(3, line_siz)+"</h2>\n";
+      else if (cur_line.rfind("# ",      0) == 0) return_buf+="<h1>"+cur_line.substr(2, line_siz)+"</h1>\n";
+
+      else if (cur_line.rfind("> ",      0) == 0) return_buf+="<blockquote>"+cur_line.substr(2, line_siz)+"</blockquote>";
+      else no_exp=true;
+    } else no_exp=true;
+
+    if ((cur_line.rfind("```", 0) == 0)){
+      if (special_state.CODE_FENCED) return_buf+="</code></pre>\n";
+      else                            return_buf+="<pre><code class=\"language-"+cur_line.substr(3, line_siz)+"\">\n";
+      special_state.CODE_FENCED=!special_state.CODE_FENCED;
+      no_exp=false;
     }
-    else if ((cur_line.rfind(":::", 0) == 0)){
-      if (special_state.CUSTOM_CLASS) return_buf+="</div>\n";
-      else                            return_buf+="<div class=\""+cur_line.substr(4, line_siz)+"\">\n";
-      special_state.CUSTOM_CLASS=!special_state.CUSTOM_CLASS;
-    }
-
-    else if ((cur_line.rfind("<<<", 0) == 0)){
-      if (special_state.BLOCKQUOTE_FENCED) return_buf+="</blockquote>\n";
-      else                                 return_buf+="<blockquote>\n";
-      special_state.BLOCKQUOTE_FENCED = !special_state.BLOCKQUOTE_FENCED;
-    }
-
-    else if (cur_line.rfind(":######: ", 0) == 0) return_buf+="<h6 align=\"center\">"+cur_line.substr(9, line_siz)+"</h6>\n";
-    else if (cur_line.rfind(":#####: ",  0) == 0) return_buf+="<h5 align=\"center\">"+cur_line.substr(8, line_siz)+"</h5>\n";
-    else if (cur_line.rfind(":####: ",   0) == 0) return_buf+="<h4 align=\"center\">"+cur_line.substr(7, line_siz)+"</h4>\n";
-    else if (cur_line.rfind(":###: ",    0) == 0) return_buf+="<h3 align=\"center\">"+cur_line.substr(6, line_siz)+"</h3>\n";
-    else if (cur_line.rfind(":##: ",     0) == 0) return_buf+="<h2 align=\"center\">"+cur_line.substr(5, line_siz)+"</h2>\n";
-    else if (cur_line.rfind(":#: ",      0) == 0) return_buf+="<h1 align=\"center\">"+cur_line.substr(4, line_siz)+"</h1>\n";
-
-    else if (cur_line.rfind("######: ", 0) == 0) return_buf+="<h6 align=\"right\">"+cur_line.substr(8, line_siz)+"</h6>\n";
-    else if (cur_line.rfind("#####: ",  0) == 0) return_buf+="<h5 align=\"right\">"+cur_line.substr(7, line_siz)+"</h5>\n";
-    else if (cur_line.rfind("####: ",   0) == 0) return_buf+="<h4 align=\"right\">"+cur_line.substr(6, line_siz)+"</h4>\n";
-    else if (cur_line.rfind("###: ",    0) == 0) return_buf+="<h3 align=\"right\">"+cur_line.substr(5, line_siz)+"</h3>\n";
-    else if (cur_line.rfind("##: ",     0) == 0) return_buf+="<h2 align=\"right\">"+cur_line.substr(4, line_siz)+"</h2>\n";
-    else if (cur_line.rfind("#: ",      0) == 0) return_buf+="<h1 align=\"right\">"+cur_line.substr(3, line_siz)+"</h1>\n";
 
 
-    else if (cur_line.rfind(":###### ", 0) == 0) return_buf+="<h6 align=\"left\">"+cur_line.substr(8, line_siz)+"</h6>\n";
-    else if (cur_line.rfind(":##### ",  0) == 0) return_buf+="<h5 align=\"left\">"+cur_line.substr(7, line_siz)+"</h5>\n";
-    else if (cur_line.rfind(":#### ",   0) == 0) return_buf+="<h4 align=\"left\">"+cur_line.substr(6, line_siz)+"</h4>\n";
-    else if (cur_line.rfind(":### ",    0) == 0) return_buf+="<h3 align=\"left\">"+cur_line.substr(5, line_siz)+"</h3>\n";
-    else if (cur_line.rfind(":## ",     0) == 0) return_buf+="<h2 align=\"left\">"+cur_line.substr(4, line_siz)+"</h2>\n";
-    else if (cur_line.rfind(":# ",      0) == 0) return_buf+="<h1 align=\"left\">"+cur_line.substr(3, line_siz)+"</h1>\n";
-
-    else if (cur_line.rfind("###### ", 0) == 0) return_buf+="<h6>"+cur_line.substr(7, line_siz)+"</h6>\n";
-    else if (cur_line.rfind("##### ",  0) == 0) return_buf+="<h5>"+cur_line.substr(6, line_siz)+"</h5>\n";
-    else if (cur_line.rfind("#### ",   0) == 0) return_buf+="<h4>"+cur_line.substr(5, line_siz)+"</h4>\n";
-    else if (cur_line.rfind("### ",    0) == 0) return_buf+="<h3>"+cur_line.substr(4, line_siz)+"</h3>\n";
-    else if (cur_line.rfind("## ",     0) == 0) return_buf+="<h2>"+cur_line.substr(3, line_siz)+"</h2>\n";
-    else if (cur_line.rfind("# ",      0) == 0) return_buf+="<h1>"+cur_line.substr(2, line_siz)+"</h1>\n";
-
-    else if (cur_line.rfind("> ",      0) == 0) return_buf+="<blockquote>"+cur_line.substr(2, line_siz)+"</blockquote>";
-    else no_exp=true;
 
     /* if(no_exp) { */
     /*   for (int i=0;i<line_siz;i++) { */
     /*     char c = cur_line[i]; */
-    /*     switch (c){ */
-    /*       case '*': { */
-    /*                   if(special_state.ITALIC) return_buf+="</em>"; */
-    /*                   else                   return_buf+="<em>"; */
-    /*                   special_state.ITALIC=!special_state.ITALIC; */
-    /*                   no_exp=!no_exp; */
-    /*                 } */
-    /*                 break; */
-    /*       default: */
-    /*                 if(!no_exp){ */
-    /*                   return_buf+=c; */
-    /*                 } */
-    /*                 break; */
-    /*     } */
     /*   } */
     /* } */
+
     if(no_exp){
-      return_buf+=cur_line+"\n";
+      if(special_state.CODE_FENCED) return_buf+=cur_line+"\n";
+      else if(!cur_line.empty())    return_buf+="\t<p>"+cur_line+"</p>\n";
+      else                          return_buf+="\n";
     }
     start = end + 1;
   }
 }
 
-std::string 
+  std::string 
 main_parse(const char *filename) 
 {
   std::string file_c = readfile(filename);

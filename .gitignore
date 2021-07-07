@@ -1,4 +1,5 @@
 build
+tests
 xcode
 .cache
 compile_commands.json
