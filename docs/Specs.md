@@ -504,17 +504,17 @@ a. content
 b. content
 c. content
 
-a. content
-b. content
-c. content
+A. content
+B. content
+C. content
 
 i. content
 ii. content
 iii. content
 
-i. content
-ii. content
-iii. content
+I. content
+II. content
+III. content
 
 1. content
 2. content
@@ -751,3 +751,4 @@ HTML:
 hidden-content
 </details>
 ```
+
