@@ -1,0 +1,27 @@
+name: macOS
+
+on:
+  push:
+    branches: [ main ]
+
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+    - name: make build dir
+      run: mkdir build
+    - name: move into build
+      run: cd build
+    - name: setup makefile
+      run: cmake ..
+    - name: build bettermark
+      run: make
+    - name: 'export binary'
+      uses: actions/upload-artifact@v2
+      with:
+        name: bettermark
+        path: bettermark

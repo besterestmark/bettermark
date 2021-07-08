@@ -1,0 +1,31 @@
+name: Ubuntu
+
+on:
+  push:
+    branches: [ main ]
+
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+    - name: update apt
+      run: sudo apt-get update
+    - name: install raylib dependencies
+      run: sudo apt install cmake gcc
+    - name: make build dir
+      run: mkdir build
+    - name: move into build
+      run: cd build
+    - name: setup makefile
+      run: cmake ..
+    - name: build bettermark
+      run: make
+    - name: 'export binary'
+      uses: actions/upload-artifact@v2
+      with:
+        name: bettermark
+        path: bettermark
