@@ -129,6 +129,7 @@ FenceConverter(std::string text)
       else if (current_line.rfind("# ",      0) == 0) return_buffer+="<h1>"+current_line.substr(2, line_length)+"</h1>\n";
 
       else if (current_line.rfind("> ",      0) == 0) return_buffer+="<blockquote>"+current_line.substr(2, line_length)+"</blockquote>";
+      else if (current_line.rfind("//",      0) == 0) return_buffer+="<!--"+current_line.substr(2, line_length)+"-->";
       else no_exp=true;
     } else no_exp=true;
 
