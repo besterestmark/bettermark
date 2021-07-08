@@ -1,61 +1,61 @@
-*content*
+*italic*
 
-**content**
+**bold**
 
-~~content~~
+~~strikethrough~~
 
-_content_
+_underline_
 
-!!content!!
+!!spoiler!!
 
-# content
+# Heading 1
 
-:# content
+:# Left-aligned Heading 1
 
-:#: content
+:#: Centred Heading 1
 
-#: content
+#: Right-aligned Heading 1
 
-## content
+## Heading 2
 
-:## content
+:## Left-Aligned Heading 2 
 
-:##: content
+:##: Centred Heading 2 
 
-##: content
+##: Right-alined Heading 2
 
-### content
+### Heading 3 
 
-:### content
+:### Left-Aligned Heading 3 
 
-:###: content
+:###: Centred Heading 3 
 
-###: content
+###: Right-Aligned Heading 3
 
-#### content
+#### Heading 4
 
-:#### content
+:#### Left-Aligned Heading 4
 
-:####: content
+:####: Centred Heading 4
 
-####: content
+####: Right-Aligned Heading 4
 
-##### content
+##### Heading 5
 
-:##### content
+:##### Left-Aligned Heading 5
 
-:#####: content
+:#####: Centred Heading 5
 
-#####: content
+#####: Right-Aligned Heading 5
 
-###### content
+###### Heading 6
 
+:###### Left-Aligned Heading 6
 
-:###### content
+:######: Centred Heading 6
 
-:######: content
+######: Right-Aligned Heading 6
 
-######: content
 
 [visible-text](link)
 
@@ -93,50 +93,50 @@ content@ema.il
 
 ![alt](link "title" +onclick.link =WidthxHeight)
 
-> content
+> single-line blockquote 
 
 <<<
-content
+fenced-blockquote
 <<<
 
 <<< (link)
-content
+fenced blockquote with link
 <<<
 
 <<< [title](link)
-content
+fenced blockquote with link and title
 <<<
 
 <<< [title]
-content
+fenced blockquote with title
 <<<
 
-- content
+- list-minus
 
-* content
+* list-asterisk
 
-+ content
++ list-plus
 
 
-a. content
-b. content
-c. content
+a. list-letter-lowercase
+b. list-letter-lowercase
+c. list-letter-lowercase
 
-A. content
-B. content
-C. content
+A. list-letter-uppercase
+B. list-letter-uppercase
+C. list-letter-uppercase
 
-i. content
-ii. content
-iii. content
+i. list-roman-lowercase
+ii. list-roman-lowercase
+iii. list-roman-lowercase
 
-I. content
-II. content
-III. content
+I. list-roman-uppercase
+II. list-roman-uppercase
+III. list-roman-uppercase
 
-1. content
-2. content
-3. content
+1. list-numbered
+2. list-numbered
+3. list-numbered
 
 - [ ] not done content
 
@@ -168,18 +168,16 @@ III. content
 
 *[TERM]: title
 
-`content`	
+`inline code block`	
 
 ```
-content
+fenced code block
 ```
  
-::: className
-content
+::: class-name
+content inside div
 :::
 
 +++ summary
 hidden-content
 +++
-
-// comment
