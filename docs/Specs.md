@@ -752,3 +752,20 @@ hidden-content
 </details>
 ```
 
+## Comment
+
+ID: COMMENT
+
+Extension: NONE
+
+MD:
+
+```md
+// comment
+```
+
+HTML:
+
+```html
+<!-- comment -->
+```
