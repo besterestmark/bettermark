@@ -7,13 +7,13 @@ Extension: None
 MD:
 
 ```md
-*content*
+*italic*
 ```
 
 HTML:
 
 ```html
-<em> content </em>
+<em>italic</em>
 ```
 
 ## Bold
@@ -25,13 +25,13 @@ Extension: None
 MD:
 
 ```md
-**content**
+**bold**
 ```
 
 HTML:
 
 ```html
-<strong>content</strong>
+<strong>bold</strong>
 ```
 
 ## Strikethrough
@@ -43,13 +43,13 @@ Extension:
 MD:
 
 ```md
-~~content~~
+~~strikethrough~~
 ```
 
 HTML:
 
 ```html
-<s>content</s>
+<s>strikethrough</s>
 ```
 
 ## Underline
@@ -61,13 +61,13 @@ Extension: https://www.npmjs.com/package/markdown-it-underline
 MD:
 
 ```md
-_content_
+_underline_
 ```
 
 HTML:
 
 ```html
-<u>content</u>
+<u>underline</u>
 ```
 
 ## Spoiler
@@ -79,7 +79,7 @@ Extension: https://www.npmjs.com/package/@traptitech/markdown-it-spoiler
 MD:
 
 ```md
-!!content!!
+!!spoiler!!
 ```
 
 HTML:
@@ -91,7 +91,7 @@ HTML:
 CSS:
 
 ```css
-// something lol
+/* .spoiler */
 ```
 
 ## Headings
@@ -151,105 +151,105 @@ Extension: NONE
 MD:
 
 ```md
-# content
+# heading 1
 
-:# content
+:# Left-aligned Heading 1
 
-:#: content
+:#: Centred Heading 1
 
-#: content
+#: Right-aligned Heading 1
 
-## content
+## Heading 2
 
-:## content
+:## Left-Aligned Heading 2 
 
-:##: content
+:##: Centred Heading 2 
 
-##: content
+##: Right-alined Heading 2
 
-### content
+### Heading 3 
 
-:### content
+:### Left-Aligned Heading 3 
 
-:###: content
+:###: Centred Heading 3 
 
-###: content
+###: Right-Aligned Heading 3
 
-#### content
+#### Heading 4
 
-:#### content
+:#### Left-Aligned Heading 4
 
-:####: content
+:####: Centred Heading 4
 
-####: content
+####: Right-Aligned Heading 4
 
-##### content
+##### Heading 5
 
-:##### content
+:##### Left-Aligned Heading 5
 
-:#####: content
+:#####: Centred Heading 5
 
-#####: content
+#####: Right-Aligned Heading 5
 
-###### content
+###### Heading 6
 
-:###### content
+:###### Left-Aligned Heading 6
 
-:######: content
+:######: Centred Heading 6
 
-######: content
+######: Right-Aligned Heading 6
 ```
 
 HTML:
 
 ```html
-<h1>content</h1>
+<h1>Heading 1</h1>
 
-<h1 align="left">content</h1>
+<h1 align="left">Left-Aligned Heading 1</h1>
 
-<h1 align="center">content</h1>
+<h1 align="center">Centred Heading 1</h1>
 
-<h1 align="right">content</h1>
+<h1 align="right">Right-Aligned Heading 1</h1>
 
-<h2>content</h2>
+<h2>Heading 2</h2>
 
-<h2 align="left">content</h2>
+<h2 align="left">Left-Aligned Heading 2</h2>
 
-<h2 align="center">content</h2>
+<h2 align="center">Centred Heading 2</h2>
 
-<h2 align="right">content</h2>
+<h2 align="right">Right-Aligned Heading 2</h2>
 
-<h3>content</h3>
+<h3>Heading 3</h3>
 
-<h3 align="left">content</h3>
+<h3 align="left">Left-Aligned Heading 3</h3>
 
-<h3 align="center">content</h3>
+<h3 align="center">Centred Heading 3</h3>
 
-<h3 align="right">content</h3>
+<h3 align="right">Right-Aligned Heading 3</h3>
 
-<h4>content</h4>
+<h4>Heading 4</h4>
 
-<h4 align="left">content</h4>
+<h4 align="left">Left-Aligned Heading 4</h4>
 
-<h4 align="center">content</h4>
+<h4 align="center">Centred Heading 4</h4>
 
-<h4 align="right">content</h4>
+<h4 align="right">Right-Aligned Heading 4</h4>
 
-<h5>content</h5>
+<h5>Heading 5</h5>
 
-<h5 align="left">content</h5>
+<h5 align="left">Left-Aligned Heading 5</h5>
 
-<h5 align="center">content</h5>
+<h5 align="center">Centred Heading 5</h5>
 
-<h5 align="right">content</h5>
+<h5 align="right">Right-Aligned Heading 5</h5>
 
-<h6>content</h6>
+<h6>Heading 6</h6>
 
-<h6 align="left">content</h6>
+<h6 align="left">Left-Aligned Heading 6</h6>
 
-<h6 align="center">content</h6>
+<h6 align="center">Centred Heading 6</h6>
 
-<h6 align="right">content</h6>
+<h6 align="right">Right-Aligned Heading 6</h6>
 ```
 
 ## (WIP) Links
@@ -271,7 +271,7 @@ Extension: NONE
 
 [[[!!!WILL ADD LATER!!!]]]
 
-link
+https://link.com
 
 content@ema.il
 ```
@@ -281,7 +281,7 @@ content@ema.il
 
 [[[!!!WILL ADD LATER!!!]]]	
 
-<a href="link">link</a>
+<a href="https://link.com">https://link.com</a>
 
 <a href="mailto:content@ema.il">content@ema.il</a>
 ```
@@ -407,44 +407,44 @@ Extension: NONE
 MD:
 
 ```md
-> content
+> single-line blockquote
 
 <<<
-content
+fenced blockquote
 <<<
 
 <<< (link)
-content
+fenced blockquote with link
 <<<
 
 <<< [title](link)
-content
+fenced blockquote with title and link
 <<<
 
 <<< [title]
-content
+fenced blockquote with title
 <<<
 ```
 
 HTML:
 
 ```html
-<blockquote>content</blockquote>
+<blockquote>single-line blockquote</blockquote>
 
 <blockquote>
-content
+fenced blockquote
 </blockquote>
 
 <blockquote cite="link">
-content
+fenced blockquote with link
 </blockquote>
 
 <blockquote cite="link" title="title">
-content
+fenced blockquote with link and title
 </blockquote>
 
 <blockquote title="title">
-content
+fenced blockquote with title
 </blockquote>
 
 ```
@@ -466,18 +466,18 @@ LIST_PLUS
 MD:
 
 ```md
-- content
-* content
-+ content
+- list-minus
+* list-asterisk
++ list-plus
 ```
 
 HTML:
 
 ```html
 <ul>
-	<li>content</li>
-	<li>content</li>
-	<li>content</li>
+	<li>list-minus</li>
+	<li>list-asterisk</li>
+	<li>list-plus</li>
 </ul>
 ```
 
@@ -500,58 +500,58 @@ Extension: NONE
 MD:
 
 ```md
-a. content
-b. content
-c. content
+a. list-letter-lowercase
+b. list-letter-lowercase
+c. list-letter-lowercase
 
-A. content
-B. content
-C. content
+A. list-letter-uppercase
+B. list-letter-uppercase
+C. list-letter-uppercase
 
-i. content
-ii. content
-iii. content
+i. list-roman-lowercase
+ii. list-roman-lowercase
+iii. list-roman-lowercase
 
-I. content
-II. content
-III. content
+I. list-roman-uppercase
+II. list-roman-uppercase
+III. list-roman-uppercase
 
-1. content
-2. content
-3. content
+1. list-numbered
+2. list-numbered
+3. list-numbered
 ```
 
 HTML:
 
 ```html
 <ol type="a">
-	<li>content</li>
-	<li>content</li>
-	<li>content</li>
+	<li>list-letter-lowercase</li>
+	<li>list-letter-lowercase</li>
+	<li>list-letter-lowercase</li>
 </ol>
 
 <ol type="A">
-	<li>content</li>
-	<li>content</li>
-	<li>content</li>
+	<li>list-letter-uppercase</li>
+	<li>list-letter-uppercase</li>
+	<li>list-letter-uppercase</li>
 </ol>
 
 <ol type="i">
-	<li>content</li>
-	<li>content</li>
-	<li>content</li>
+	<li>list-roman-lowercase</li>
+	<li>list-roman-lowercase</li>
+	<li>list-roman-lowercase</li>
 </ol>
 
 <ol type="I">
-	<li>content</li>
-	<li>content</li>
-	<li>content</li>
+	<li>list-roman-uppercase</li>
+	<li>list-roman-uppercase</li>
+	<li>list-roman-uppercase</li>
 </ol>
 
 <ol>
-	<li>content</li>
-	<li>content</li>
-	<li>content</li>
+	<li>list-numbered</li>
+	<li>list-numbered</li>
+	<li>list-numbered</li>
 </ol>
 ```
 
@@ -627,7 +627,7 @@ CSS:
 
 NOTE: Apply custom class to checkboxes so they're easier to style
 
-## Horizontal Rules
+## (WIP) Horizontal Rules
 
 IDs:
 
@@ -642,7 +642,7 @@ MD:
 ```md
 ---
 
---- content ---
+--- words inside hr ---
 ```
 
 HTML:
@@ -691,20 +691,20 @@ Extension: NONE
 MD:
 
 ~~~~
-`content`
+`inline code`
 
 ```
-content
+fenced code block
 ```
 ~~~~
 
 HTML:
 
 ```html
-<code>content</code>
+<code>inline code</code>
 
 <pre><code class="language-[LANG]">
-content
+fenced code block
 </code></pre>
 ```
 
@@ -717,16 +717,16 @@ Extension:  [markdown-it-container](https://github.com/markdown-it/markdown-it-c
 MD:
 
 ```md
-::: className
-content
+::: class-name
+content inside div
 :::
 ```
 
 HTML:
 
 ```html
-<div class="className">
-content
+<div class="class-name">
+content inside div
 </div>
 ```
 
