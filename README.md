@@ -52,4 +52,4 @@ $ make
 ## Credits
 
 - [highlight.js](https://highlightjs.org) for code block syntax highlighting
-- [Gusted](https://github.com/Gusted) for multiple PRs
+
