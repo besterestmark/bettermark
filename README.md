@@ -1,9 +1,9 @@
 <h1 align="center">Welcome to BetterMark!</h1>
-<div align="center"><p>A <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> CLI parser & flavour that aims to compete in speed with popular parsers like <a href="https://commonmark.org">CommonMark</a>, whilst supporting many more unique features.</p></div>
+<div align="center"><p>A <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> CLI converter & flavour that aims to compete in speed with popular parsers like <a href="https://commonmark.org">CommonMark</a>, whilst supporting many more unique features.</p></div>
 
 ## General info
 
-- Uses C++14, a very widely supported version of C++
+- Uses C++14, better supported version
 - Faster than most JavaScript parsers
 - Extremely extensible CSS-wise
   + Multiple already available themes like [Gruvbox](https://github.com/morhetz/gruvbox) and [Lantern-theme](https://github.com/Gitleptune/lantern-theme)
