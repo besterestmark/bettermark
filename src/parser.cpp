@@ -73,7 +73,7 @@ ISINLINE std::string RegexConverter(std::string text)
   return text;
 }
 
-struct ActiveBlock{
+struct ActiveState{
   bool COLLAPSIBLE=false;
   bool CUSTOM_CLASS=false;
   bool BLOCKQUOTE_FENCED=false;
@@ -85,8 +85,9 @@ struct ActiveBlock{
 
 ISINLINE std::string FenceConverter(const std::string *kText)
 {
-  std::string return_buffer;
-  ActiveBlock active_state;
+  /* The string which will be used to add content to, to return */
+  std::string rb;
+  ActiveState active_state;
 
   size_t start = 0;
   size_t end;
@@ -95,8 +96,8 @@ ISINLINE std::string FenceConverter(const std::string *kText)
   while (true) {
     //line="";
     if ((end = kText->find("\n", start)) == std::string::npos) {
-      if (!(line = kText->substr(start)).empty()) return_buffer+=line+"this shouldn't come";
-      return return_buffer;
+      if (!(line = kText->substr(start)).empty()) rb+=line+"this shouldn't come";
+      return rb;
     }
 
     line = kText->substr(start, end - start);
@@ -108,81 +109,111 @@ ISINLINE std::string FenceConverter(const std::string *kText)
 
     if(!active_state.CODE_FENCED){
       if (BEGIN3(line, '+')){
-        if (active_state.COLLAPSIBLE) return_buffer+="</details>\n";
-        else                           return_buffer+="<details><summary>"+line.substr(4, line_length)+"</summary>\n";
+        if (active_state.COLLAPSIBLE) rb+="</details>\n";
+        else                           rb+="<details><summary>"+line.substr(4, line_length)+"</summary>\n";
         active_state.COLLAPSIBLE= !active_state.COLLAPSIBLE ;
       } 
       else if (BEGIN3(line, ':')){
-        if (active_state.CUSTOM_CLASS) return_buffer+="</div>\n";
-        else                            return_buffer+="<div class=\""+line.substr(4, line_length)+"\">\n";
+        if (active_state.CUSTOM_CLASS) rb+="</div>\n";
+        else                            rb+="<div class=\""+line.substr(4, line_length)+"\">\n";
         active_state.CUSTOM_CLASS=!active_state.CUSTOM_CLASS;
       }
 
       else if (BEGIN3(line, '<')){
-        if (active_state.BLOCKQUOTE_FENCED) return_buffer+="</blockquote>\n";
-        else                                 return_buffer+="<blockquote>\n";
+        if (active_state.BLOCKQUOTE_FENCED) rb+="</blockquote>\n";
+        else                                 rb+="<blockquote>\n";
         active_state.BLOCKQUOTE_FENCED = !active_state.BLOCKQUOTE_FENCED;
       }
 
+
       else if (line[0] == ':'){
-        if      (line.rfind(":###### ", 0) == 0) return_buffer+="<h6 align=\"left\">"+line.substr(8, line_length)+"</h6>\n";
-        else if (line.rfind(":##### ",  0) == 0) return_buffer+="<h5 align=\"left\">"+line.substr(7, line_length)+"</h5>\n";
-        else if (line.rfind(":#### ",   0) == 0) return_buffer+="<h4 align=\"left\">"+line.substr(6, line_length)+"</h4>\n";
-        else if (line.rfind(":### ",    0) == 0) return_buffer+="<h3 align=\"left\">"+line.substr(5, line_length)+"</h3>\n";
-        else if (line.rfind(":## ",     0) == 0) return_buffer+="<h2 align=\"left\">"+line.substr(4, line_length)+"</h2>\n";
-        else if (line.rfind(":# ",      0) == 0) return_buffer+="<h1 align=\"left\">"+line.substr(3, line_length)+"</h1>\n";
+        if(line[1]=='#'){
+          if(line[2]=='#'){
+            if(line[3]=='#'){
+              if(line[4]=='#'){
+                if(line[5]=='#'){
+                  if(line[6]=='#'){
+                    if(line[7]==':') rb+="<h6 align=\"center\">"+line.substr(9, line_length)+"</h6>\n";
+                    else             rb+="<h6 align=\"left\">"+line.substr(8, line_length)+"</h6>\n";
+                  }else{ 
+                    if(line[6]==':') rb+="<h5 align=\"center\">"+line.substr(8, line_length)+"</h5>\n";
+                    else             rb+="<h5 align=\"left\">"+line.substr(7, line_length)+"</h5>\n";
+                  }
+                }else {
+                  if(line[5]==':') rb+="<h4 align=\"center\">"+line.substr(7, line_length)+"</h4>\n";
+                  else             rb+="<h4 align=\"left\">"+line.substr(6, line_length)+"</h4>\n";
+                }
+              }else {
+                if(line[4]==':') rb+="<h3 align=\"center\">"+line.substr(6, line_length)+"</h3>\n";
+                else             rb+="<h3 align=\"left\">"+line.substr(5, line_length)+"</h3>\n";
 
-        else if (line.rfind(":######: ", 0) == 0) return_buffer+="<h6 align=\"center\">"+line.substr(9, line_length)+"</h6>\n";
-        else if (line.rfind(":#####: ",  0) == 0) return_buffer+="<h5 align=\"center\">"+line.substr(8, line_length)+"</h5>\n";
-        else if (line.rfind(":####: ",   0) == 0) return_buffer+="<h4 align=\"center\">"+line.substr(7, line_length)+"</h4>\n";
-        else if (line.rfind(":###: ",    0) == 0) return_buffer+="<h3 align=\"center\">"+line.substr(6, line_length)+"</h3>\n";
-        else if (line.rfind(":##: ",     0) == 0) return_buffer+="<h2 align=\"center\">"+line.substr(5, line_length)+"</h2>\n";
-        else if (line.rfind(":#: ",      0) == 0) return_buffer+="<h1 align=\"center\">"+line.substr(4, line_length)+"</h1>\n";
+              }
+            }else {
+              if(line[3]==':') rb+="<h2 align=\"center\">"+line.substr(5, line_length)+"</h2>\n";
+              else             rb+="<h2 align=\"left\">"+line.substr(4, line_length)+"</h2>\n";
+            }
+          }else {
+            if(line[2]==':') rb+="<h1 align=\"left\">"+line.substr(4, line_length)+"</h1>\n";
+            else             rb+="<h1 align=\"left\">"+line.substr(3, line_length)+"</h1>\n";
+          }
+        } 
       }
-      else if (line[0]=='#'){
-        if      (line.rfind("######: ", 0) == 0) return_buffer+="<h6 align=\"right\">"+line.substr(8, line_length)+"</h6>\n";
-        else if (line.rfind("#####: ",  0) == 0) return_buffer+="<h5 align=\"right\">"+line.substr(7, line_length)+"</h5>\n";
-        else if (line.rfind("####: ",   0) == 0) return_buffer+="<h4 align=\"right\">"+line.substr(6, line_length)+"</h4>\n";
-        else if (line.rfind("###: ",    0) == 0) return_buffer+="<h3 align=\"right\">"+line.substr(5, line_length)+"</h3>\n";
-        else if (line.rfind("##: ",     0) == 0) return_buffer+="<h2 align=\"right\">"+line.substr(4, line_length)+"</h2>\n";
-        else if (line.rfind("#: ",      0) == 0) return_buffer+="<h1 align=\"right\">"+line.substr(3, line_length)+"</h1>\n";
 
-
-        else if (line.rfind("###### ", 0) == 0) return_buffer+="<h6>"+line.substr(7, line_length)+"</h6>\n";
-        else if (line.rfind("##### ",  0) == 0) return_buffer+="<h5>"+line.substr(6, line_length)+"</h5>\n";
-        else if (line.rfind("#### ",   0) == 0) return_buffer+="<h4>"+line.substr(5, line_length)+"</h4>\n";
-        else if (line.rfind("### ",    0) == 0) return_buffer+="<h3>"+line.substr(4, line_length)+"</h3>\n";
-        else if (line.rfind("## ",     0) == 0) return_buffer+="<h2>"+line.substr(3, line_length)+"</h2>\n";
-        else if (line.rfind("# ",      0) == 0) return_buffer+="<h1>"+line.substr(2, line_length)+"</h1>\n";
+      else if(line[0]=='#'){
+        if(line[1]=='#'){
+          if(line[2]=='#'){
+            if(line[3]=='#'){
+              if(line[4]=='#'){
+                if(line[5]=='#'){
+                  if(line[6]==':')  rb+="<h6 align=\"right\">"+line.substr(8, line_length)+"</h6>\n";
+                  else              rb+="<h6>"+line.substr(7, line_length)+"</h6>\n";
+                }else{
+                  if(line[5]==':')  rb+="<h5 align=\"right\">"+line.substr(7, line_length)+"</h5>\n";
+                  else              rb+="<h5>"+line.substr(6, line_length)+"</h5>\n";
+                }
+              } else{
+                if(line[4]==':')  rb+="<h4 align=\"right\">"+line.substr(6, line_length)+"</h4>\n";
+                else              rb+="<h4>"+line.substr(5, line_length)+"</h5>\n";
+              }
+            } else{
+              if(line[3]==':')  rb+="<h3 align=\"right\">"+line.substr(5, line_length)+"</h3>\n";
+              else              rb+="<h3>"+line.substr(4, line_length)+"</h5>\n";
+            }
+          } else{
+              if(line[2]==':')  rb+="<h2 align=\"right\">"+line.substr(4, line_length)+"</h2>\n";
+              else              rb+="<h2 >"+line.substr(3, line_length)+"</h2>\n";
+          }
+        } else{
+              if(line[1]==':')  rb+="<h1 align=\"right\">"+line.substr(3, line_length)+"</h1>\n";
+              else              rb+="<h1 >"+line.substr(2, line_length)+"</h1>\n";
+        }
       }
 
-
-
-      else if ( BEGIN1(line, '>') ) return_buffer+="<blockquote>"+line.substr(2, line_length)+"</blockquote>\n";
-      else if ( BEGIN2(line, '/') ) return_buffer+="<!--"+line.substr(2, line_length)+"-->";
+      else if ( BEGIN1(line, '>') ) rb+="<blockquote>"+line.substr(2, line_length)+"</blockquote>\n";
+      else if ( BEGIN2(line, '/') ) rb+="<!--"+line.substr(2, line_length)+"-->";
       else no_exp=true;
     } else no_exp=true;
 
 
-/*     if(no_exp) { */
-/*  */
-/*       if(line.find('*') != std::string::npos){ */
-/*         for (int i=0;i<line_length;i++) { */
-/*           char c = line[i]; */
-/*  */
-/*           if (c == '*'){ */
-/*             if(active_state.ITALIC) return_buffer+="</em>"; */
-/*             else                     return_buffer+="<em>"; */
-/*             active_state.ITALIC=!active_state.ITALIC; */
-/*           } */
-/*  */
-/*         } */
-/*       } */
-/*     } */
+    /*     if(no_exp) { */
+    /*  */
+    /*       if(line.find('*') != std::string::npos){ */
+    /*         for (int i=0;i<line_length;i++) { */
+    /*           char c = line[i]; */
+    /*  */
+    /*           if (c == '*'){ */
+    /*             if(active_state.ITALIC) rb+="</em>"; */
+    /*             else                     rb+="<em>"; */
+    /*             active_state.ITALIC=!active_state.ITALIC; */
+    /*           } */
+    /*  */
+    /*         } */
+    /*       } */
+    /*     } */
 
     if ( BEGIN3(line, '`') ){
-      if (active_state.CODE_FENCED) return_buffer+="</code></pre>\n";
-      else                            return_buffer+="<pre><code class=\"language-"+line.substr(3, line_length)+"\">\n";
+      if (active_state.CODE_FENCED) rb+="</code></pre>\n";
+      else                            rb+="<pre><code class=\"language-"+line.substr(3, line_length)+"\">\n";
       active_state.CODE_FENCED=!active_state.CODE_FENCED;
       no_exp=false;
     }
@@ -191,9 +222,9 @@ ISINLINE std::string FenceConverter(const std::string *kText)
 
 
     if(no_exp){
-      if(active_state.CODE_FENCED) return_buffer+=line+"\n";
-      else if(!line.empty())    return_buffer+="<p>"+line+"</p>\n";
-      else                          return_buffer+="\n";
+      if(active_state.CODE_FENCED) rb+=line+"\n";
+      else if(!line.empty())    rb+="<p>"+line+"</p>\n";
+      else                          rb+="\n";
     }
     start = end + 1;
   }
