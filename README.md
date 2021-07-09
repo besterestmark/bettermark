@@ -55,4 +55,6 @@ $ make
 
 ## Extra thanks to all these awesome contributors!
 
-![amogus](https://contrib.rocks/preview?repo=besterestmark%2Fbettermark)
+<a href="https://github.com/besterestmark/bettermark/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=besterestmark/bettermark" />
+</a>
