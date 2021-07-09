@@ -5,13 +5,39 @@
 #include <string>
 #include "parser.hpp"
 
+
+
+#define ISIN(ch, ch_min, ch_max)       ((ch_min) <= (unsigned)(ch) && (unsigned)(ch) <= (ch_max))
+#define ISANYOF(ch, palette)           ((ch) != _T('\0')  &&  md_strchr((palette), (ch)) != NULL)
+#define ISANYOF2(ch, ch1, ch2)         ((ch) == (ch1) || (ch) == (ch2))
+#define ISANYOF3(ch, ch1, ch2, ch3)    ((ch) == (ch1) || (ch) == (ch2) || (ch) == (ch3))
+#define ISASCII(ch)                    ((unsigned)(ch) <= 127)
+#define ISBLANK(ch)                    (ISANYOF2((ch), _T(' '), _T('\t')))
+#define ISNEWLINE(ch)                  (ISANYOF2((ch), _T('\r'), _T('\n')))
+#define ISWHITESPACE(ch)               (ISBLANK(ch) || ISANYOF2((ch), _T('\v'), _T('\f')))
+#define ISCNTRL(ch)                    ((unsigned)(ch) <= 31 || (unsigned)(ch) == 127)
+#define ISPUNCT(ch)                    (ISIN(ch, 33, 47) || ISIN(ch, 58, 64) || ISIN(ch, 91, 96) || ISIN(ch, 123, 126))
+#define ISUPPER(ch)                    (ISIN(ch, _T('A'), _T('Z')))
+#define ISLOWER(ch)                    (ISIN(ch, _T('a'), _T('z')))
+#define ISALPHA(ch)                    (ISUPPER_(ch) || ISLOWER_(ch))
+#define ISDIGIT(ch)                    (ISIN_(ch, _T('0'), _T('9')))
+#define ISXDIGIT(ch)                   (ISDIGIT(ch) || ISIN(ch, _T('A'), _T('F')) || ISIN(ch, _T('a'), _T('f')))
+#define ISALNUM(ch)                    (ISALPHA(ch) || ISDIGIT(ch))
+
+#define BEGIN1(str, ch)               (str[0]==ch )
+#define BEGIN2(str, ch)               (str[0]==ch &&  str[1]==ch )
+#define BEGIN3(str, ch)               (str[0]==ch &&  str[1]==ch && str[2]==ch )
+
+#define STARTS(str, substr)            (str.rfind(substr, 0)==0)
+
+#define ISINLINE inline
+
 using u8 = uint8_t;
 using u16 = uint16_t;
 using u32 = uint32_t;
 using u64 = uint64_t;
 
-  std::string 
-Readfile(const char *kFilename)
+ISINLINE std::string Readfile(const char *kFilename)
 {
   std::ifstream in(kFilename, std::ios::in | std::ios::binary);
   if (in) {
@@ -26,8 +52,7 @@ Readfile(const char *kFilename)
   throw(errno);
 }
 
-  std::string 
-RegexConverter(std::string text) 
+ISINLINE std::string RegexConverter(std::string text) 
 {
   std::regex BOLD(R"(\*\*(.+)\*\*)");
   std::regex ITALIC(R"(\*(.+)\*)");
@@ -58,8 +83,7 @@ struct ActiveBlock{
   bool ITALIC=false;
 };
 
-  std::string 
-FenceConverter(std::string text)
+ISINLINE std::string FenceConverter(const std::string *kText)
 {
   std::string return_buffer;
   ActiveBlock active_state;
@@ -67,78 +91,84 @@ FenceConverter(std::string text)
   size_t start = 0;
   size_t end;
 
-  std::string current_line;
+  std::string line;
   while (true) {
-    current_line="";
-    if ((end = text.find("\n", start)) == std::string::npos) {
-      if (!(current_line = text.substr(start)).empty()) return_buffer+=current_line+"this shouldn't come";
+    //line="";
+    if ((end = kText->find("\n", start)) == std::string::npos) {
+      if (!(line = kText->substr(start)).empty()) return_buffer+=line+"this shouldn't come";
       return return_buffer;
     }
 
-    current_line = text.substr(start, end - start);
-    int line_length = current_line.size()-1;
+    line = kText->substr(start, end - start);
+    int line_length = line.size()-1;
     bool no_exp = false;
 
 
 
 
     if(!active_state.CODE_FENCED){
-      if ((current_line.rfind("+++", 0) == 0)){
+      if (BEGIN3(line, '+')){
         if (active_state.COLLAPSIBLE) return_buffer+="</details>\n";
-        else                           return_buffer+="<details><summary>"+current_line.substr(4, line_length)+"</summary>\n";
+        else                           return_buffer+="<details><summary>"+line.substr(4, line_length)+"</summary>\n";
         active_state.COLLAPSIBLE= !active_state.COLLAPSIBLE ;
       } 
-      else if ((current_line.rfind(":::", 0) == 0)){
+      else if (BEGIN3(line, ':')){
         if (active_state.CUSTOM_CLASS) return_buffer+="</div>\n";
-        else                            return_buffer+="<div class=\""+current_line.substr(4, line_length)+"\">\n";
+        else                            return_buffer+="<div class=\""+line.substr(4, line_length)+"\">\n";
         active_state.CUSTOM_CLASS=!active_state.CUSTOM_CLASS;
       }
 
-      else if ((current_line.rfind("<<<", 0) == 0)){
+      else if (BEGIN3(line, '<')){
         if (active_state.BLOCKQUOTE_FENCED) return_buffer+="</blockquote>\n";
         else                                 return_buffer+="<blockquote>\n";
         active_state.BLOCKQUOTE_FENCED = !active_state.BLOCKQUOTE_FENCED;
       }
 
-      else if (current_line.rfind(":###### ", 0) == 0) return_buffer+="<h6 align=\"left\">"+current_line.substr(8, line_length)+"</h6>\n";
-      else if (current_line.rfind(":##### ",  0) == 0) return_buffer+="<h5 align=\"left\">"+current_line.substr(7, line_length)+"</h5>\n";
-      else if (current_line.rfind(":#### ",   0) == 0) return_buffer+="<h4 align=\"left\">"+current_line.substr(6, line_length)+"</h4>\n";
-      else if (current_line.rfind(":### ",    0) == 0) return_buffer+="<h3 align=\"left\">"+current_line.substr(5, line_length)+"</h3>\n";
-      else if (current_line.rfind(":## ",     0) == 0) return_buffer+="<h2 align=\"left\">"+current_line.substr(4, line_length)+"</h2>\n";
-      else if (current_line.rfind(":# ",      0) == 0) return_buffer+="<h1 align=\"left\">"+current_line.substr(3, line_length)+"</h1>\n";
+      else if (line[0] == ':'){
+        if      (line.rfind(":###### ", 0) == 0) return_buffer+="<h6 align=\"left\">"+line.substr(8, line_length)+"</h6>\n";
+        else if (line.rfind(":##### ",  0) == 0) return_buffer+="<h5 align=\"left\">"+line.substr(7, line_length)+"</h5>\n";
+        else if (line.rfind(":#### ",   0) == 0) return_buffer+="<h4 align=\"left\">"+line.substr(6, line_length)+"</h4>\n";
+        else if (line.rfind(":### ",    0) == 0) return_buffer+="<h3 align=\"left\">"+line.substr(5, line_length)+"</h3>\n";
+        else if (line.rfind(":## ",     0) == 0) return_buffer+="<h2 align=\"left\">"+line.substr(4, line_length)+"</h2>\n";
+        else if (line.rfind(":# ",      0) == 0) return_buffer+="<h1 align=\"left\">"+line.substr(3, line_length)+"</h1>\n";
 
-      else if (current_line.rfind("######: ", 0) == 0) return_buffer+="<h6 align=\"right\">"+current_line.substr(8, line_length)+"</h6>\n";
-      else if (current_line.rfind("#####: ",  0) == 0) return_buffer+="<h5 align=\"right\">"+current_line.substr(7, line_length)+"</h5>\n";
-      else if (current_line.rfind("####: ",   0) == 0) return_buffer+="<h4 align=\"right\">"+current_line.substr(6, line_length)+"</h4>\n";
-      else if (current_line.rfind("###: ",    0) == 0) return_buffer+="<h3 align=\"right\">"+current_line.substr(5, line_length)+"</h3>\n";
-      else if (current_line.rfind("##: ",     0) == 0) return_buffer+="<h2 align=\"right\">"+current_line.substr(4, line_length)+"</h2>\n";
-      else if (current_line.rfind("#: ",      0) == 0) return_buffer+="<h1 align=\"right\">"+current_line.substr(3, line_length)+"</h1>\n";
+        else if (line.rfind(":######: ", 0) == 0) return_buffer+="<h6 align=\"center\">"+line.substr(9, line_length)+"</h6>\n";
+        else if (line.rfind(":#####: ",  0) == 0) return_buffer+="<h5 align=\"center\">"+line.substr(8, line_length)+"</h5>\n";
+        else if (line.rfind(":####: ",   0) == 0) return_buffer+="<h4 align=\"center\">"+line.substr(7, line_length)+"</h4>\n";
+        else if (line.rfind(":###: ",    0) == 0) return_buffer+="<h3 align=\"center\">"+line.substr(6, line_length)+"</h3>\n";
+        else if (line.rfind(":##: ",     0) == 0) return_buffer+="<h2 align=\"center\">"+line.substr(5, line_length)+"</h2>\n";
+        else if (line.rfind(":#: ",      0) == 0) return_buffer+="<h1 align=\"center\">"+line.substr(4, line_length)+"</h1>\n";
+      }
+      else if (line[0]=='#'){
+        if      (line.rfind("######: ", 0) == 0) return_buffer+="<h6 align=\"right\">"+line.substr(8, line_length)+"</h6>\n";
+        else if (line.rfind("#####: ",  0) == 0) return_buffer+="<h5 align=\"right\">"+line.substr(7, line_length)+"</h5>\n";
+        else if (line.rfind("####: ",   0) == 0) return_buffer+="<h4 align=\"right\">"+line.substr(6, line_length)+"</h4>\n";
+        else if (line.rfind("###: ",    0) == 0) return_buffer+="<h3 align=\"right\">"+line.substr(5, line_length)+"</h3>\n";
+        else if (line.rfind("##: ",     0) == 0) return_buffer+="<h2 align=\"right\">"+line.substr(4, line_length)+"</h2>\n";
+        else if (line.rfind("#: ",      0) == 0) return_buffer+="<h1 align=\"right\">"+line.substr(3, line_length)+"</h1>\n";
 
-      else if (current_line.rfind(":######: ", 0) == 0) return_buffer+="<h6 align=\"center\">"+current_line.substr(9, line_length)+"</h6>\n";
-      else if (current_line.rfind(":#####: ",  0) == 0) return_buffer+="<h5 align=\"center\">"+current_line.substr(8, line_length)+"</h5>\n";
-      else if (current_line.rfind(":####: ",   0) == 0) return_buffer+="<h4 align=\"center\">"+current_line.substr(7, line_length)+"</h4>\n";
-      else if (current_line.rfind(":###: ",    0) == 0) return_buffer+="<h3 align=\"center\">"+current_line.substr(6, line_length)+"</h3>\n";
-      else if (current_line.rfind(":##: ",     0) == 0) return_buffer+="<h2 align=\"center\">"+current_line.substr(5, line_length)+"</h2>\n";
-      else if (current_line.rfind(":#: ",      0) == 0) return_buffer+="<h1 align=\"center\">"+current_line.substr(4, line_length)+"</h1>\n";
 
-      else if (current_line.rfind("###### ", 0) == 0) return_buffer+="<h6>"+current_line.substr(7, line_length)+"</h6>\n";
-      else if (current_line.rfind("##### ",  0) == 0) return_buffer+="<h5>"+current_line.substr(6, line_length)+"</h5>\n";
-      else if (current_line.rfind("#### ",   0) == 0) return_buffer+="<h4>"+current_line.substr(5, line_length)+"</h4>\n";
-      else if (current_line.rfind("### ",    0) == 0) return_buffer+="<h3>"+current_line.substr(4, line_length)+"</h3>\n";
-      else if (current_line.rfind("## ",     0) == 0) return_buffer+="<h2>"+current_line.substr(3, line_length)+"</h2>\n";
-      else if (current_line.rfind("# ",      0) == 0) return_buffer+="<h1>"+current_line.substr(2, line_length)+"</h1>\n";
+        else if (line.rfind("###### ", 0) == 0) return_buffer+="<h6>"+line.substr(7, line_length)+"</h6>\n";
+        else if (line.rfind("##### ",  0) == 0) return_buffer+="<h5>"+line.substr(6, line_length)+"</h5>\n";
+        else if (line.rfind("#### ",   0) == 0) return_buffer+="<h4>"+line.substr(5, line_length)+"</h4>\n";
+        else if (line.rfind("### ",    0) == 0) return_buffer+="<h3>"+line.substr(4, line_length)+"</h3>\n";
+        else if (line.rfind("## ",     0) == 0) return_buffer+="<h2>"+line.substr(3, line_length)+"</h2>\n";
+        else if (line.rfind("# ",      0) == 0) return_buffer+="<h1>"+line.substr(2, line_length)+"</h1>\n";
+      }
 
-      else if (current_line.rfind("> ",      0) == 0) return_buffer+="<blockquote>"+current_line.substr(2, line_length)+"</blockquote>";
-      else if (current_line.rfind("//",      0) == 0) return_buffer+="<!--"+current_line.substr(2, line_length)+"-->";
+
+
+      else if ( BEGIN1(line, '>') ) return_buffer+="<blockquote>"+line.substr(2, line_length)+"</blockquote>\n";
+      else if ( BEGIN2(line, '/') ) return_buffer+="<!--"+line.substr(2, line_length)+"-->";
       else no_exp=true;
     } else no_exp=true;
 
 
 /*     if(no_exp) { */
 /*  */
-/*       if(current_line.find('*') != std::string::npos){ */
+/*       if(line.find('*') != std::string::npos){ */
 /*         for (int i=0;i<line_length;i++) { */
-/*           char c = current_line[i]; */
+/*           char c = line[i]; */
 /*  */
 /*           if (c == '*'){ */
 /*             if(active_state.ITALIC) return_buffer+="</em>"; */
@@ -150,9 +180,9 @@ FenceConverter(std::string text)
 /*       } */
 /*     } */
 
-    if ((current_line.rfind("```", 0) == 0)){
+    if ( BEGIN3(line, '`') ){
       if (active_state.CODE_FENCED) return_buffer+="</code></pre>\n";
-      else                            return_buffer+="<pre><code class=\"language-"+current_line.substr(3, line_length)+"\">\n";
+      else                            return_buffer+="<pre><code class=\"language-"+line.substr(3, line_length)+"\">\n";
       active_state.CODE_FENCED=!active_state.CODE_FENCED;
       no_exp=false;
     }
@@ -161,8 +191,8 @@ FenceConverter(std::string text)
 
 
     if(no_exp){
-      if(active_state.CODE_FENCED) return_buffer+=current_line+"\n";
-      else if(!current_line.empty())    return_buffer+="\t<p>"+current_line+"</p>\n";
+      if(active_state.CODE_FENCED) return_buffer+=line+"\n";
+      else if(!line.empty())    return_buffer+="<p>"+line+"</p>\n";
       else                          return_buffer+="\n";
     }
     start = end + 1;
@@ -170,9 +200,8 @@ FenceConverter(std::string text)
 }
 
 
-  std::string 
-ConverterInitiater(const char *kFilename) 
+std::string ConverterInitiater(const char *kFilename) 
 {
   std::string file_c = Readfile(kFilename);
-  return RegexConverter(FenceConverter(file_c));
+  return (FenceConverter(&file_c));
 }
