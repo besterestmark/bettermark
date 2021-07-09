@@ -19,19 +19,19 @@ Everything that has support or will be supported soon can be seen in [todo.md](h
 - Most of [Commonmark](https://commonmark.org)
 - Custom Classes
 - Heading-alignment (Original Feature)
+- Double slash comments (Original Feature)
 
 ### Features soon to be supported
 
 - All types of lists, including lettered and roman
 - 4 types of task lists (not done, done, disabled and in progress)
-- Double slash comments Comments
 - Tables
 - Custom HR with words in it
-- And more! You can also leave suggestions in the [issues](https://github.com/besterestmark/bettermark/issues)!
+- And more, you can also leave your suggestions in the [issues section](https://github.com/besterestmark/bettermark/issues)!
 
 ## Comparison between BetterMark and CommonMark
 
-The benchmark file [test.md](https://github.com/besterestmark/bettermark/blob/master/docs/test.md) was parsed 500 times with both Bmark and Cmark, with Cmark coming on top by `4` s in total or `~125` ms per parse.
+The benchmark file [test.md](https://github.com/besterestmark/bettermark/blob/master/docs/test.md) was parsed 500 times with both Bmark and Cmark, with Cmark coming on top by `4` s in total or `~125` ms per parse. Bmark is very slow on large files because of Regex parsing, getting fixed currently!
 
 |  Flavour   | Amount of features supported | test.md x 500 | test.md x 1 | 50mb x 500 | 50mb x 1 | Avg. Time/Feature |
 | :--------: | :--------------------------: | :-----------: | :---------: | :--------: | :------: | :---------------: |
@@ -52,3 +52,4 @@ $ make
 ## Credits
 
 - [highlight.js](https://highlightjs.org) for code block syntax highlighting
+- [Gusted](https://github.com/Gusted) for multiple PRs
