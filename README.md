@@ -55,4 +55,4 @@ $ make
 
 ## Extra thanks to all these awesome contributors!
 
-https://contrib.rocks/preview?repo=besterestmark%2Fbettermark
+![amogus](https://contrib.rocks/preview?repo=besterestmark%2Fbettermark)
