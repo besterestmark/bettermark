@@ -53,3 +53,6 @@ $ make
 
 - [highlight.js](https://highlightjs.org) for code block syntax highlighting
 
+## Extra thanks to all these awesome contributors!
+
+https://contrib.rocks/preview?repo=besterestmark%2Fbettermark
