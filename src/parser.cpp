@@ -151,8 +151,8 @@ ISINLINE std::string FenceConverter(const std::string *kText)
       }
 
 
-                                                                                                      // Following comments represent the what the state
-                                                                                                      // of @line might be based on if condition satisfies
+                                                                                                      // Following comments represent what the state of                                                                                 
+                                                                                                      // @line might be based on the condition 
                                                                                                       //
       else if (line[0] == ':'){                                                                       //:
         if(line[1]=='#'){                                                                             //:#
