@@ -83,6 +83,25 @@ struct ActiveState{
   bool ITALIC=false;
 };
 
+// getHeading check for how many `#` there are in the line and returns
+// `#` + amount of heading levels, with a maximum of 6 (`#` + `##` + `###` + etc)
+ISINLINE int getHeading(const std::string &line)
+{
+  int heading = 0;
+  for (int i = 0; i < line.length(); i++) {
+    if (heading == 7 && line[i] == '#') {
+      // FIXME: Error about too many levels.
+      return -1;
+    }
+    if (line[i] == '#') {
+      heading++;
+    } else {
+      break;
+    }
+  }
+  return heading;
+}
+
 ISINLINE std::string FenceConverter(const std::string *kText)
 {
   /* The string which will be used to add content to, to return */
@@ -125,68 +144,31 @@ ISINLINE std::string FenceConverter(const std::string *kText)
         active_state.BLOCKQUOTE_FENCED = !active_state.BLOCKQUOTE_FENCED;
       }
 
+      else if (line[0] == ':' || line[0] == '#'){
+        bool isLeft = (line[0] == ':');
+        // .substr(1) to remove the `:` from the beginning.
+        std::string lineWithHeadingStart = isLeft ? line.substr(1, line_length) : line;
 
-      else if (line[0] == ':'){
-        if(line[1]=='#'){
-          if(line[2]=='#'){
-            if(line[3]=='#'){
-              if(line[4]=='#'){
-                if(line[5]=='#'){
-                  if(line[6]=='#'){
-                    if(line[7]==':') rb+="<h6 align=\"center\">"+line.substr(9, line_length)+"</h6>\n";
-                    else             rb+="<h6 align=\"left\">"+line.substr(8, line_length)+"</h6>\n";
-                  }else{ 
-                    if(line[6]==':') rb+="<h5 align=\"center\">"+line.substr(8, line_length)+"</h5>\n";
-                    else             rb+="<h5 align=\"left\">"+line.substr(7, line_length)+"</h5>\n";
-                  }
-                }else {
-                  if(line[5]==':') rb+="<h4 align=\"center\">"+line.substr(7, line_length)+"</h4>\n";
-                  else             rb+="<h4 align=\"left\">"+line.substr(6, line_length)+"</h4>\n";
-                }
-              }else {
-                if(line[4]==':') rb+="<h3 align=\"center\">"+line.substr(6, line_length)+"</h3>\n";
-                else             rb+="<h3 align=\"left\">"+line.substr(5, line_length)+"</h3>\n";
+        // FIXME: Check for heading == -1 and error.
+        int heading = getHeading(lineWithHeadingStart);
+        bool isCenterOrRight = lineWithHeadingStart[heading] == ':';
 
-              }
-            }else {
-              if(line[3]==':') rb+="<h2 align=\"center\">"+line.substr(5, line_length)+"</h2>\n";
-              else             rb+="<h2 align=\"left\">"+line.substr(4, line_length)+"</h2>\n";
-            }
-          }else {
-            if(line[2]==':') rb+="<h1 align=\"left\">"+line.substr(4, line_length)+"</h1>\n";
-            else             rb+="<h1 align=\"left\">"+line.substr(3, line_length)+"</h1>\n";
+        // 2x increase headingSpace to take in account for the `:`.
+        int headingSpace = isCenterOrRight ? heading+2 : heading+1;
+        std::string allignment = "";
+
+        // Get correct alignment block.
+        if (isCenterOrRight) {
+          if (isLeft) {
+            allignment = " align=\"center\"";
+          } else {
+            allignment = " align=\"right\"";
           }
-        } 
-      }
-
-      else if(line[0]=='#'){
-        if(line[1]=='#'){
-          if(line[2]=='#'){
-            if(line[3]=='#'){
-              if(line[4]=='#'){
-                if(line[5]=='#'){
-                  if(line[6]==':')  rb+="<h6 align=\"right\">"+line.substr(8, line_length)+"</h6>\n";
-                  else              rb+="<h6>"+line.substr(7, line_length)+"</h6>\n";
-                }else{
-                  if(line[5]==':')  rb+="<h5 align=\"right\">"+line.substr(7, line_length)+"</h5>\n";
-                  else              rb+="<h5>"+line.substr(6, line_length)+"</h5>\n";
-                }
-              } else{
-                if(line[4]==':')  rb+="<h4 align=\"right\">"+line.substr(6, line_length)+"</h4>\n";
-                else              rb+="<h4>"+line.substr(5, line_length)+"</h5>\n";
-              }
-            } else{
-              if(line[3]==':')  rb+="<h3 align=\"right\">"+line.substr(5, line_length)+"</h3>\n";
-              else              rb+="<h3>"+line.substr(4, line_length)+"</h5>\n";
-            }
-          } else{
-              if(line[2]==':')  rb+="<h2 align=\"right\">"+line.substr(4, line_length)+"</h2>\n";
-              else              rb+="<h2 >"+line.substr(3, line_length)+"</h2>\n";
-          }
-        } else{
-              if(line[1]==':')  rb+="<h1 align=\"right\">"+line.substr(3, line_length)+"</h1>\n";
-              else              rb+="<h1 >"+line.substr(2, line_length)+"</h1>\n";
+        } else if (isLeft) {
+          allignment = " align=\"left\"";
         }
+
+        rb += "<h" + std::to_string(heading) + allignment + ">" +lineWithHeadingStart.substr(headingSpace, line_length)+"</h" + std::to_string(heading) + ">\n";
       }
 
       else if ( BEGIN1(line, '>') ) rb+="<blockquote>"+line.substr(2, line_length)+"</blockquote>\n";
