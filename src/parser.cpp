@@ -1,9 +1,12 @@
 #include <cerrno>
+#include <cstddef>
 #include <fstream>
+#include <iostream>
 #include <regex>
 #include <string>
 #include "parser.hpp"
 
+#include <cstdio>
 
 
 #define ISIN(ch, ch_min, ch_max)       ((ch_min) <= (unsigned)(ch) && (unsigned)(ch) <= (ch_max))
@@ -109,14 +112,14 @@ ISINLINE std::string FenceConverter(const std::string *kText)
     }
 
     line = kText->substr(start, end - start); // go to next line
-    // Store the length of the line as int
-    int llen = line.size()-1;
 
     // If the line is empty, skip it
-    if (llen <= 0) {
+    if (line.empty()) {
       start = end + 1;
       continue;
     }
+
+    const size_t llen = line.size()-1; // indexable length of string
     bool no_exp = false;                      // stores if there are any @ActiveState active
 
 
@@ -231,7 +234,7 @@ ISINLINE std::string FenceConverter(const std::string *kText)
 
 /*     if(no_exp) { */
 /*  */
-/*       int index; */
+/*       size_t index; */
 /*       if((index = line.find('*')) != std::string::npos){ */
 /*         for (int i=0;i<llen;i++) { */
 /*           char c = line[i]; */
@@ -261,7 +264,7 @@ ISINLINE std::string FenceConverter(const std::string *kText)
       if (active_state.CODE_FENCED) rb+="</code></pre>\n";
       else{
         std::string type = line.substr(3, llen);
-        if(line.empty()) rb+="<pre><code class=\"language-plaintext\">\n"; 
+        if(type.empty()) rb+="<pre><code class=\"language-plaintext\">\n"; 
         else rb+="<pre><code class=\"language-"+line.substr(3, llen)+"\">\n";
       }
       active_state.CODE_FENCED=!active_state.CODE_FENCED;
@@ -273,8 +276,7 @@ ISINLINE std::string FenceConverter(const std::string *kText)
 
     if(no_exp){
       if(active_state.CODE_FENCED) rb+=line+"\n";           // if code blocks is found, just add the line without any checks
-      else if(!line.empty())       rb+="<p>"+line+"</p>\n"; // if line isn't empty, use html paragraphs
-      else                         rb+="\n";                // if empty, then add newline
+      else                         rb+="<p>"+line+"</p>\n"; // if line isn't empty, use html paragraphs
     }
     start = end + 1;
   }
