@@ -237,8 +237,16 @@ ISINLINE std::string FenceConverter(const std::string *kText)
         }                                                                                             //
       }                                                                                               //
 
-      else if ( BEGIN1(line, '>') ) rb+="<blockquote>"+line.substr(2, llen)+"</blockquote>\n";        //> normal quote
-      else if ( BEGIN2(line, '/') ) rb+="<!--"+line.substr(2, llen)+"-->";                            //ignored comments
+      else if ( BEGIN1(line, '>') ) {
+        // FIXME: add error handling.
+        // Because this mean `>` is not followed by content.
+        if (llen > 2)               rb+="<blockquote>"+line.substr(2, llen)+"</blockquote>\n";        //> normal quote
+      }
+      else if ( BEGIN2(line, '/') ) {
+        // FIXME: add error handling.
+        // Because this mean `//` is not followed by content.
+        if (llen > 2)               rb+="<!--"+line.substr(2, llen)+"-->";                            //ignored comments
+      }
       else no_exp=true;
     } else no_exp=true;
 
