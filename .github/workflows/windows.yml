@@ -1,4 +1,4 @@
-name: macOS
+name: windows
 
 on:
   push:
@@ -9,19 +9,15 @@ on:
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
-    - name: make build directory
-      run: mkdir build
-    - name: move into build
-      run: cd build
-    - name: setup makefile
-      run: cmake ..
+    - name: setup build directory
+      run: cmake -S. -Bbuild -DCMAKE_INSTALL_PREFIX="$HOME/.local"
     - name: build bettermark
-      run: make
+      run: cmake --build build
     - name: 'export binary'
       uses: actions/upload-artifact@v2
       with:
         name: bettermark
-        path: bettermark
+        path: build/Debug/bettermark.exe

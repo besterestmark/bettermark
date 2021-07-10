@@ -16,16 +16,12 @@ jobs:
       run: sudo apt-get update
     - name: install raylib dependencies
       run: sudo apt install cmake gcc
-    - name: make build dir
-      run: mkdir build
-    - name: move into build
-      run: cd build
-    - name: setup makefile
-      run: cmake ..
+    - name: setup build directory
+      run: cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release
     - name: build bettermark
-      run: make
+      run: cmake --build build --target all -v
     - name: 'export binary'
       uses: actions/upload-artifact@v2
       with:
         name: bettermark
-        path: bettermark
+        path: build/bettermark
