@@ -131,8 +131,14 @@ ISINLINE std::string FenceConverter(const std::string *kText)
        */
       if (BEGIN3(line, '+')){
         if (active_state.COLLAPSIBLE) rb+="</details>\n";
-        else                          rb+="<details><summary>"+line.substr(4, llen)+"</summary>\n";
-        active_state.COLLAPSIBLE= !active_state.COLLAPSIBLE ;
+        else {
+          // FIXME: add error handling.
+          // Because this mean `+++` is not followed by summary.
+          if (llen > 3) {
+            rb+="<details><summary>"+line.substr(4, llen)+"</summary>\n";
+            active_state.COLLAPSIBLE= !active_state.COLLAPSIBLE ;
+          }
+        }
       } 
       /*
        *::: classname
@@ -141,8 +147,14 @@ ISINLINE std::string FenceConverter(const std::string *kText)
        */
       else if (BEGIN3(line, ':')){
         if (active_state.CUSTOM_CLASS) rb+="</div>\n";
-        else                           rb+="<div class=\""+line.substr(4, llen)+"\">\n";
-        active_state.CUSTOM_CLASS=!active_state.CUSTOM_CLASS;
+        else {
+          // FIXME: add error handling.
+          // Because this mean `:::` is not followed by a valid classname.
+          if (llen > 3) {
+            rb+="<div class=\""+line.substr(4, llen)+"\">\n";
+            active_state.CUSTOM_CLASS=!active_state.CUSTOM_CLASS;
+          }
+        }
       }
 
 
