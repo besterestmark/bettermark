@@ -1,6 +1,7 @@
 #include <cerrno>
 #include <fstream>
 #include <iostream>
+#include <ostream>
 #include <regex>
 #include <string>
 #include "parser.hpp"
@@ -32,10 +33,14 @@
 
 #define ISINLINE inline
 
-using u8 = uint8_t;
+using u8 =  uint8_t;
 using u16 = uint16_t;
 using u32 = uint32_t;
 using u64 = uint64_t;
+using i8 =  int8_t;
+using i16 = int16_t;
+using i32 = int32_t;
+using i64 = int64_t;
 
 ISINLINE std::string Readfile(const char *kFilename)
 {
@@ -85,135 +90,167 @@ struct ActiveState{
 
 ISINLINE std::string FenceConverter(const std::string *kText)
 {
-  /* The string which will be used to add content to, to return */
-  std::string rb;
-  ActiveState active_state;
+  
+  std::string rb; // The string which will be used to add content to, to return 
+
+  ActiveState active_state; // Currently active fencestates
 
   size_t start = 0;
   size_t end;
 
   std::string line;
   while (true) {
-    //line="";
     if ((end = kText->find("\n", start)) == std::string::npos) {
       if (!(line = kText->substr(start)).empty()) rb+=line+"this shouldn't come";
       return rb;
     }
 
-    line = kText->substr(start, end - start);
-    int line_length = line.size()-1;
-    bool no_exp = false;
+    line = kText->substr(start, end - start); //go to next line
+    int llen = line.size()-1;                 // store length of line
+    bool no_exp = false;                      // stores if there are any @ActiveState active
 
 
-
-
+    // don't check if in code blocks
     if(!active_state.CODE_FENCED){
+      /* 
+       *+++ summary
+       * collapsible content
+       *+++
+       */
       if (BEGIN3(line, '+')){
         if (active_state.COLLAPSIBLE) rb+="</details>\n";
-        else                           rb+="<details><summary>"+line.substr(4, line_length)+"</summary>\n";
+        else                          rb+="<details><summary>"+line.substr(4, llen)+"</summary>\n";
         active_state.COLLAPSIBLE= !active_state.COLLAPSIBLE ;
       } 
+      /*
+       *::: classname
+       * content in div
+       *:::
+       */
       else if (BEGIN3(line, ':')){
         if (active_state.CUSTOM_CLASS) rb+="</div>\n";
-        else                            rb+="<div class=\""+line.substr(4, line_length)+"\">\n";
+        else                           rb+="<div class=\""+line.substr(4, llen)+"\">\n";
         active_state.CUSTOM_CLASS=!active_state.CUSTOM_CLASS;
       }
 
+
+      /*
+       *>>>
+       * long quote
+       * many lines
+       *>>>
+       */
+
       else if (BEGIN3(line, '<')){
         if (active_state.BLOCKQUOTE_FENCED) rb+="</blockquote>\n";
-        else                                 rb+="<blockquote>\n";
+        else                                rb+="<blockquote>\n";
         active_state.BLOCKQUOTE_FENCED = !active_state.BLOCKQUOTE_FENCED;
       }
 
 
-      else if (line[0] == ':'){
-        if(line[1]=='#'){
-          if(line[2]=='#'){
-            if(line[3]=='#'){
-              if(line[4]=='#'){
-                if(line[5]=='#'){
-                  if(line[6]=='#'){
-                    if(line[7]==':') rb+="<h6 align=\"center\">"+line.substr(9, line_length)+"</h6>\n";
-                    else             rb+="<h6 align=\"left\">"+line.substr(8, line_length)+"</h6>\n";
-                  }else{ 
-                    if(line[6]==':') rb+="<h5 align=\"center\">"+line.substr(8, line_length)+"</h5>\n";
-                    else             rb+="<h5 align=\"left\">"+line.substr(7, line_length)+"</h5>\n";
-                  }
-                }else {
-                  if(line[5]==':') rb+="<h4 align=\"center\">"+line.substr(7, line_length)+"</h4>\n";
-                  else             rb+="<h4 align=\"left\">"+line.substr(6, line_length)+"</h4>\n";
-                }
-              }else {
-                if(line[4]==':') rb+="<h3 align=\"center\">"+line.substr(6, line_length)+"</h3>\n";
-                else             rb+="<h3 align=\"left\">"+line.substr(5, line_length)+"</h3>\n";
+      else if (line[0] == ':'){                                                                       //:
+        if(line[1]=='#'){                                                                             //:#
+          if(line[2]=='#'){                                                                           //:##
+            if(line[3]=='#'){                                                                         //:###
+              if(line[4]=='#'){                                                                       //:####
+                if(line[5]=='#'){                                                                     //:#####
+                  if(line[6]=='#'){                                                                   //:######
+                    if(line[7]==':') rb+="<h6 align=\"center\">"+line.substr(9, llen)+"</h6>\n";      //:######:
+                    else             rb+="<h6 align=\"left\">"+line.substr(8, llen)+"</h6>\n";        //:######
+                  }else{                                                                              //
+                    if(line[6]==':') rb+="<h5 align=\"center\">"+line.substr(8, llen)+"</h5>\n";      //:#####:
+                    else             rb+="<h5 align=\"left\">"+line.substr(7, llen)+"</h5>\n";        //:#####
+                  }                                                                                   //
+                }else {                                                                               //
+                  if(line[5]==':') rb+="<h4 align=\"center\">"+line.substr(7, llen)+"</h4>\n";        //:####:
+                  else             rb+="<h4 align=\"left\">"+line.substr(6, llen)+"</h4>\n";          //:####
+                }                                                                                     //                         
+              }else {                                                                                 //
+                if(line[4]==':') rb+="<h3 align=\"center\">"+line.substr(6, llen)+"</h3>\n";          //:###:
+                else             rb+="<h3 align=\"left\">"+line.substr(5, llen)+"</h3>\n";            //:###
+              }                                                                                       //
+            }else {                                                                                   //
+              if(line[3]==':') rb+="<h2 align=\"center\">"+line.substr(5, llen)+"</h2>\n";            //:##;
+              else             rb+="<h2 align=\"left\">"+line.substr(4, llen)+"</h2>\n";              //:##
+            }                                                                                         //
+          }else {                                                                                     //
+            if(line[2]==':') rb+="<h1 align=\"left\">"+line.substr(4, llen)+"</h1>\n";                //:#:
+            else             rb+="<h1 align=\"left\">"+line.substr(3, llen)+"</h1>\n";                //:#
+          }                                                                                           //
+        }                                                                                             //
+      }                                                                                               //
+                                                                                                      //
+      else if(line[0]=='#'){                                                                          //# 
+        if(line[1]=='#'){                                                                             //##
+          if(line[2]=='#'){                                                                           //###
+            if(line[3]=='#'){                                                                         //####
+              if(line[4]=='#'){                                                                       //#####
+                if(line[5]=='#'){                                                                     //######
+                  if(line[6]==':')  rb+="<h6 align=\"right\">"+line.substr(8, llen)+"</h6>\n";        //######:
+                  else              rb+="<h6>"+line.substr(7, llen)+"</h6>\n";                        //######
+                }else{                                                                                //
+                  if(line[5]==':')  rb+="<h5 align=\"right\">"+line.substr(7, llen)+"</h5>\n";        //#####:
+                  else              rb+="<h5>"+line.substr(6, llen)+"</h5>\n";                        //#####
+                }                                                                                     //
+              } else{                                                                                 //
+                if(line[4]==':')  rb+="<h4 align=\"right\">"+line.substr(6, llen)+"</h4>\n";          //####:
+                else              rb+="<h4>"+line.substr(5, llen)+"</h5>\n";                          //####
+              }                                                                                       //
+            } else{                                                                                   //
+              if(line[3]==':')  rb+="<h3 align=\"right\">"+line.substr(5, llen)+"</h3>\n";            //###:
+              else              rb+="<h3>"+line.substr(4, llen)+"</h5>\n";                            //### 
+            }                                                                                         //
+          } else{                                                                                     //
+              if(line[2]==':')  rb+="<h2 align=\"right\">"+line.substr(4, llen)+"</h2>\n";            //##:
+              else              rb+="<h2 >"+line.substr(3, llen)+"</h2>\n";                           //##
+          }                                                                                           //
+        } else{                                                                                       //
+              if(line[1]==':')  rb+="<h1 align=\"right\">"+line.substr(3, llen)+"</h1>\n";            //#:
+              else              rb+="<h1>"+line.substr(2, llen)+"</h1>\n";                            //# 
+        }                                                                                             //
+      }                                                                                               //
 
-              }
-            }else {
-              if(line[3]==':') rb+="<h2 align=\"center\">"+line.substr(5, line_length)+"</h2>\n";
-              else             rb+="<h2 align=\"left\">"+line.substr(4, line_length)+"</h2>\n";
-            }
-          }else {
-            if(line[2]==':') rb+="<h1 align=\"left\">"+line.substr(4, line_length)+"</h1>\n";
-            else             rb+="<h1 align=\"left\">"+line.substr(3, line_length)+"</h1>\n";
-          }
-        } 
-      }
-
-      else if(line[0]=='#'){
-        if(line[1]=='#'){
-          if(line[2]=='#'){
-            if(line[3]=='#'){
-              if(line[4]=='#'){
-                if(line[5]=='#'){
-                  if(line[6]==':')  rb+="<h6 align=\"right\">"+line.substr(8, line_length)+"</h6>\n";
-                  else              rb+="<h6>"+line.substr(7, line_length)+"</h6>\n";
-                }else{
-                  if(line[5]==':')  rb+="<h5 align=\"right\">"+line.substr(7, line_length)+"</h5>\n";
-                  else              rb+="<h5>"+line.substr(6, line_length)+"</h5>\n";
-                }
-              } else{
-                if(line[4]==':')  rb+="<h4 align=\"right\">"+line.substr(6, line_length)+"</h4>\n";
-                else              rb+="<h4>"+line.substr(5, line_length)+"</h5>\n";
-              }
-            } else{
-              if(line[3]==':')  rb+="<h3 align=\"right\">"+line.substr(5, line_length)+"</h3>\n";
-              else              rb+="<h3>"+line.substr(4, line_length)+"</h5>\n";
-            }
-          } else{
-              if(line[2]==':')  rb+="<h2 align=\"right\">"+line.substr(4, line_length)+"</h2>\n";
-              else              rb+="<h2 >"+line.substr(3, line_length)+"</h2>\n";
-          }
-        } else{
-              if(line[1]==':')  rb+="<h1 align=\"right\">"+line.substr(3, line_length)+"</h1>\n";
-              else              rb+="<h1 >"+line.substr(2, line_length)+"</h1>\n";
-        }
-      }
-
-      else if ( BEGIN1(line, '>') ) rb+="<blockquote>"+line.substr(2, line_length)+"</blockquote>\n";
-      else if ( BEGIN2(line, '/') ) rb+="<!--"+line.substr(2, line_length)+"-->";
+      else if ( BEGIN1(line, '>') ) rb+="<blockquote>"+line.substr(2, llen)+"</blockquote>\n";        //> normal quote
+      else if ( BEGIN2(line, '/') ) rb+="<!--"+line.substr(2, llen)+"-->";                            //ignored comments
       else no_exp=true;
     } else no_exp=true;
 
 
-    /*     if(no_exp) { */
-    /*  */
-    /*       if(line.find('*') != std::string::npos){ */
-    /*         for (int i=0;i<line_length;i++) { */
-    /*           char c = line[i]; */
-    /*  */
-    /*           if (c == '*'){ */
-    /*             if(active_state.ITALIC) rb+="</em>"; */
-    /*             else                     rb+="<em>"; */
-    /*             active_state.ITALIC=!active_state.ITALIC; */
-    /*           } */
-    /*  */
-    /*         } */
-    /*       } */
-    /*     } */
+/*     if(no_exp) { */
+/*  */
+/*       int index; */
+/*       if((index = line.find('*')) != std::string::npos){ */
+/*         for (int i=0;i<llen;i++) { */
+/*           char c = line[i]; */
+/*  */
+/*           if (c == '*'){ */
+/*             if(active_state.ITALIC) rb+="</em>"; */
+/*             else                     rb+="<em>"; */
+/*             active_state.ITALIC=!active_state.ITALIC; */
+/*           } */
+/*  */
+/*         } */
+/*       } */
+/*     } */
+
+
+
+
+    /*
+     * code blocks
+     *```python
+     *for i in range(1):
+     *    print(i)
+     *```
+     */
 
     if ( BEGIN3(line, '`') ){
       if (active_state.CODE_FENCED) rb+="</code></pre>\n";
-      else                            rb+="<pre><code class=\"language-"+line.substr(3, line_length)+"\">\n";
+      else{
+        std::string type = line.substr(3, llen);
+        if(line.empty()) rb+="<pre><code class=\"language-plaintext\">\n"; 
+        else rb+="<pre><code class=\"language-"+line.substr(3, llen)+"\">\n";
+      }
       active_state.CODE_FENCED=!active_state.CODE_FENCED;
       no_exp=false;
     }
@@ -222,9 +259,9 @@ ISINLINE std::string FenceConverter(const std::string *kText)
 
 
     if(no_exp){
-      if(active_state.CODE_FENCED) rb+=line+"\n";
-      else if(!line.empty())    rb+="<p>"+line+"</p>\n";
-      else                          rb+="\n";
+      if(active_state.CODE_FENCED) rb+=line+"\n";           // if code blocks is found, just add the line without any checks
+      else if(!line.empty())       rb+="<p>"+line+"</p>\n"; // if line isn't empty, use html paragraphs
+      else                         rb+="\n";                // if empty, then add newline
     }
     start = end + 1;
   }
@@ -233,6 +270,6 @@ ISINLINE std::string FenceConverter(const std::string *kText)
 
 std::string ConverterInitiater(const char *kFilename) 
 {
-  std::string file_c = Readfile(kFilename);
+  std::string file_c = Readfile(kFilename); 
   return (FenceConverter(&file_c));
 }

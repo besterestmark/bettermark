@@ -2,34 +2,42 @@
 #include <string>
 #include "parser.hpp"
 
+#include <typeinfo>
+
+#include "argh.h"
+
 #define DEBUG
 
 int main(int argc, const char** argv) {
 
 #ifdef DEBUG
-  #include <time.h>
+#include <time.h>
   clock_t start_time = clock();
 #endif // DEBUG
 
-    std::cout << R"html(
-<!DOCTYPE html>
-<html>
-  <head>
-  </head>
-  <body>
-  )html"
-    << ConverterInitiater(argv[1]) << std::endl 
-    << R"html(
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
-  </body>
-</html>
-  )html" << std::endl;
+  argh::parser cmdl(argc, argv);
+
+  std::cout << "<!DOCTYPE html>\n"
+    "<html>\n"
+    "<head>\n"
+    "</head>\n"
+    "<body>\n"
+    << ConverterInitiater(  cmdl.pos_args()[1].c_str() )
+    << std::endl;
+
+  if (cmdl[{ "-s", "--syntax" }]){
+    std::cout << "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js\"></script>\n"
+      "<script>hljs.highlightAll();</script>\n";
+  }
+  std::cout << 
+    "</body>\n"
+    "</html>\n"
+    << std::endl;
 
 
 #ifdef DEBUG
   double elapsed_time = (double)(clock() - start_time) / CLOCKS_PER_SEC;
-    std::cerr << "Took " << elapsed_time << " seconds" << std::endl;
+  std::cerr << "Took " << elapsed_time << " seconds" << std::endl;
 #endif // DEBUG
 
   return 0;
