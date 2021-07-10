@@ -114,7 +114,12 @@ ISINLINE std::string FenceConverter(const std::string *kText)
     line = kText->substr(start, end - start); // go to next line
 
     // If the line is empty, skip it
+<<<<<<< HEAD
     if (line.empty()) {
+=======
+    if (llen <= 0) {
+      rb += "\n";
+>>>>>>> c287a78f78acd4a94a0efee2fc59d6ebd5596d12
       start = end + 1;
       continue;
     }
