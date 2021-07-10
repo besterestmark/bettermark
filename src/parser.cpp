@@ -1,7 +1,5 @@
 #include <cerrno>
 #include <fstream>
-#include <iostream>
-#include <ostream>
 #include <regex>
 #include <string>
 #include "parser.hpp"
@@ -31,8 +29,12 @@
 
 #define STARTS(str, substr)            (str.rfind(substr, 0)==0)
 
+
+//uncomment this for using inline functions
 #define ISINLINE inline
 
+
+// macros for simplicity of types
 using u8 =  uint8_t;
 using u16 = uint16_t;
 using u32 = uint32_t;
@@ -57,6 +59,7 @@ ISINLINE std::string Readfile(const char *kFilename)
   throw(errno);
 }
 
+//WARNING: Slow probably will be deprecated
 ISINLINE std::string RegexConverter(std::string text) 
 {
   std::regex BOLD(R"(\*\*(.+)\*\*)");
@@ -91,9 +94,9 @@ struct ActiveState{
 ISINLINE std::string FenceConverter(const std::string *kText)
 {
   
-  std::string rb; // The string which will be used to add content to, to return 
+  std::string rb; // the string to which content is added to return
 
-  ActiveState active_state; // Currently active fencestates
+  ActiveState active_state; // stores all the currently active fencestates
 
   size_t start = 0;
   size_t end;
@@ -105,12 +108,12 @@ ISINLINE std::string FenceConverter(const std::string *kText)
       return rb;
     }
 
-    line = kText->substr(start, end - start); //go to next line
+    line = kText->substr(start, end - start); // go to next line
     int llen = line.size()-1;                 // store length of line
     bool no_exp = false;                      // stores if there are any @ActiveState active
 
 
-    // don't check if in code blocks
+    // don't check for other states if code blocks is active
     if(!active_state.CODE_FENCED){
       /* 
        *+++ summary
@@ -148,6 +151,9 @@ ISINLINE std::string FenceConverter(const std::string *kText)
       }
 
 
+                                                                                                      // Following comments represent the what the state
+                                                                                                      // of @line might be based on if condition satisfies
+                                                                                                      //
       else if (line[0] == ':'){                                                                       //:
         if(line[1]=='#'){                                                                             //:#
           if(line[2]=='#'){                                                                           //:##
