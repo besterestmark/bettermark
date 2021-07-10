@@ -85,15 +85,15 @@ struct ActiveState{
 
 // getHeading check for how many `#` there are in the line and returns
 // `#` + amount of heading levels, with a maximum of 6 (`#` + `##` + `###` + etc)
-ISINLINE int getHeading(const std::string &line, const std::size_t lineSize)
+ISINLINE int getHeading(const std::string &line)
 {
   int heading = 0;
-  for (int i = 0; i < lineSize; i++) {
-    if (heading == 7 && line[i] == '#') {
+  for (auto character : line) {
+    if (heading == 7 && character == '#') {
       // FIXME: Error about too many levels.
       return -1;
     }
-    if (line[i] == '#') {
+    if (character == '#') {
       heading++;
     } else {
       break;
@@ -150,7 +150,7 @@ ISINLINE std::string FenceConverter(const std::string *kText)
         std::string modifiedLine = isLeft ? line.substr(1, line_length) : line;
 
         // FIXME: Check for heading == -1 and error.
-        int heading = getHeading(modifiedLine, line_length);
+        int heading = getHeading(modifiedLine);
         bool isCenterOrRight = modifiedLine[heading] == ':';
 
         // 2x increase headingSpace to take in account for the `:`.
