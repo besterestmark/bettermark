@@ -109,7 +109,14 @@ ISINLINE std::string FenceConverter(const std::string *kText)
     }
 
     line = kText->substr(start, end - start); // go to next line
-    int llen = line.size()-1;                 // store length of line
+    // Store the length of the line as int
+    int llen = line.size()-1;
+
+    // If the line is empty, skip it
+    if (llen <= 0) {
+      start = end + 1;
+      continue;
+    }
     bool no_exp = false;                      // stores if there are any @ActiveState active
 
 
