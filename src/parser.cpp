@@ -85,10 +85,10 @@ struct ActiveState{
 
 // getHeading check for how many `#` there are in the line and returns
 // `#` + amount of heading levels, with a maximum of 6 (`#` + `##` + `###` + etc)
-ISINLINE int getHeading(const std::string &line)
+ISINLINE int getHeading(const std::string &line, const std::size_t lineSize)
 {
   int heading = 0;
-  for (int i = 0; i < line.length(); i++) {
+  for (int i = 0; i < lineSize; i++) {
     if (heading == 7 && line[i] == '#') {
       // FIXME: Error about too many levels.
       return -1;
@@ -147,11 +147,11 @@ ISINLINE std::string FenceConverter(const std::string *kText)
       else if (line[0] == ':' || line[0] == '#'){
         bool isLeft = (line[0] == ':');
         // .substr(1) to remove the `:` from the beginning.
-        std::string lineWithHeadingStart = isLeft ? line.substr(1, line_length) : line;
+        std::string modifiedLine = isLeft ? line.substr(1, line_length) : line;
 
         // FIXME: Check for heading == -1 and error.
-        int heading = getHeading(lineWithHeadingStart);
-        bool isCenterOrRight = lineWithHeadingStart[heading] == ':';
+        int heading = getHeading(modifiedLine, line_length);
+        bool isCenterOrRight = modifiedLine[heading] == ':';
 
         // 2x increase headingSpace to take in account for the `:`.
         int headingSpace = isCenterOrRight ? heading+2 : heading+1;
@@ -168,7 +168,7 @@ ISINLINE std::string FenceConverter(const std::string *kText)
           allignment = " align=\"left\"";
         }
 
-        rb += "<h" + std::to_string(heading) + allignment + ">" +lineWithHeadingStart.substr(headingSpace, line_length)+"</h" + std::to_string(heading) + ">\n";
+        rb += "<h" + std::to_string(heading) + allignment + ">" +modifiedLine.substr(headingSpace, line_length)+"</h" + std::to_string(heading) + ">\n";
       }
 
       else if ( BEGIN1(line, '>') ) rb+="<blockquote>"+line.substr(2, line_length)+"</blockquote>\n";
