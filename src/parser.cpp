@@ -154,7 +154,7 @@ ISINLINE std::string FenceConverter(const std::string *kText)
         bool isCenterOrRight = modifiedLine[heading] == ':';
 
         // 2x increase headingSpace to take in account for the `:`.
-        int headingSpace = isCenterOrRight ? heading+2 : heading+1;
+        size_t headingSpace = isCenterOrRight ? heading+2 : heading+1;
         std::string allignment = "";
 
         // Get correct alignment block.
