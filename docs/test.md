@@ -18,17 +18,17 @@ _underline_
 
 ## Heading 2
 
-:## Left-Aligned Heading 2 
+:## Left-Aligned Heading 2
 
-:##: Centred Heading 2 
+:##: Centred Heading 2
 
 ##: Right-alined Heading 2
 
-### Heading 3 
+### Heading 3
 
-:### Left-Aligned Heading 3 
+:### Left-Aligned Heading 3
 
-:###: Centred Heading 3 
+:###: Centred Heading 3
 
 ###: Right-Aligned Heading 3
 
@@ -93,7 +93,7 @@ content@ema.il
 
 ![alt](link "title" +onclick.link =WidthxHeight)
 
-> single-line blockquote 
+> single-line blockquote
 
 <<<
 fenced-blockquote
@@ -173,7 +173,7 @@ III. list-roman-uppercase
 ```
 fenced code block
 ```
- 
+
 ::: class-name
 content inside div
 :::
