@@ -131,8 +131,14 @@ ISINLINE std::string FenceConverter(const std::string *kText)
        */
       if (BEGIN3(line, '+')){
         if (active_state.COLLAPSIBLE) rb+="</details>\n";
-        else                          rb+="<details><summary>"+line.substr(4, llen)+"</summary>\n";
-        active_state.COLLAPSIBLE= !active_state.COLLAPSIBLE ;
+        else {
+          // FIXME: add error handling.
+          // Because this mean `+++` is not followed by summary.
+          if (llen > 3) {
+            rb+="<details><summary>"+line.substr(4, llen)+"</summary>\n";
+            active_state.COLLAPSIBLE= !active_state.COLLAPSIBLE ;
+          }
+        }
       } 
       /*
        *::: classname
@@ -141,8 +147,14 @@ ISINLINE std::string FenceConverter(const std::string *kText)
        */
       else if (BEGIN3(line, ':')){
         if (active_state.CUSTOM_CLASS) rb+="</div>\n";
-        else                           rb+="<div class=\""+line.substr(4, llen)+"\">\n";
-        active_state.CUSTOM_CLASS=!active_state.CUSTOM_CLASS;
+        else {
+          // FIXME: add error handling.
+          // Because this mean `:::` is not followed by a valid classname.
+          if (llen > 3) {
+            rb+="<div class=\""+line.substr(4, llen)+"\">\n";
+            active_state.CUSTOM_CLASS=!active_state.CUSTOM_CLASS;
+          }
+        }
       }
 
 
@@ -170,27 +182,51 @@ ISINLINE std::string FenceConverter(const std::string *kText)
               if(line[4]=='#'){                                                                       //:####
                 if(line[5]=='#'){                                                                     //:#####
                   if(line[6]=='#'){                                                                   //:######
-                    if(line[7]==':') rb+="<h6 align=\"center\">"+line.substr(9, llen)+"</h6>\n";      //:######:
-                    else             rb+="<h6 align=\"left\">"+line.substr(8, llen)+"</h6>\n";        //:######
+                    if(line[7]==':') {
+                      if (llen > 8)  rb+="<h6 align=\"center\">"+line.substr(9, llen)+"</h6>\n";      //:######:
+                    }
+                    else {
+                      if (llen > 7)  rb+="<h6 align=\"left\">"+line.substr(8, llen)+"</h6>\n";        //:######
+                    }
                   }else{                                                                              //
-                    if(line[6]==':') rb+="<h5 align=\"center\">"+line.substr(8, llen)+"</h5>\n";      //:#####:
-                    else             rb+="<h5 align=\"left\">"+line.substr(7, llen)+"</h5>\n";        //:#####
+                    if(line[6]==':') {
+                      if (llen > 7)  rb+="<h5 align=\"center\">"+line.substr(8, llen)+"</h5>\n";      //:#####:
+                    }
+                    else {
+                      if (llen > 6)  rb+="<h5 align=\"left\">"+line.substr(7, llen)+"</h5>\n";        //:#####
+                    }
                   }                                                                                   //
                 }else {                                                                               //
-                  if(line[5]==':') rb+="<h4 align=\"center\">"+line.substr(7, llen)+"</h4>\n";        //:####:
-                  else             rb+="<h4 align=\"left\">"+line.substr(6, llen)+"</h4>\n";          //:####
+                  if(line[5]==':') {
+                    if (llen > 6)    rb+="<h4 align=\"center\">"+line.substr(7, llen)+"</h4>\n";      //:####:
+                  }
+                  else {
+                    if (llen > 5)    rb+="<h4 align=\"left\">"+line.substr(6, llen)+"</h4>\n";        //:####
+                  }
                 }                                                                                     //                         
               }else {                                                                                 //
-                if(line[4]==':') rb+="<h3 align=\"center\">"+line.substr(6, llen)+"</h3>\n";          //:###:
-                else             rb+="<h3 align=\"left\">"+line.substr(5, llen)+"</h3>\n";            //:###
+                if(line[4]==':') {
+                  if (llen > 5)      rb+="<h3 align=\"center\">"+line.substr(6, llen)+"</h3>\n";      //:###:
+                }
+                else {
+                  if (llen > 4)      rb+="<h3 align=\"left\">"+line.substr(5, llen)+"</h3>\n";        //:###
+                }
               }                                                                                       //
             }else {                                                                                   //
-              if(line[3]==':') rb+="<h2 align=\"center\">"+line.substr(5, llen)+"</h2>\n";            //:##;
-              else             rb+="<h2 align=\"left\">"+line.substr(4, llen)+"</h2>\n";              //:##
+              if(line[3]==':') {
+                if (llen > 4)        rb+="<h2 align=\"center\">"+line.substr(5, llen)+"</h2>\n";      //:##;
+              }
+              else {
+                if (llen > 3)        rb+="<h2 align=\"left\">"+line.substr(4, llen)+"</h2>\n";        //:##
+              }
             }                                                                                         //
           }else {                                                                                     //
-            if(line[2]==':') rb+="<h1 align=\"left\">"+line.substr(4, llen)+"</h1>\n";                //:#:
-            else             rb+="<h1 align=\"left\">"+line.substr(3, llen)+"</h1>\n";                //:#
+            if(line[2]==':') {
+              if (llen > 3)          rb+="<h1 align=\"center\">"+line.substr(4, llen)+"</h1>\n";        //:#:
+            }
+            else {
+              if (llen > 2)           rb+="<h1 align=\"left\">"+line.substr(3, llen)+"</h1>\n";       //:#
+            }
           }                                                                                           //
         }                                                                                             //
       }                                                                                               //
@@ -201,32 +237,64 @@ ISINLINE std::string FenceConverter(const std::string *kText)
             if(line[3]=='#'){                                                                         //####
               if(line[4]=='#'){                                                                       //#####
                 if(line[5]=='#'){                                                                     //######
-                  if(line[6]==':')  rb+="<h6 align=\"right\">"+line.substr(8, llen)+"</h6>\n";        //######:
-                  else              rb+="<h6>"+line.substr(7, llen)+"</h6>\n";                        //######
+                  if(line[6]==':')  {                                                                 //
+                    if (llen > 7) rb+="<h6 align=\"right\">"+line.substr(8, llen)+"</h6>\n";          //######:
+                  }                                                                                   //
+                  else {                                                                              //
+                    if (llen > 6) rb+="<h6>"+line.substr(7, llen)+"</h6>\n";                          //######
+                  }                                                                                   //
                 }else{                                                                                //
-                  if(line[5]==':')  rb+="<h5 align=\"right\">"+line.substr(7, llen)+"</h5>\n";        //#####:
-                  else              rb+="<h5>"+line.substr(6, llen)+"</h5>\n";                        //#####
+                  if(line[5]==':')  {                                                                 //
+                    if (llen > 6) rb+="<h5 align=\"right\">"+line.substr(7, llen)+"</h5>\n";          //#####:
+                  }                                                                                   //
+                  else {                                                                              //
+                    if (llen > 5) rb+="<h5>"+line.substr(6, llen)+"</h5>\n";                          //#####
+                  }                                                                                   //
                 }                                                                                     //
               } else{                                                                                 //
-                if(line[4]==':')  rb+="<h4 align=\"right\">"+line.substr(6, llen)+"</h4>\n";          //####:
-                else              rb+="<h4>"+line.substr(5, llen)+"</h5>\n";                          //####
+                if(line[4]==':')  {                                                                   //
+                  if (llen > 5) rb+="<h4 align=\"right\">"+line.substr(6, llen)+"</h4>\n";            //####:
+                }                                                                                     //
+                else {                                                                                //
+                  if (llen > 4) rb+="<h4>"+line.substr(5, llen)+"</h4>\n";                            //####
+                }                                                                                     //
               }                                                                                       //
             } else{                                                                                   //
-              if(line[3]==':')  rb+="<h3 align=\"right\">"+line.substr(5, llen)+"</h3>\n";            //###:
-              else              rb+="<h3>"+line.substr(4, llen)+"</h5>\n";                            //### 
+              if(line[3]==':')  {                                                                     //
+                 if (llen > 4) rb+="<h3 align=\"right\">"+line.substr(5, llen)+"</h3>\n";             //###:
+              }                                                                                       //
+              else {                                                                                  //    
+                if (llen > 3) rb+="<h3>"+line.substr(4, llen)+"</h3>\n";                              //### 
+              }                                                                                       //  
             }                                                                                         //
           } else{                                                                                     //
-              if(line[2]==':')  rb+="<h2 align=\"right\">"+line.substr(4, llen)+"</h2>\n";            //##:
-              else              rb+="<h2 >"+line.substr(3, llen)+"</h2>\n";                           //##
+            if(line[2]==':')  {                                                                       //
+                if (llen > 3) rb+="<h2 align=\"right\">"+line.substr(4, llen)+"</h2>\n";              //##:
+              }                                                                                       //
+              else {                                                                                  //
+                if (llen > 2) rb+="<h2 >"+line.substr(3, llen)+"</h2>\n";                             //##
+              }                                                                                       //
           }                                                                                           //
         } else{                                                                                       //
-              if(line[1]==':')  rb+="<h1 align=\"right\">"+line.substr(3, llen)+"</h1>\n";            //#:
-              else              rb+="<h1>"+line.substr(2, llen)+"</h1>\n";                            //# 
+          if(line[1]==':') {                                                                          //
+            if (llen > 2) rb+="<h1 align=\"right\">"+line.substr(3, llen)+"</h1>\n";                  //#:
+          }                                                                                           //
+          else {                                                                                      //
+            if (llen > 1) rb+="<h1>"+line.substr(2, llen)+"</h1>\n";                                  //#
+          }                                                                                           //
         }                                                                                             //
       }                                                                                               //
 
-      else if ( BEGIN1(line, '>') ) rb+="<blockquote>"+line.substr(2, llen)+"</blockquote>\n";        //> normal quote
-      else if ( BEGIN2(line, '/') ) rb+="<!--"+line.substr(2, llen)+"-->";                            //ignored comments
+      else if ( BEGIN1(line, '>') ) {
+        // FIXME: add error handling.
+        // Because this mean `>` is not followed by content.
+        if (llen > 2)               rb+="<blockquote>"+line.substr(2, llen)+"</blockquote>\n";        //> normal quote
+      }
+      else if ( BEGIN2(line, '/') ) {
+        // FIXME: add error handling.
+        // Because this mean `//` is not followed by content.
+        if (llen > 2)               rb+="<!--"+line.substr(2, llen)+"-->";                            //ignored comments
+      }
       else no_exp=true;
     } else no_exp=true;
 
