@@ -1,11 +1,9 @@
-#include <cerrno>
-#include <fstream>
 #include <regex>
 #include <string>
 #include "parser.hpp"
+#include "simio.hpp"
 
-#include <cstdio>
-
+#include<cstdio>
 
 #define ISIN(ch, ch_min, ch_max)       ((ch_min) <= (unsigned)(ch) && (unsigned)(ch) <= (ch_max))
 #define ISANYOF(ch, palette)           ((ch) != _T('\0')  &&  md_strchr((palette), (ch)) != NULL)
@@ -24,15 +22,12 @@
 #define ISXDIGIT(ch)                   (ISDIGIT(ch) || ISIN(ch, _T('A'), _T('F')) || ISIN(ch, _T('a'), _T('f')))
 #define ISALNUM(ch)                    (ISALPHA(ch) || ISDIGIT(ch))
 
-#define BEGIN1(str, ch)               (str[0]==ch )
-#define BEGIN2(str, ch)               (str[0]==ch &&  str[1]==ch )
-#define BEGIN3(str, ch)               (str[0]==ch &&  str[1]==ch && str[2]==ch )
+#define BEGIN1(str, ch)                ( str[0]==ch )
+#define BEGIN2(str, ch)                ( str[0]==ch &&  str[1]==ch )
+#define BEGIN3(str, ch)                ( str[0]==ch &&  str[1]==ch && str[2]==ch )
 
 #define STARTS(str, substr)            (str.rfind(substr, 0)==0)
 
-
-//uncomment this for using inline functions
-#define ISINLINE inline
 
 
 // macros for simplicity of types
@@ -45,40 +40,18 @@ using i16 = int16_t;
 using i32 = int32_t;
 using i64 = int64_t;
 
-ISINLINE std::string Readfile(const char *kFilename)
-{
-  std::ifstream in(kFilename, std::ios::in | std::ios::binary);
-  if (in) {
-    std::string contents;
-    in.seekg(0, std::ios::end);
-    contents.resize(in.tellg());
-    in.seekg(0, std::ios::beg);
-    in.read(&contents[0], contents.size());
-    in.close();
-    return (contents);
-  }
-  throw(errno);
-}
 
 //WARNING: Slow probably will be deprecated
-ISINLINE std::string RegexConverter(std::string text) 
+std::string RegexConverter(std::string text) 
 {
-  std::regex BOLD(R"(\*\*(.+)\*\*)");
-  std::regex ITALIC(R"(\*(.+)\*)");
-  std::regex STRIKETHROUGH(R"(~~(.+)~~)");
   std::regex IMAGE_SIZE(R"(!\[(.+)\]\((.+) (.+) =(.+)x(.+)\))");
   std::regex ABBREVIATIONS(R"(\*\[(.+)\]:\s(.+))");
-  std::regex UNDERLINE(R"(_(.+)_)");
   std::regex SPOILER(R"(!!(.+)!!)");
   text = regex_replace(text, SPOILER, "<span class=\"spoiler\">$1</span>");
-  text = regex_replace(text, UNDERLINE, "<u>$1</u>");
   text = regex_replace(text, ABBREVIATIONS, "<abbr title=\"$1\">$2</abbr>");
   text = regex_replace(
       text, IMAGE_SIZE,
       "<img src=\"$2\" title=$3 alt=\"$1\" width=\"$4\" height=\"$5\">");
-  text = regex_replace(text, STRIKETHROUGH, "<s>$1</s>");
-  text = regex_replace(text, BOLD, "<strong>$1</strong>");
-  text = regex_replace(text, ITALIC, "<em>$1</em>");
   return text;
 }
 
@@ -90,11 +63,18 @@ struct ActiveState{
 
   bool BOLD=false;
   bool ITALIC=false;
+  bool UNDERLINE=false;
+  bool  STRIKETHROUGH=false;
+
+  bool SUBSCRIPT=false;
+  bool SUPERSCRIPT=false;
+
+  bool CODE_INLINE=false;
 };
 
-ISINLINE std::string FenceConverter(const std::string *kText)
+std::string FenceConverter(const std::string *kText)
 {
-  
+
   std::string rb; // the string to which content is added to return
 
   ActiveState active_state; // stores all the currently active fencestates
@@ -111,15 +91,16 @@ ISINLINE std::string FenceConverter(const std::string *kText)
 
     line = kText->substr(start, end - start); // go to next line
 
+    const size_t kLen = line.size();
     // If the line is empty, skip it
-    if (line.empty()) {
+    if ( kLen==0 ) {
       rb += "\n";
       start = end + 1;
       continue;
     }
 
-    const size_t llen = line.size()-1; // indexable length of string
-    bool no_exp = false;                      // stores if there are any @ActiveState active
+    const size_t llen = kLen-1;               // indexable length of string
+    bool no_exp = false;                     // stores if there special state happened in current line
 
 
     // don't check for other states if code blocks is active
@@ -172,9 +153,9 @@ ISINLINE std::string FenceConverter(const std::string *kText)
       }
 
 
-                                                                                                      // Following comments represent what the state of                                                                                 
-                                                                                                      // @line might be based on the condition 
-                                                                                                      //
+      // Following comments represent what the state of 
+      // @line might be based on the condition 
+      //
       else if (line[0] == ':'){                                                                       //:
         if(line[1]=='#'){                                                                             //:#
           if(line[2]=='#'){                                                                           //:##
@@ -182,51 +163,51 @@ ISINLINE std::string FenceConverter(const std::string *kText)
               if(line[4]=='#'){                                                                       //:####
                 if(line[5]=='#'){                                                                     //:#####
                   if(line[6]=='#'){                                                                   //:######
-                    if(line[7]==':') {
+                    if(line[7]==':') {                                                                //
                       if (llen > 8)  rb+="<h6 align=\"center\">"+line.substr(9, llen)+"</h6>\n";      //:######:
-                    }
-                    else {
+                    }                                                                                 //
+                    else {                                                                            //
                       if (llen > 7)  rb+="<h6 align=\"left\">"+line.substr(8, llen)+"</h6>\n";        //:######
-                    }
+                    }                                                                                 //
                   }else{                                                                              //
-                    if(line[6]==':') {
+                    if(line[6]==':') {                                                                //
                       if (llen > 7)  rb+="<h5 align=\"center\">"+line.substr(8, llen)+"</h5>\n";      //:#####:
-                    }
-                    else {
+                    }                                                                                 //
+                    else {                                                                            //
                       if (llen > 6)  rb+="<h5 align=\"left\">"+line.substr(7, llen)+"</h5>\n";        //:#####
-                    }
+                    }                                                                                 //
                   }                                                                                   //
                 }else {                                                                               //
-                  if(line[5]==':') {
+                  if(line[5]==':') {                                                                  //
                     if (llen > 6)    rb+="<h4 align=\"center\">"+line.substr(7, llen)+"</h4>\n";      //:####:
-                  }
-                  else {
+                  }                                                                                   // 
+                  else {                                                                              // 
                     if (llen > 5)    rb+="<h4 align=\"left\">"+line.substr(6, llen)+"</h4>\n";        //:####
-                  }
+                  }                                                                                   // 
                 }                                                                                     //                         
               }else {                                                                                 //
-                if(line[4]==':') {
+                if(line[4]==':') {                                                                    //
                   if (llen > 5)      rb+="<h3 align=\"center\">"+line.substr(6, llen)+"</h3>\n";      //:###:
-                }
-                else {
+                }                                                                                     // 
+                else {                                                                                // 
                   if (llen > 4)      rb+="<h3 align=\"left\">"+line.substr(5, llen)+"</h3>\n";        //:###
-                }
+                }                                                                                     // 
               }                                                                                       //
             }else {                                                                                   //
-              if(line[3]==':') {
+              if(line[3]==':') {                                                                      //
                 if (llen > 4)        rb+="<h2 align=\"center\">"+line.substr(5, llen)+"</h2>\n";      //:##;
-              }
-              else {
+              }                                                                                       // 
+              else {                                                                                  // 
                 if (llen > 3)        rb+="<h2 align=\"left\">"+line.substr(4, llen)+"</h2>\n";        //:##
-              }
+              }                                                                                       // 
             }                                                                                         //
           }else {                                                                                     //
-            if(line[2]==':') {
-              if (llen > 3)          rb+="<h1 align=\"center\">"+line.substr(4, llen)+"</h1>\n";        //:#:
-            }
-            else {
+            if(line[2]==':') {                                                                        // 
+              if (llen > 3)          rb+="<h1 align=\"center\">"+line.substr(4, llen)+"</h1>\n";      //:#:
+            }                                                                                         // 
+            else {                                                                                    //
               if (llen > 2)           rb+="<h1 align=\"left\">"+line.substr(3, llen)+"</h1>\n";       //:#
-            }
+            }                                                                                         //
           }                                                                                           //
         }                                                                                             //
       }                                                                                               //
@@ -261,7 +242,7 @@ ISINLINE std::string FenceConverter(const std::string *kText)
               }                                                                                       //
             } else{                                                                                   //
               if(line[3]==':')  {                                                                     //
-                 if (llen > 4) rb+="<h3 align=\"right\">"+line.substr(5, llen)+"</h3>\n";             //###:
+                if (llen > 4) rb+="<h3 align=\"right\">"+line.substr(5, llen)+"</h3>\n";             //###:
               }                                                                                       //
               else {                                                                                  //    
                 if (llen > 3) rb+="<h3>"+line.substr(4, llen)+"</h3>\n";                              //### 
@@ -269,11 +250,11 @@ ISINLINE std::string FenceConverter(const std::string *kText)
             }                                                                                         //
           } else{                                                                                     //
             if(line[2]==':')  {                                                                       //
-                if (llen > 3) rb+="<h2 align=\"right\">"+line.substr(4, llen)+"</h2>\n";              //##:
-              }                                                                                       //
-              else {                                                                                  //
-                if (llen > 2) rb+="<h2 >"+line.substr(3, llen)+"</h2>\n";                             //##
-              }                                                                                       //
+              if (llen > 3) rb+="<h2 align=\"right\">"+line.substr(4, llen)+"</h2>\n";              //##:
+            }                                                                                       //
+            else {                                                                                    //
+              if (llen > 2) rb+="<h2 >"+line.substr(3, llen)+"</h2>\n";                               //##
+            }                                                                                         //
           }                                                                                           //
         } else{                                                                                       //
           if(line[1]==':') {                                                                          //
@@ -299,22 +280,62 @@ ISINLINE std::string FenceConverter(const std::string *kText)
     } else no_exp=true;
 
 
-/*     if(no_exp) { */
-/*  */
-/*       size_t index; */
-/*       if((index = line.find('*')) != std::string::npos){ */
-/*         for (int i=0;i<llen;i++) { */
-/*           char c = line[i]; */
-/*  */
-/*           if (c == '*'){ */
-/*             if(active_state.ITALIC) rb+="</em>"; */
-/*             else                     rb+="<em>"; */
-/*             active_state.ITALIC=!active_state.ITALIC; */
-/*           } */
-/*  */
-/*         } */
-/*       } */
-/*     } */
+    if(no_exp) {
+      size_t index;
+
+      if ( ((index = line.find('*')) != std::string::npos) ||
+          ((index = line.find('_')) != std::string::npos)  ||
+          ((index = line.find('`')) != std::string::npos)  ||
+          ((index = line.find('^')) != std::string::npos)  ||
+          ((index = line.find('~')) != std::string::npos) ) {
+        no_exp=false;
+        rb+="<p>"+line.substr(0, index);
+        for (size_t i=index;i<=llen;i++) {
+          char c = line[i];
+
+          if (c == '*'){
+            if( (i==llen)?false:line[i+1]=='*' ){
+              if(active_state.BOLD) rb+="</strong>";
+              else                  rb+="<strong>";
+              active_state.BOLD=!active_state.BOLD;
+            }
+            else if( (i==0)?false:line[i-1]!='*' ){
+              if(active_state.ITALIC) rb+="</em>";
+              else                    rb+="<em>";
+              active_state.ITALIC=!active_state.ITALIC;
+            }
+          }
+          else if (c == '~'){
+            if( (i==llen)?false:line[i+1]=='~' ){
+              if(active_state.STRIKETHROUGH) rb+="</s>";
+              else                  rb+="<s>";
+              active_state.STRIKETHROUGH=!active_state.STRIKETHROUGH;
+            }
+            else if( (i==0)?false:line[i-1]!='~' ){
+              if(active_state.SUBSCRIPT) rb+="</sub>";
+              else                    rb+="<sub>";
+              active_state.SUBSCRIPT=!active_state.SUBSCRIPT;
+            }
+          }
+          else if (c == '^'){
+            if(active_state.SUPERSCRIPT) rb+="</sup>";
+            else                       rb+="<sup>";
+            active_state.SUPERSCRIPT=!active_state.SUPERSCRIPT;
+          }
+          else if (c == '`'){
+            if(active_state.CODE_INLINE) rb+="</code>";
+            else                       rb+="<code>";
+            active_state.CODE_INLINE=!active_state.CODE_INLINE;
+          }
+          else if (c == '_'){
+            if(active_state.UNDERLINE) rb+="</u>";
+            else                       rb+="<u>";
+            active_state.UNDERLINE=!active_state.UNDERLINE;
+          }
+          else rb+=c;
+        }rb+="<p>\n";
+      }
+    }
 
 
 
@@ -349,9 +370,3 @@ ISINLINE std::string FenceConverter(const std::string *kText)
   }
 }
 
-
-std::string ConverterInitiater(const char *kFilename) 
-{
-  std::string file_c = Readfile(kFilename); 
-  return (FenceConverter(&file_c));
-}

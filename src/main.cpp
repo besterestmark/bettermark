@@ -1,8 +1,7 @@
 #include <iostream>
 #include <string>
 #include "parser.hpp"
-
-#include <typeinfo>
+#include "simio.hpp"
 
 #include "argh.h"
 
@@ -17,12 +16,15 @@ int main(int argc, const char** argv) {
 
   argh::parser cmdl(argc, argv);
 
+
+  std::string file_c = Readfile( cmdl.pos_args()[1].c_str()  ); 
+  cmdl.pos_args();
   std::cout << "<!DOCTYPE html>\n"
     "<html>\n"
     "<head>\n"
     "</head>\n"
     "<body>\n"
-    << ConverterInitiater(  cmdl.pos_args()[1].c_str() )
+    << FenceConverter(&file_c)
     << std::endl;
 
   if (cmdl[{ "-s", "--syntax" }]){
