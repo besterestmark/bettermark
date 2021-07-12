@@ -35,7 +35,7 @@ The benchmark file [test.md](https://github.com/besterestmark/bettermark/blob/ma
 
 |  Flavour   | Amount of features supported | test.md x 500 | test.md x 1 | 50mb x 500 | 50mb x 1 | Avg. Time/Feature |
 | :--------: | :--------------------------: | :-----------: | :---------: | :--------: | :------: | :---------------: |
-| BetterMark |          29/98 (?)           |       ?       |      ?      |     ?      |    ?     |         ?         |
+| BetterMark |          36/98 (?)           |       ?       |      ?      |     ?      |    ?     |         ?         |
 | CommonMark |             ?/98             |       ?       |      ?      |     ?      |    ?     |         ?         |
 
 
