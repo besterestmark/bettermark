@@ -1,9 +1,8 @@
 #include <regex>
+#include <algorithm> //for std::min to find smallest index of starting char, will just manually do in future
 #include <string>
 #include "parser.hpp"
 #include "simio.hpp"
-
-#include<cstdio>
 
 #define ISIN(ch, ch_min, ch_max)       ((ch_min) <= (unsigned)(ch) && (unsigned)(ch) <= (ch_max))
 #define ISANYOF(ch, palette)           ((ch) != _T('\0')  &&  md_strchr((palette), (ch)) != NULL)
@@ -72,6 +71,11 @@ struct ActiveState{
   bool CODE_INLINE=false;
 };
 
+bool FirstIndexOf(size_t i1, size_t i2){
+  return i1 < i2;
+}
+
+
 std::string FenceConverter(const std::string *kText)
 {
 
@@ -84,22 +88,22 @@ std::string FenceConverter(const std::string *kText)
 
   std::string line;
   while (true) {
-    if ((end = kText->find("\n", start)) == std::string::npos) {
+    if ((end = kText->find("\n", start)) == std::string::npos) { 
       if (!(line = kText->substr(start)).empty()) rb+=line+"this shouldn't come";
       return rb;
     }
 
     line = kText->substr(start, end - start); // go to next line
 
-    const size_t kLen = line.size();
+    const size_t llen = line.size()-1;               // indexable length of string
     // If the line is empty, skip it
-    if ( kLen==0 ) {
+    /* if ( kLen==0 ) { */
+    if(llen==std::string::npos){ // comparing with npos because its has value of unsigned type - 1, I am clever, right?
       rb += "\n";
       start = end + 1;
       continue;
     }
 
-    const size_t llen = kLen-1;               // indexable length of string
     bool no_exp = false;                     // stores if there special state happened in current line
 
 
@@ -280,16 +284,20 @@ std::string FenceConverter(const std::string *kText)
     } else no_exp=true;
 
 
-    if(no_exp) {
-      size_t index;
+    if(no_exp && !(active_state.CODE_FENCED)) {
+      size_t index = std::min({ line.find('*'),
+          line.find('_'),
+          line.find('`'),
+          line.find('^'),
+          line.find('~'),
+          line.find('*')},
+          FirstIndexOf) ;
 
-      if ( ((index = line.find('*')) != std::string::npos) ||
-          ((index = line.find('_')) != std::string::npos)  ||
-          ((index = line.find('`')) != std::string::npos)  ||
-          ((index = line.find('^')) != std::string::npos)  ||
-          ((index = line.find('~')) != std::string::npos) ) {
+      if (  index!=std::string::npos ) {
         no_exp=false;
-        rb+="<p>"+line.substr(0, index);
+
+        if(index!=0) rb+="<p>"+line.substr(0, index);
+
         for (size_t i=index;i<=llen;i++) {
           char c = line[i];
 

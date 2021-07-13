@@ -1,6 +1,6 @@
-#include <cerrno>
 #include <fstream>
 #include <string>
+#include <iostream>
 
 #include "simio.hpp"
 
@@ -16,5 +16,6 @@ std::string Readfile(const char *kFilename)
     in.close();
     return (contents);
   }
-  throw(errno);
+  std::cerr << "Cannot find file" << std::endl;
+  exit(2);
 }
