@@ -31,12 +31,12 @@ Everything that has support or will be supported soon can be seen in [todo.md](h
 
 ## Comparison between BetterMark and CommonMark
 
-The benchmark file [test.md](https://github.com/besterestmark/bettermark/blob/master/docs/test.md) was parsed 500 times with both Bmark and Cmark, with Cmark coming on top by `4` s in total or `~125` ms per parse. Bmark is very slow on large files because of Regex parsing, getting fixed currently!
+Bettermark is faster than cmark btw
 
 |  Flavour   | Amount of features supported | test.md x 500 | test.md x 1 | 50mb x 500 | 50mb x 1 | Avg. Time/Feature |
 | :--------: | :--------------------------: | :-----------: | :---------: | :--------: | :------: | :---------------: |
-| BetterMark |          36/98 (?)           |       ?       |      ?      |     ?      |    ?     |         ?         |
-| CommonMark |             ?/98             |       ?       |      ?      |     ?      |    ?     |         ?         |
+| BetterMark |          43/98               |       ?       |      ?      |     ?      |    ?     |         ?         |
+| CommonMark |          ?/98                |       ?       |      ?      |     ?      |    ?     |         ?         |
 
 
 ## Building/Installing
