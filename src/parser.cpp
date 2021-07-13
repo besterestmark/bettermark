@@ -59,6 +59,7 @@ struct ActiveState{
   bool CUSTOM_CLASS=false;
   bool BLOCKQUOTE_FENCED=false;
   bool CODE_FENCED=false;
+  bool UNORDERED_LIST=false;
 
   bool BOLD=false;
   bool ITALIC=false;
@@ -95,16 +96,23 @@ std::string FenceConverter(const std::string *kText)
 
     line = kText->substr(start, end - start); // go to next line
 
-    const size_t llen = line.size()-1;               // indexable length of string
-    // If the line is empty, skip it
-    /* if ( kLen==0 ) { */
-    if(llen==std::string::npos){ // comparing with npos because its has value of unsigned type - 1, I am clever, right?
+    const size_t llen = line.size()-1;        // indexable length of string
+    // If the line is empty, skip it              
+    if(llen==std::string::npos){              // comparing with npos because it has value of unsigned type - 1, I am clever, right?
       rb += "\n";
       start = end + 1;
       continue;
     }
 
     bool no_exp = false;                     // stores if there special state happened in current line
+
+
+    if(active_state.UNORDERED_LIST){
+      if( !(BEGIN1(line, '-') || BEGIN1(line, '+')  || BEGIN1(line, '*'))  ){
+        rb+="</ul>\n";
+        active_state.UNORDERED_LIST=false;
+      }
+    }
 
 
     // don't check for other states if code blocks is active
@@ -154,6 +162,22 @@ std::string FenceConverter(const std::string *kText)
         if (active_state.BLOCKQUOTE_FENCED) rb+="</blockquote>\n";
         else                                rb+="<blockquote>\n";
         active_state.BLOCKQUOTE_FENCED = !active_state.BLOCKQUOTE_FENCED;
+      }
+
+      else if(BEGIN1(line, '*')){
+        if(line[1]=='['){
+          //TODO: ABBREVIATIONS
+        }else{
+          if(!active_state.UNORDERED_LIST)             rb+="<ul>\n";
+
+          rb+="<li>"+line.substr(1, llen)+"</li>\n";
+          active_state.UNORDERED_LIST=true;
+        }
+      }
+      else if(BEGIN1(line, '-') || BEGIN1(line, '+')){
+        if(!active_state.UNORDERED_LIST) rb+="<ul>\n";
+        rb+="<li>"+line.substr(1, llen)+"</li>\n";
+        active_state.UNORDERED_LIST=true;
       }
 
 
@@ -215,7 +239,7 @@ std::string FenceConverter(const std::string *kText)
           }                                                                                           //
         }                                                                                             //
       }                                                                                               //
-                                                                                                      //
+      //
       else if(line[0]=='#'){                                                                          //# 
         if(line[1]=='#'){                                                                             //##
           if(line[2]=='#'){                                                                           //###
@@ -310,7 +334,7 @@ std::string FenceConverter(const std::string *kText)
             else if( (i==0)?false:line[i-1]!='*' ){
               if(active_state.ITALIC) rb+="</em>";
               else                    rb+="<em>";
-              active_state.ITALIC=!active_state.ITALIC;
+              active_state.ITALIC=!active_state.ITALIC; 
             }
           }
           else if (c == '~'){
