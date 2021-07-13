@@ -629,6 +629,40 @@ CSS:
 
 NOTE: Apply custom class to checkboxes so they're easier to style
 
+
+## Definition lists
+
+ID: LIST_DEFINITION
+
+Extension: https://github.com/markdown-it/markdown-it-deflist
+
+MD:
+
+```md
+definitionTerm1
+: definition one
+: definition two
+
+definitionTerm2
+: definition one
+```
+
+HTML:
+
+```html
+<dl>
+<dt>definitionTerm1</dt>
+<dd>definition one</dd>
+<dd>definition two</dd>
+</dl>
+
+<dl>
+<dt>definitionTerm2</dt>
+<dd>definition one</dd>
+</dl>
+```
+
+
 ## (WIP) Horizontal Rules
 
 IDs:
@@ -770,4 +804,75 @@ HTML:
 
 ```html
 <!-- comment -->
+```
+
+## Subscript
+
+IDs:
+
+SUBSCRIPT
+
+SUPERSCRIPT
+
+Extension: https://github.com/markdown-it/markdown-it-sub & https://github.com/markdown-it/markdown-it-sup
+
+MD:
+
+```md
+~subscript~
+
+^superscript^
+```
+
+HTML:
+
+```html
+<sub>subscript</sub>
+
+<sup>superscript</sup>
+```
+
+
+## Fractions
+
+ID: FRACTION
+
+Extension: https://github.com/russross/blackfriday
+
+MD:
+
+```md
+number1/number2
+```
+
+HTML:
+
+```html
+<sup>number1</sup>/<sub>number2</sub>
+```
+
+## LaTeX Math/KaTeX
+
+IDs:
+
+MATH_INLINE
+
+MATH_BLOCK
+
+Extension: https://katex.org
+
+MD:
+
+```md
+
+$inline maths \alpha$
+
+$$block maths \beta$$
+
+```
+
+HTML:
+
+```html
+<!-- fancy js magic -->
 ```
