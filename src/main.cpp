@@ -6,6 +6,7 @@
 #include "argh.h"
 
 #define DEBUG
+#define MINIMALIST
 
 int main(int argc, const char** argv) {
 
@@ -19,11 +20,14 @@ int main(int argc, const char** argv) {
 
   std::string file_c = Readfile( cmdl.pos_args()[1].c_str()  ); 
   cmdl.pos_args();
+#ifndef MINIMALIST
   std::cout << "<!DOCTYPE html>\n"
     "<html>\n"
     "<head>\n"
     "</head>\n"
     "<body>\n"
+#endif // MINIMALIST
+    std::cout
     << FenceConverter(&file_c)
     << std::endl;
 
@@ -31,10 +35,13 @@ int main(int argc, const char** argv) {
     std::cout << "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js\"></script>\n"
       "<script>hljs.highlightAll();</script>\n";
   }
+  
+#ifndef MINIMALIST
   std::cout << 
     "</body>\n"
     "</html>\n"
     << std::endl;
+#endif // MINIMALIST
 
 
 #ifdef DEBUG

@@ -1,3 +1,5 @@
+#include <cstddef>
+#include <cstdio>
 #include <regex>
 #include <algorithm> //for std::min to find smallest index of starting char, will just manually do in future
 #include <string>
@@ -44,10 +46,8 @@ using i64 = int64_t;
 std::string RegexConverter(std::string text) 
 {
   std::regex IMAGE_SIZE(R"(!\[(.+)\]\((.+) (.+) =(.+)x(.+)\))");
-  std::regex ABBREVIATIONS(R"(\*\[(.+)\]:\s(.+))");
   std::regex SPOILER(R"(!!(.+)!!)");
   text = regex_replace(text, SPOILER, "<span class=\"spoiler\">$1</span>");
-  text = regex_replace(text, ABBREVIATIONS, "<abbr title=\"$1\">$2</abbr>");
   text = regex_replace(
       text, IMAGE_SIZE,
       "<img src=\"$2\" title=$3 alt=\"$1\" width=\"$4\" height=\"$5\">");
@@ -167,16 +167,23 @@ std::string FenceConverter(const std::string *kText)
       else if(BEGIN1(line, '*')){
         if(line[1]=='['){
           //TODO: ABBREVIATIONS
-        }else{
+          size_t endB;
+          if( (endB = line.find(']')) !=std::string::npos){
+            std::printf("among us");
+            rb+="<abbr title=\""+line.substr(endB+2, llen)+"\">"+line.substr(2, endB-2)+"</abbr>\n";
+          }
+          else no_exp=true;
+        }
+        else if(line[1]==' '){
           if(!active_state.UNORDERED_LIST)             rb+="<ul>\n";
 
-          rb+="<li>"+line.substr(1, llen)+"</li>\n";
+          rb+="<li>"+line.substr(2, llen)+"</li>\n";
           active_state.UNORDERED_LIST=true;
         }
       }
-      else if(BEGIN1(line, '-') || BEGIN1(line, '+')){
-        if(!active_state.UNORDERED_LIST) rb+="<ul>\n";
-        rb+="<li>"+line.substr(1, llen)+"</li>\n";
+      else if( (BEGIN1(line, '-') || BEGIN1(line, '+')) && line[1]==' ' ){
+        if(!active_state.UNORDERED_LIST)               rb+="<ul>\n";
+        rb+="<li>"+line.substr(2, llen)+"</li>\n";
         active_state.UNORDERED_LIST=true;
       }
 
@@ -308,19 +315,21 @@ std::string FenceConverter(const std::string *kText)
     } else no_exp=true;
 
 
-    if(no_exp && !(active_state.CODE_FENCED)) {
-      size_t index = std::min({ line.find('*'),
+    if(no_exp && !(active_state.CODE_FENCED || BEGIN3(line, '`') ) ) {
+      size_t index = std::min({
+          line.find('*'),
           line.find('_'),
           line.find('`'),
           line.find('^'),
           line.find('~'),
-          line.find('*')},
+          line.find('*')
+          },
           FirstIndexOf) ;
 
       if (  index!=std::string::npos ) {
         no_exp=false;
-
-        if(index!=0) rb+="<p>"+line.substr(0, index);
+        rb+="<p>";
+        if(index!=0) rb+=line.substr(0, index);
 
         for (size_t i=index;i<=llen;i++) {
           char c = line[i];
@@ -365,7 +374,7 @@ std::string FenceConverter(const std::string *kText)
             active_state.UNDERLINE=!active_state.UNDERLINE;
           }
           else rb+=c;
-        }rb+="<p>\n";
+        }rb+="</p>\n";
       }
     }
 
