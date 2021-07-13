@@ -51,6 +51,8 @@
   - [ ] Image alignment
   - [ ] Image description
   - [ ] Tabs
-  - [ ] Custom Class/Id to elements
+  - [ ] Custom Class/Id to elements 
+  - [ ] https://github.com/arve0/markdown-it-attrs
   - [ ] Numbered headings [CSS]
   - [ ] Words in hr [CSS]
+	- [ ] &CONSTANTS&
