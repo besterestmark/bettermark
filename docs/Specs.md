@@ -686,7 +686,7 @@ HTML:
 ```html
 <hr class="hr-def">
 
-<hr class="hr-words">
+<h6 class="hr-words no-num">words inside hr</h6>
 ```
 
 CSS:
