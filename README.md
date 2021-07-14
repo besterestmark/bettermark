@@ -29,9 +29,9 @@ Everything that has support or will be supported soon can be seen in [todo.md](h
 - Custom HR with words in it
 - And more, you can also leave your suggestions in the [issues section](https://github.com/besterestmark/bettermark/issues)!
 
-## Comparison between BetterMark and CommonMark
+## Speed comparison between Bmark and Cmark
 
-Bettermark is faster than cmark btw
+Bettermark is faster than cmark and supports more features [stats coming soon].
 
 |  Flavour   | Amount of features supported | test.md x 500 | test.md x 1 | 50mb x 500 | 50mb x 1 | Avg. Time/Feature |
 | :--------: | :--------------------------: | :-----------: | :---------: | :--------: | :------: | :---------------: |
