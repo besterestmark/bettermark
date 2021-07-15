@@ -16,6 +16,6 @@ std::string Readfile(const char *kFilename)
     in.close();
     return (contents);
   }
-  std::cerr << "Cannot find file" << std::endl;
+  std::cerr << "betttermark: "<< kFilename <<": No such file or directory";
   exit(2);
 }

@@ -1,6 +1,3 @@
-#include <cstddef>
-#include <cstdio>
-#include <regex>
 #include <algorithm> //for std::min to find smallest index of starting char, will just manually do in future
 #include <string>
 #include "parser.hpp"
@@ -30,29 +27,6 @@
 #define STARTS(str, substr)            (str.rfind(substr, 0)==0)
 
 
-
-// macros for simplicity of types
-using u8 =  uint8_t;
-using u16 = uint16_t;
-using u32 = uint32_t;
-using u64 = uint64_t;
-using i8 =  int8_t;
-using i16 = int16_t;
-using i32 = int32_t;
-using i64 = int64_t;
-
-
-//WARNING: Slow probably will be deprecated
-std::string RegexConverter(std::string text) 
-{
-  std::regex IMAGE_SIZE(R"(!\[(.+)\]\((.+) (.+) =(.+)x(.+)\))");
-  std::regex SPOILER(R"(!!(.+)!!)");
-  text = regex_replace(text, SPOILER, "<span class=\"spoiler\">$1</span>");
-  text = regex_replace(
-      text, IMAGE_SIZE,
-      "<img src=\"$2\" title=$3 alt=\"$1\" width=\"$4\" height=\"$5\">");
-  return text;
-}
 
 struct ActiveState{
   bool COLLAPSIBLE=false;
@@ -146,7 +120,7 @@ std::string FenceConverter(const std::string *kText)
           // Because this mean `:::` is not followed by a valid classname.
           if (llen > 3) {
             rb+="<div class=\""+line.substr(4, llen)+"\">\n";
-            active_state.CUSTOM_CLASS=!active_state.CUSTOM_CLASS;
+            active_state.CUSTOM_CLASS =! active_state.CUSTOM_CLASS;
           }
         }
       }
@@ -311,10 +285,8 @@ std::string FenceConverter(const std::string *kText)
         if (llen > 2)               rb+="<!--"+line.substr(2, llen)+"-->";                            //ignored comments
       }
       else no_exp=true;
-    } else no_exp=true;
 
-
-    if(no_exp && !(active_state.CODE_FENCED || BEGIN3(line, '`') ) ) {
+    if(no_exp && !(BEGIN3(line, '`') ) ) {
       size_t index = std::min({
           line.find('*'),
           line.find('_'),
@@ -338,51 +310,53 @@ std::string FenceConverter(const std::string *kText)
             if( (i==llen)?false:line[i+1]=='*' ){
               if(active_state.BOLD) rb+="</strong>";
               else                  rb+="<strong>";
-              active_state.BOLD=!active_state.BOLD;
+              active_state.BOLD =! active_state.BOLD;
             }
             else if( (i==0)?false:line[i-1]!='*' ){
               if(active_state.ITALIC) rb+="</em>";
               else                    rb+="<em>";
-              active_state.ITALIC=!active_state.ITALIC; 
+              active_state.ITALIC =! active_state.ITALIC; 
             }
           }
           else if (c == '~'){
             if( (i==llen)?false:line[i+1]=='~' ){
               if(active_state.STRIKETHROUGH) rb+="</s>";
               else                  rb+="<s>";
-              active_state.STRIKETHROUGH=!active_state.STRIKETHROUGH;
+              active_state.STRIKETHROUGH =! active_state.STRIKETHROUGH;
             }
             else if( (i==0)?false:line[i-1]!='~' ){
               if(active_state.SUBSCRIPT) rb+="</sub>";
               else                    rb+="<sub>";
-              active_state.SUBSCRIPT=!active_state.SUBSCRIPT;
+              active_state.SUBSCRIPT =! active_state.SUBSCRIPT;
             }
           }
           else if(c == '!' && line[i+1]=='!'){
-            i++;
             if(active_state.SPOILER) rb+="</sub>";
             else                     rb+="<span class=\"spoiler\">";
-            active_state.SPOILER=!active_state.SPOILER;
+            active_state.SPOILER =! active_state.SPOILER;
+            i++;
           }
           else if (c == '^'){
             if(active_state.SUPERSCRIPT) rb+="</sup>";
             else                       rb+="<sup>";
-            active_state.SUPERSCRIPT=!active_state.SUPERSCRIPT;
+            active_state.SUPERSCRIPT =! active_state.SUPERSCRIPT;
           }
           else if (c == '`'){
             if(active_state.CODE_INLINE) rb+="</code>";
             else                       rb+="<code>";
-            active_state.CODE_INLINE=!active_state.CODE_INLINE;
+            active_state.CODE_INLINE =! active_state.CODE_INLINE;
           }
           else if (c == '_'){
             if(active_state.UNDERLINE) rb+="</u>";
             else                       rb+="<u>";
-            active_state.UNDERLINE=!active_state.UNDERLINE;
+            active_state.UNDERLINE =! active_state.UNDERLINE;
           }
           else rb+=c;
         }rb+="</p>\n";
       }
     }
+
+    } else no_exp=true;
 
 
 
@@ -402,7 +376,7 @@ std::string FenceConverter(const std::string *kText)
         if(type.empty()) rb+="<pre><code class=\"language-plaintext\">\n"; 
         else rb+="<pre><code class=\"language-"+line.substr(3, llen)+"\">\n";
       }
-      active_state.CODE_FENCED=!active_state.CODE_FENCED;
+      active_state.CODE_FENCED =! active_state.CODE_FENCED;
       no_exp=false;
     }
 

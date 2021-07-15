@@ -2,7 +2,6 @@
 #define PARSER_HPP_
 
 #include <string>
-std::string RegexConverter(std::string text);
 std::string FenceConverter(const std::string *text);
 #endif
 
