@@ -3,6 +3,7 @@
 
 ## General info
 
+- Getting actively developed with updates daily
 - Uses C++14, better supported version
 - Faster than most JavaScript parsers
 - Extremely extensible CSS-wise
@@ -53,6 +54,10 @@ $ cmake ..
 $ mv ./compile_commands.json ../ 
 $ make
 ```
+
+## Contributing
+
+The project is licensed under MPL-2.0, so feel free to fork and open pull requests after reading [CONTRIBUTING.md](https://github.com/besterestmark/bettermark/blob/master/CONTRIBUTING.MD)
 
 ## Credits
 
