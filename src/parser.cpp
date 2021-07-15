@@ -64,7 +64,8 @@ struct ActiveState{
   bool BOLD=false;
   bool ITALIC=false;
   bool UNDERLINE=false;
-  bool  STRIKETHROUGH=false;
+  bool STRIKETHROUGH=false;
+  bool SPOILER=false;
 
   bool SUBSCRIPT=false;
   bool SUPERSCRIPT=false;
@@ -98,7 +99,7 @@ std::string FenceConverter(const std::string *kText)
 
     const size_t llen = line.size()-1;        // indexable length of string
     // If the line is empty, skip it              
-    if(llen==std::string::npos){              // comparing with npos because it has value of unsigned type - 1, I am clever, right?
+    if(llen==std::string::npos){
       rb += "\n";
       start = end + 1;
       continue;
@@ -166,10 +167,8 @@ std::string FenceConverter(const std::string *kText)
 
       else if(BEGIN1(line, '*')){
         if(line[1]=='['){
-          //TODO: ABBREVIATIONS
           size_t endB;
           if( (endB = line.find(']')) !=std::string::npos){
-            std::printf("among us");
             rb+="<abbr title=\""+line.substr(endB+2, llen)+"\">"+line.substr(2, endB-2)+"</abbr>\n";
           }
           else no_exp=true;
@@ -322,6 +321,7 @@ std::string FenceConverter(const std::string *kText)
           line.find('`'),
           line.find('^'),
           line.find('~'),
+          line.find('!'),
           line.find('*')
           },
           FirstIndexOf) ;
@@ -357,6 +357,12 @@ std::string FenceConverter(const std::string *kText)
               else                    rb+="<sub>";
               active_state.SUBSCRIPT=!active_state.SUBSCRIPT;
             }
+          }
+          else if(c == '!' && line[i+1]=='!'){
+            i++;
+            if(active_state.SPOILER) rb+="</sub>";
+            else                     rb+="<span class=\"spoiler\">";
+            active_state.SPOILER=!active_state.SPOILER;
           }
           else if (c == '^'){
             if(active_state.SUPERSCRIPT) rb+="</sup>";

@@ -6,7 +6,7 @@
 #include "argh.h"
 
 #define DEBUG
-#define MINIMALIST
+//#define MINIMALIST
 
 int main(int argc, const char** argv) {
 
@@ -18,14 +18,14 @@ int main(int argc, const char** argv) {
   argh::parser cmdl(argc, argv);
 
 
-  std::string file_c = Readfile( cmdl.pos_args()[1].c_str()  ); 
+  std::string file_c = Readfile( cmdl.pos_args()[1].c_str()  );
   cmdl.pos_args();
 #ifndef MINIMALIST
   std::cout << "<!DOCTYPE html>\n"
     "<html>\n"
     "<head>\n"
     "</head>\n"
-    "<body>\n"
+    "<body>\n";
 #endif // MINIMALIST
     std::cout
     << FenceConverter(&file_c)
