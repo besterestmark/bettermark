@@ -19,7 +19,6 @@ int main(int argc, const char** argv) {
 
 
   std::string file_c = Readfile( cmdl.pos_args()[1].c_str()  );
-  cmdl.pos_args();
 #ifndef MINIMALIST
   std::cout << "<!DOCTYPE html>\n"
     "<html>\n"

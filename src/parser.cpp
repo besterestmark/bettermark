@@ -83,7 +83,7 @@ std::string FenceConverter(const std::string *kText)
 
 
     if(active_state.UNORDERED_LIST){
-      if( !(BEGIN1(line, '-') || BEGIN1(line, '+')  || BEGIN1(line, '*'))  ){
+      if( !((BEGIN1(line, '-') || BEGIN1(line, '+')  || BEGIN1(line, '*')) && line[1]==' ' )  ){
         rb+="</ul>\n";
         active_state.UNORDERED_LIST=false;
       }
@@ -139,24 +139,87 @@ std::string FenceConverter(const std::string *kText)
         active_state.BLOCKQUOTE_FENCED = !active_state.BLOCKQUOTE_FENCED;
       }
 
-      else if(BEGIN1(line, '*')){
-        if(line[1]=='['){
+      else if(BEGIN1(line, '*') && line[1]=='[' ){
           size_t endB;
           if( (endB = line.find(']')) !=std::string::npos){
             rb+="<abbr title=\""+line.substr(endB+2, llen)+"\">"+line.substr(2, endB-2)+"</abbr>\n";
           }
           else no_exp=true;
-        }
-        else if(line[1]==' '){
-          if(!active_state.UNORDERED_LIST)             rb+="<ul>\n";
-
-          rb+="<li>"+line.substr(2, llen)+"</li>\n";
-          active_state.UNORDERED_LIST=true;
-        }
       }
-      else if( (BEGIN1(line, '-') || BEGIN1(line, '+')) && line[1]==' ' ){
+      else if(( (BEGIN1(line, '-') || BEGIN1(line, '+')) || BEGIN1(line, '*')) && line[1]==' ' ){
         if(!active_state.UNORDERED_LIST)               rb+="<ul>\n";
-        rb+="<li>"+line.substr(2, llen)+"</li>\n";
+        rb+="<li>";
+        {
+          size_t index = std::min({
+              line.find('*'),
+              line.find('_'),
+              line.find('`'),
+              line.find('^'),
+              line.find('~'),
+              line.find('!'),
+              line.find('*')
+              },
+              FirstIndexOf) ;
+
+          if (  index!=std::string::npos ) {
+            no_exp=false;
+            if(index>2) rb+=line.substr(2, index);
+            else index=2;
+
+            for (size_t i=index;i<=llen;i++) {
+              char c = line[i];
+
+              if (c == '*'){
+                if( (i==llen)?false:line[i+1]=='*' ){
+                  if(active_state.BOLD) rb+="</strong>";
+                  else                  rb+="<strong>";
+                  active_state.BOLD =! active_state.BOLD;
+                }
+                else if( (i==0)?false:line[i-1]!='*' ){
+                  if(active_state.ITALIC) rb+="</em>";
+                  else                    rb+="<em>";
+                  active_state.ITALIC =! active_state.ITALIC; 
+                }
+              }
+              else if (c == '~'){
+                if( (i==llen)?false:line[i+1]=='~' ){
+                  if(active_state.STRIKETHROUGH) rb+="</s>";
+                  else                  rb+="<s>";
+                  active_state.STRIKETHROUGH =! active_state.STRIKETHROUGH;
+                }
+                else if( (i==0)?false:line[i-1]!='~' ){
+                  if(active_state.SUBSCRIPT) rb+="</sub>";
+                  else                    rb+="<sub>";
+                  active_state.SUBSCRIPT =! active_state.SUBSCRIPT;
+                }
+              }
+              else if(c == '!' && line[i+1]=='!'){
+                if(active_state.SPOILER) rb+="</sub>";
+                else                     rb+="<span class=\"spoiler\">";
+                active_state.SPOILER =! active_state.SPOILER;
+                i++;
+              }
+              else if (c == '^'){
+                if(active_state.SUPERSCRIPT) rb+="</sup>";
+                else                       rb+="<sup>";
+                active_state.SUPERSCRIPT =! active_state.SUPERSCRIPT;
+              }
+              else if (c == '`'){
+                if(active_state.CODE_INLINE) rb+="</code>";
+                else                       rb+="<code>";
+                active_state.CODE_INLINE =! active_state.CODE_INLINE;
+              }
+              else if (c == '_'){
+                if(active_state.UNDERLINE) rb+="</u>";
+                else                       rb+="<u>";
+                active_state.UNDERLINE =! active_state.UNDERLINE;
+              }
+              else rb+=c;
+            }
+          }
+          else rb+=line.substr(2, llen);
+        }
+        rb+="</li>\n";
         active_state.UNORDERED_LIST=true;
       }
 
