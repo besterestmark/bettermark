@@ -141,8 +141,10 @@ std::string FenceConverter(const std::string *kText)
 
       else if(BEGIN1(line, '*') && line[1]=='[' ){
           size_t endB;
-          if( (endB = line.find(']')) !=std::string::npos){
-            rb+="<abbr title=\""+line.substr(endB+2, llen)+"\">"+line.substr(2, endB-2)+"</abbr>\n";
+          if( (endB = line.find(']')) !=std::string::npos) {
+            // check if it actually has a title
+            // FIXME: add error handling!!!
+            if (llen > endB+1) rb+="<abbr title=\""+line.substr(endB+2, llen)+"\">"+line.substr(2, endB-2)+"</abbr>\n";
           }
           else no_exp=true;
       }
