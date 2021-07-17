@@ -152,17 +152,9 @@ std::string FenceConverter(const std::string *kText)
         if(!active_state.UNORDERED_LIST)               rb+="<ul>\n";
         rb+="<li>";
         {
-          size_t index = std::min({
-              line.find('*'),
-              line.find('_'),
-              line.find('`'),
-              line.find('^'),
-              line.find('~'),
-              line.find('!'),
-              line.find('*')
-              },
-              FirstIndexOf) ;
+          // Get first index of any of the characters.
 
+          size_t index = line.find_first_of("*_`^~!");
           if (  index!=std::string::npos ) {
             no_exp=false;
             if(index>2) rb+=line.substr(2, index);
