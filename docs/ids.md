@@ -96,7 +96,7 @@
     - [x] CODE_FENCED [OG]
 - [x] CUSTOM_CLASS [ST]
 - [x] COLLAPSIBLE [ST]
-- [x] COMMENT [OC]
+- [x] COMMENT [OC] 
 
 ## Legend
 
