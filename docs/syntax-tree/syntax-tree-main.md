@@ -2,7 +2,8 @@
 
 ## Image
 
-![image](https://user-images.githubusercontent.com/76597257/126064048-35920e2d-3838-47f2-8e25-e3d79a26aa4e.png)
+![image](https://user-images.githubusercontent.com/76597257/126064343-6d6683d1-d270-427d-bc01-71f98ebb4742.png)
+
 
 ## Raw syntax
 
@@ -133,6 +134,18 @@
               ]
             ]
           ]
+        ]
+      ]
+    ]
+  ]
+  [TILDE
+    [IDENTIFIER 
+      [TILDE SUBSCRIPT]
+    ]
+    [TILDE 
+      [IDENTIFIER
+        [TILDE
+          [TILDE STRIKETHROUGH]
         ]
       ]
     ]
