@@ -2,8 +2,7 @@
 
 ## Image
 
-![image](https://user-images.githubusercontent.com/76597257/126064343-6d6683d1-d270-427d-bc01-71f98ebb4742.png)
-
+![image](https://user-images.githubusercontent.com/76597257/126064375-f839c393-e3c1-42ca-a36d-1f4b1957eedd.png)
 
 ## Raw syntax
 
