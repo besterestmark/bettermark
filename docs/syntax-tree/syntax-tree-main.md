@@ -14,7 +14,7 @@
         [EOL LIST-ASTERISK]
       ]
       [x
-				[CLOSE-BRACKET
+				[RBRACKET
 					[WHITESPACE
 						[IDENTIFIER
 							[EOL LIST-TASK-DONE-ASTERISK]
