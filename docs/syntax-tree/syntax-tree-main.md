@@ -2,61 +2,75 @@
 
 ## Image
 
-![image](https://user-images.githubusercontent.com/76597257/126051678-42a9e0f4-29b6-4a0d-b022-61a4a39858e4.png)
+![image](https://user-images.githubusercontent.com/76597257/126051995-905ca7dd-dc9c-4296-9006-da83bf97fb5d.png)
 
 ## Raw syntax
 
 ```pain
 [BETTERMARK
   [ASTERISK
-  [WHITESPACE
-    [IDENTIFIER
-      [EOL LIST-ASTERISK]
-    ]
-  ]
     [WHITESPACE
-				[OPEN-BRACKET
-					[x
-						[CLOSE-BRACKET
-							[WHITESPACE
-								[IDENTIFIER
-									[EOL LIST-TASK-DONE-ASTERISK]
-								]
-							]
+      [IDENTIFIER
+        [EOL LIST-ASTERISK]
+      ]
+      [x
+				[CLOSE-BRACKET
+					[WHITESPACE
+						[IDENTIFIER
+							[EOL LIST-TASK-DONE-ASTERISK]
 						]
 					]
-					[/
-						[CLOSE-BRACKET
-							[WHITESPACE
-								[IDENTIFIER
-									[EOL LIST-TASK-PROGRESS-ASTERISK]
-								]
-							]
+				]
+			]
+			[SLASH
+				[CLOSE-BRACKET
+					[WHITESPACE
+						[IDENTIFIER
+							[EOL LIST-TASK-PROGRESS-ASTERISK]
 						]
 					]
-					[-
-						[CLOSE-BRACKET
-							[WHITESPACE
-								[IDENTIFIER
-									[EOL LIST-TASK-DISABLED-ASTERISK]
-								]
-							]
-						]
-					]  
-					[SPACE
-						[CLOSE-BRACKET
-							[WHITESPACE
-								[IDENTIFIER
-									[EOL LIST-TASK-NOT-DONE-ASTERISK]
-								]
-							]
+				]
+			]
+			[HYPHEN
+				[CLOSE-BRACKET
+					[WHITESPACE
+						[IDENTIFIER
+							[EOL LIST-TASK-DISABLED-ASTERISK]
 						]
 					]
+				]
+			]  
+			[SPACE
+				[CLOSE-BRACKET
+					[WHITESPACE
+						[IDENTIFIER
+							[EOL LIST-TASK-NOT-DONE-ASTERISK]
+						]
+					]
+				]
+			]
+    ]
+    [IDENTIFIER
+      [ASTERISK ITALIC]
+    ]
+    [ASTERISK
+      [IDENTIFIER
+        [ASTERISK
+          [ASTERISK BOLD]
         ]
       ]
-  ]
-  [HYPHEN
-  -
+    ]
+    [OPEN-BRACKET
+      [TERM
+        [CLOSE-BRACKET
+          [COLON
+            [WHITESPACE
+              [IDENTIFIER ABBREVIATION]
+            ]
+          ]
+        ]
+      ]
+    ]
   ]
 ]
 ```
