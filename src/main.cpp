@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include <thread>
+/* #include <thread> */
 #include "parser.hpp"
 #include "simio.hpp"
 
@@ -23,8 +23,8 @@ int main(int argc, const char** argv) {
   const size_t vecsize = cmdl.pos_args().size();
   if ( vecsize > 2 ){
     for( size_t i =1; i<vecsize;i++ ){
-      /* Writer( cmdl.pos_args()[i] , cmdl[{ "-s", "--syntax" }]  ); */
-      std::thread *tk = new std::thread(Writer,  cmdl.pos_args()[i], cmdl[{ "-s", "--syntax" }]  );
+      Writer( cmdl.pos_args()[i] , cmdl[{ "-s", "--syntax" }]  );
+      /* std::thread *tk = new std::thread(Writer,  cmdl.pos_args()[i], cmdl[{ "-s", "--syntax" }]  ); */
      }
   }
   else{
