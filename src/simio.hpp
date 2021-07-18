@@ -4,4 +4,5 @@
 
 #include <string>
 std::string Readfile(const char *kFilename);
+void Writer(const std::string kFilename, const bool kSyntax);
 #endif
