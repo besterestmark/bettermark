@@ -290,6 +290,8 @@ content@ema.il
 
 IDs:
 
+IMG
+
 IMG_ALT
 
 IMG_TITLE
@@ -325,6 +327,8 @@ Extension: https://www.npmjs.com/package/markdown-it-imsize
 MD:
 
 ```md
+![](link)
+
 ![alt](link)
 
 ![](link "title")
@@ -359,6 +363,8 @@ MD:
 HTML:
 
 ```html
+<img src="link"/>
+
 <img src="link" alt="alt"/>
 
 <img src="link" title="title"/>
