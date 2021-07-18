@@ -1,4 +1,3 @@
-#include <algorithm> //for std::min to find smallest index of starting char, will just manually do in future
 #include <string>
 #include "parser.hpp"
 #include "simio.hpp"
@@ -46,11 +45,6 @@ struct ActiveState{
 
   bool CODE_INLINE=false;
 };
-
-bool FirstIndexOf(size_t i1, size_t i2){
-  return i1 < i2;
-}
-
 
 std::string FenceConverter(const std::string *kText)
 {
@@ -152,8 +146,6 @@ std::string FenceConverter(const std::string *kText)
         if(!active_state.UNORDERED_LIST)               rb+="<ul>\n";
         rb+="<li>";
         {
-          // Get first index of any of the characters.
-
           size_t index = line.find_first_of("*_`^~!");
           if (  index!=std::string::npos ) {
             no_exp=false;
@@ -344,17 +336,8 @@ std::string FenceConverter(const std::string *kText)
       else no_exp=true;
 
     if(no_exp && !(BEGIN3(line, '`') ) ) {
-      size_t index = std::min({
-          line.find('*'),
-          line.find('_'),
-          line.find('`'),
-          line.find('^'),
-          line.find('~'),
-          line.find('!'),
-          line.find('*')
-          },
-          FirstIndexOf) ;
 
+      size_t index = line.find_first_of("*_`^~!");
       if (  index!=std::string::npos ) {
         no_exp=false;
         rb+="<p>";
