@@ -2,7 +2,7 @@
 
 ## Image
 
-![image](https://user-images.githubusercontent.com/76597257/126064375-f839c393-e3c1-42ca-a36d-1f4b1957eedd.png)
+![image](https://user-images.githubusercontent.com/76597257/126064568-ad915d9a-ee0b-4805-b20c-7eb03f1be0d3.png)
 
 ## Raw syntax
 
@@ -147,6 +147,11 @@
           [TILDE STRIKETHROUGH]
         ]
       ]
+    ]
+  ]
+  [UNDERSCORE
+    [IDENTIFIER
+      [UNDERSCORE UNDERLINE]
     ]
   ]
 ]
