@@ -6,49 +6,51 @@
 
 ## Raw syntax
 
-```pain
+```
 [BETTERMARK
   [ASTERISK
     [WHITESPACE
       [IDENTIFIER
         [EOL LIST-ASTERISK]
       ]
-      [x
-				[RBRACKET
-					[WHITESPACE
-						[IDENTIFIER
-							[EOL LIST-TASK-DONE-ASTERISK]
-						]
-					]
-				]
-			]
-			[SLASH
-				[CLOSE-BRACKET
-					[WHITESPACE
-						[IDENTIFIER
-							[EOL LIST-TASK-PROGRESS-ASTERISK]
-						]
-					]
-				]
-			]
-			[HYPHEN
-				[CLOSE-BRACKET
-					[WHITESPACE
-						[IDENTIFIER
-							[EOL LIST-TASK-DISABLED-ASTERISK]
-						]
-					]
-				]
-			]  
-			[SPACE
-				[CLOSE-BRACKET
-					[WHITESPACE
-						[IDENTIFIER
-							[EOL LIST-TASK-NOT-DONE-ASTERISK]
-						]
-					]
-				]
-			]
+      [LBRACKET
+        [x
+          [RBRACKET
+            [WHITESPACE
+              [IDENTIFIER
+                [EOL LIST-TASK-DONE-ASTERISK]
+              ]
+            ]
+          ]
+        ]
+        [SLASH
+          [CLOSE-BRACKET
+            [WHITESPACE
+              [IDENTIFIER
+                [EOL LIST-TASK-PROGRESS-ASTERISK]
+              ]
+            ]
+          ]
+        ]
+        [HYPHEN
+          [CLOSE-BRACKET
+            [WHITESPACE
+              [IDENTIFIER
+                [EOL LIST-TASK-DISABLED-ASTERISK]
+              ]
+            ]
+          ]
+        ]  
+        [SPACE
+          [CLOSE-BRACKET
+            [WHITESPACE
+              [IDENTIFIER
+                [EOL LIST-TASK-NOT-DONE-ASTERISK]
+              ]
+            ]
+          ]
+        ]
+      ]
     ]
     [IDENTIFIER
       [ASTERISK ITALIC]
