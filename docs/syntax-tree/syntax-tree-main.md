@@ -2,7 +2,7 @@
 
 ## Image
 
-![image](https://user-images.githubusercontent.com/76597257/126064568-ad915d9a-ee0b-4805-b20c-7eb03f1be0d3.png)
+![image](https://user-images.githubusercontent.com/76597257/126086318-3e1f7742-f406-41c7-8914-bc3fec3e283a.png)
 
 ## Raw syntax
 
@@ -152,6 +152,81 @@
   [UNDERSCORE
     [IDENTIFIER
       [UNDERSCORE UNDERLINE]
+    ]
+  ]
+  [BANG
+    [BANG
+      [IDENTIFIER
+        [BANG
+          [BANG SPOILER]
+        ]
+      ]
+    ]
+    [LBRACKET
+      [IDENTIFIER(ALT)
+        [RBRACKET
+        [LPAREN
+          [IDENTIFIER(LINK)
+            [RPAREN IMG-ALT]
+              [WHITESPACE
+                [IDENTIFIER(TITLE)
+                  [RPAREN IMG-ALT-TITLE]
+                  [WHITESPACE
+                    [IDENTIFIER(SIZE)
+                      [RPAREN IMG-ALT-TITLE-SIZE]
+                    ]
+                    [IDENTIFIER(ONCLICK.LINK)
+                      [RPAREN IMG-ALT-TITLE-LINK]
+                      [WHITESPACE
+                        [IDENTIFIER(SIZE)
+                          [RPAREN IMG-ALT-TITLE-LINK-SIZE]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+                [IDENTIFIER(ONCLICK.LINK)
+                  [RPAREN IMG-LINK]
+                  [IDENTIFIER(SIZE)
+                    [RPAREN IMG-LINK-SIZE]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+      [RBRACKET
+        [LPAREN
+          [IDENTIFIER(LINK)
+            [RPAREN IMG]
+            [WHITESPACE
+              [IDENTIFIER(TITLE)
+                [RPAREN IMG-TITLE]
+                [WHITESPACE
+                  [IDENTIFIER(SIZE)
+                    [RPAREN IMG-TITLE-SIZE]
+                  ]
+                  [IDENTIFIER(ONCLICK.LINK)
+                    [RPAREN IMG-TITLE-LINK]
+                    [WHITESPACE
+                      [IDENTIFIER(SIZE)
+                        [RPAREN IMG-TITLE-LINK-SIZE]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+              [IDENTIFIER(ONCLICK.LINK)
+                [RPAREN IMG-LINK]
+                [IDENTIFIER(SIZE)
+                  [RPAREN IMG-LINK-SIZE]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
     ]
   ]
 ]
