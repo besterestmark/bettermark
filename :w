@@ -1,4 +1,3 @@
-#include <cstdio>
 #include <string>
 #include "parser.hpp"
 #include "simio.hpp"
@@ -28,72 +27,66 @@
 
 
 
-void LineConverter(std::string *buf, std::string line, size_t llen, ActiveState *as, uint8_t startIndex, bool *no_exp)
-{
+void LineConverter(std::string *buf, std::string line, ActiveState *as, uint8_t startIndex, bool *no_exp){
   size_t index = line.find_first_of("*_`^~!");
-  printf("%zu", index);
   if (  index!=std::string::npos ) {
-    *no_exp=false;
-    if(index>startIndex) buf->append(line.substr(startIndex, index));
-    else index=startIndex;
+    no_exp=false;
+    if(index>0) rb+=line.substr(startIndex, index);
+    else index=0;
 
     for (size_t i=index;i<=llen;i++) {
       char c = line[i];
 
       if (c == '*'){
         if( (i==llen)?false:line[i+1]=='*' ){
-          if(as->BOLD) buf->append("</strong>");
-          else                  buf->append("<strong>");
+          if(as->BOLD) rb+="</strong>";
+          else                  rb+="<strong>";
           as->BOLD =! as->BOLD;
         }
         else if( (i==0)?false:line[i-1]!='*' ){
-          if(as->ITALIC) buf->append("</em>");
-          else                    buf->append("<em>");
+          if(as->ITALIC) rb+="</em>";
+          else                    rb+="<em>";
           as->ITALIC =! as->ITALIC; 
         }
       }
       else if (c == '~'){
         if( (i==llen)?false:line[i+1]=='~' ){
-          if(as->STRIKETHROUGH) buf->append("</s>");
-          else                  buf->append("<s>");
+          if(as->STRIKETHROUGH) rb+="</s>";
+          else                  rb+="<s>";
           as->STRIKETHROUGH =! as->STRIKETHROUGH;
         }
         else if( (i==0)?false:line[i-1]!='~' ){
-          if(as->SUBSCRIPT) buf->append("</sub>");
-          else                    buf->append("<sub>");
+          if(as->SUBSCRIPT) rb+="</sub>";
+          else                    rb+="<sub>";
           as->SUBSCRIPT =! as->SUBSCRIPT;
         }
       }
       else if(c == '!' && line[i+1]=='!'){
-        if(as->SPOILER) buf->append("</sub>");
-        else                     buf->append("<span class=\"spoiler\">");
+        if(as->SPOILER) rb+="</sub>";
+        else                     rb+="<span class=\"spoiler\">";
         as->SPOILER =! as->SPOILER;
         i++;
       }
       else if (c == '^'){
-        if(as->SUPERSCRIPT) buf->append("</sup>");
-        else                       buf->append("<sup>");
+        if(as->SUPERSCRIPT) rb+="</sup>";
+        else                       rb+="<sup>";
         as->SUPERSCRIPT =! as->SUPERSCRIPT;
       }
       else if (c == '`'){
-        if(as->CODE_INLINE) buf->append("</code>");
-        else                       buf->append("<code>");
+        if(as->CODE_INLINE) rb+="</code>";
+        else                       rb+="<code>";
         as->CODE_INLINE =! as->CODE_INLINE;
       }
       else if (c == '_'){
-        if(as->UNDERLINE) buf->append("</u>");
-        else                       buf->append("<u>");
+        if(as->UNDERLINE) rb+="</u>";
+        else                       rb+="<u>";
         as->UNDERLINE =! as->UNDERLINE;
       }
-      else buf->push_back(c);
+      else rb+=c;
     }
   }
-  else buf->append(line.substr(startIndex, llen));
+  else rb+=line.substr(startIndex, llen);
 }
-
-
-
-
 
 std::string FenceConverter(const std::string *kText)
 {
@@ -193,7 +186,7 @@ std::string FenceConverter(const std::string *kText)
       else if(( (BEGIN1(line, '-') || BEGIN1(line, '+')) || BEGIN1(line, '*')) && line[1]==' ' ){
         if(!active_state.UNORDERED_LIST)               rb+="<ul>\n";
         rb+="<li>";
-        LineConverter(&rb, line, llen, &active_state, 2, &no_exp);
+        LineConverter(&rb, line, &active_state);
         
         rb+="</li>\n";
         active_state.UNORDERED_LIST=true;
@@ -327,10 +320,63 @@ std::string FenceConverter(const std::string *kText)
 
       if(no_exp && !(BEGIN3(line, '`') ) ) {
 
+        size_t index = line.find_first_of("*_`^~!");
+        if (  index!=std::string::npos ) {
+          no_exp=false;
+          rb+="<p>";
+          if(index>0) rb+=line.substr(0, index);
 
-        rb+="<p>";
-        LineConverter(&rb, line, llen, &active_state, 0, &no_exp);
-        rb+="</p>\n";
+          for (size_t i=index;i<=llen;i++) {
+            char c = line[i];
+
+            if (c == '*'){
+              if( (i==llen)?false:line[i+1]=='*' ){
+                if(active_state.BOLD) rb+="</strong>";
+                else                  rb+="<strong>";
+                active_state.BOLD =! active_state.BOLD;
+              }
+              else if( (i==0)?false:line[i-1]!='*' ){
+                if(active_state.ITALIC) rb+="</em>";
+                else                    rb+="<em>";
+                active_state.ITALIC =! active_state.ITALIC; 
+              }
+            }
+            else if (c == '~'){
+              if( (i==llen)?false:line[i+1]=='~' ){
+                if(active_state.STRIKETHROUGH) rb+="</s>";
+                else                  rb+="<s>";
+                active_state.STRIKETHROUGH =! active_state.STRIKETHROUGH;
+              }
+              else if( (i==0)?false:line[i-1]!='~' ){
+                if(active_state.SUBSCRIPT) rb+="</sub>";
+                else                    rb+="<sub>";
+                active_state.SUBSCRIPT =! active_state.SUBSCRIPT;
+              }
+            }
+            else if(c == '!' && line[i+1]=='!'){
+              if(active_state.SPOILER) rb+="</sub>";
+              else                     rb+="<span class=\"spoiler\">";
+              active_state.SPOILER =! active_state.SPOILER;
+              i++;
+            }
+            else if (c == '^'){
+              if(active_state.SUPERSCRIPT) rb+="</sup>";
+              else                       rb+="<sup>";
+              active_state.SUPERSCRIPT =! active_state.SUPERSCRIPT;
+            }
+            else if (c == '`'){
+              if(active_state.CODE_INLINE) rb+="</code>";
+              else                       rb+="<code>";
+              active_state.CODE_INLINE =! active_state.CODE_INLINE;
+            }
+            else if (c == '_'){
+              if(active_state.UNDERLINE) rb+="</u>";
+              else                       rb+="<u>";
+              active_state.UNDERLINE =! active_state.UNDERLINE;
+            }
+            else rb+=c;
+          }rb+="</p>\n";
+        }
       }
 
     } else no_exp=true;
