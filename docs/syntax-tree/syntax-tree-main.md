@@ -2,7 +2,7 @@
 
 ## Image
 
-![image](https://user-images.githubusercontent.com/76597257/126086318-3e1f7742-f406-41c7-8914-bc3fec3e283a.png)
+![image](https://user-images.githubusercontent.com/76597257/126835406-cd514ff1-8f0f-452c-9c2b-ef118042a089.png)
 
 ## Raw syntax
 
@@ -14,7 +14,7 @@
         [EOL LIST-ASTERISK]
       ]
       [LBRACKET
-        [x
+        [xCHAR
           [RBRACKET
             [WHITESPACE
               [IDENTIFIER
@@ -165,30 +165,49 @@
     [LBRACKET
       [IDENTIFIER(ALT)
         [RBRACKET
-        [LPAREN
-          [IDENTIFIER(LINK)
-            [RPAREN IMG-ALT]
+          [LPAREN
+            [IDENTIFIER(LINK)
+              [RPAREN IMG-ALT]
               [WHITESPACE
                 [IDENTIFIER(TITLE)
                   [RPAREN IMG-ALT-TITLE]
                   [WHITESPACE
-                    [IDENTIFIER(SIZE)
-                      [RPAREN IMG-ALT-TITLE-SIZE]
+                    [IDENTIFIER(SIZE-WIDTH)
+                      [xCHAR
+                        [IDENTIFIER(SIZE-HEIGHT)
+                          [RPAREN IMG-ALT-TITLE-SIZE]
+                        ]
+                      ]
                     ]
                     [IDENTIFIER(ONCLICK.LINK)
                       [RPAREN IMG-ALT-TITLE-LINK]
                       [WHITESPACE
-                        [IDENTIFIER(SIZE)
-                          [RPAREN IMG-ALT-TITLE-LINK-SIZE]
+                        [IDENTIFIER(SIZE-WIDTH)
+                          [xCHAR
+                            [IDENTIFIER(SIZE-HEIGHT)
+                              [RPAREN IMG-ALT-TITLE-LINK-SIZE]
+                            ]
+                          ]
                         ]
                       ]
                     ]
                   ]
                 ]
                 [IDENTIFIER(ONCLICK.LINK)
-                  [RPAREN IMG-LINK]
-                  [IDENTIFIER(SIZE)
-                    [RPAREN IMG-LINK-SIZE]
+                  [RPAREN IMG-ALT-LINK]
+                  [IDENTIFIER(SIZE-WIDTH)
+                    [xCHAR
+                      [IDENTIFIER(SIZE-HEIGHT)
+                        [RPAREN IMG-ALT-LINK-SIZE]
+                      ]
+                    ]
+                  ]
+                ]
+                [IDENTIFIER(SIZE-WIDTH)
+                  [xCHAR
+                    [IDENTIFIER(SIZE-HEIGHT)
+                      [RPAREN IMG-ALT-SIZE]
+                    ]
                   ]
                 ]
               ]
@@ -204,14 +223,22 @@
               [IDENTIFIER(TITLE)
                 [RPAREN IMG-TITLE]
                 [WHITESPACE
-                  [IDENTIFIER(SIZE)
-                    [RPAREN IMG-TITLE-SIZE]
+                  [IDENTIFIER(SIZE-WIDTH)
+                    [xCHAR
+                      [IDENTIFIER(SIZE-HEIGHT)
+                        [RPAREN IMG-TITLE-SIZE]
+                      ]
+                    ]
                   ]
                   [IDENTIFIER(ONCLICK.LINK)
                     [RPAREN IMG-TITLE-LINK]
                     [WHITESPACE
-                      [IDENTIFIER(SIZE)
-                        [RPAREN IMG-TITLE-LINK-SIZE]
+                      [IDENTIFIER(SIZE-WIDTH)
+                        [xCHAR
+                          [IDENTIFIER(SIZE-HEIGHT)
+                            [RPAREN IMG-TITLE-LINK-SIZE]
+                          ]
+                        ]
                       ]
                     ]
                   ]
@@ -219,8 +246,19 @@
               ]
               [IDENTIFIER(ONCLICK.LINK)
                 [RPAREN IMG-LINK]
-                [IDENTIFIER(SIZE)
-                  [RPAREN IMG-LINK-SIZE]
+                [IDENTIFIER(SIZE-WIDTH)
+                  [xCHAR
+                    [IDENTIFIER(SIZE-HEIGHT)
+                      [RPAREN IMG-LINK-SIZE]
+                    ]
+                  ]
+                ]
+              ]
+              [IDENTIFIER(SIZE-WIDTH)
+                [xCHAR
+                  [IDENTIFIER(SIZE-HEIGHT)
+                    [RPAREN IMG-SIZE]
+                  ]
                 ]
               ]
             ]
