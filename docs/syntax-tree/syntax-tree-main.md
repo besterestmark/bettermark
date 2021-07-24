@@ -1,15 +1,13 @@
-## This is the very work in progress syntax tree for bettermark
+## This is the almost completed syntax tree for bmark
 
-
-
-## Image
+## Image (FIXME: OUTDATED!)
 
 ![image](https://user-images.githubusercontent.com/76597257/126880522-85adaa0b-922d-4c98-9426-fb485a7cbed9.png)
 
 ## Credits
 
 - <img src="https://avatars.githubusercontent.com/u/34986581" width="20px" height="20px"/>  [TheGLander](https://github.com/TheGLander) (ʐ̈ MANNNNNNN#2006):
-  - Exporting SVG and PNG because my WiFi is bad
+  + Exporting SVG and PNG because my WiFi is bad
 
 ## Raw syntax
 
@@ -509,7 +507,7 @@
                         [IDENTIFIER
                           [LANGLEBRACKET
                             [LANGLEBRACKET
-                              [LANGLEBRACKET BLOCKQUOTE_CITE_AND_TITLE]
+                              [LANGLEBRACKET BLOCKQUOTE-CITE-AND-TITLE]
                             ]
                           ]
                         ]
@@ -585,7 +583,7 @@
                       [IDENTIFIER
                         [LANGLEBRACKET
                           [LANGLEBRACKET
-                            [LANGLEBRACKET BLOCKQUOTE_CITE_AND_TITLE]
+                            [LANGLEBRACKET BLOCKQUOTE-CITE-AND-TITLE]
                           ]
                         ]
                       ]
@@ -599,5 +597,139 @@
       ]
     ]
   ]
+  [PLUS
+    [WHITESPACE
+      [IDENTIFIER
+        [EOL LIST-PLUS]
+      ]
+      [LBRACKET
+      [x
+        [RBRACKET
+          [WHITESPACE
+            [IDENTIFIER
+              [EOL LIST-TASK-DONE-PLUS]
+            ]
+          ]
+        ]
+      ]
+      [SLASH
+        [RBRACKET
+          [WHITESPACE
+            [IDENTIFIER
+              [EOL LIST-TASK-PROGRESS-PLUS]
+            ]
+          ]
+        ]
+      ]
+      [HYPHEN
+        [RBRACKET
+          [WHITESPACE
+            [IDENTIFIER
+              [EOL LIST-TASK-DISABLED-PLUS]
+            ]
+          ]
+        ]
+      ]  
+      [SPACE
+        [RBRACKET
+          [WHITESPACE
+            [IDENTIFIER
+              [EOL LIST-TASK-NOT-DONE-PLUS]
+            ]
+          ]
+        ]
+      ]     
+    ]
+    [PLUS
+      [PLUS
+        [IDENTIFIER(SUMMARY)
+          [BREAKLINE
+            [IDENTIFIER
+              [PLUS
+                [PLUS
+                  [PLUS COLLAPSIBLE]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+  [DOLLARSIGN
+    [IDENTIFIER
+      [DOLLARSIGN MATH-INLINE]
+    ]
+    [DOLLARSIGN
+      [IDENTIFIER
+        [DOLLARSIGN
+          [DOLLARSIGN MATH-BLOCK]
+        ]
+      ]
+    ]
+  ]
+  [IDENTIFIER(NUMBER)
+    [SLASH
+      [IDENTIFIER(NUMBER) FRACTION]
+    ]
+  ]
+  [CARET
+    [IDENTIFIER
+      [CARET SUPERSCRIPT]
+    ]
+  ]
+  [SLASH
+    [SLASH
+      [IDENTIFIER COMMENT]
+    ]
+  ]
+  [BACKTICK
+    [IDENTIFIER
+      [BACKTICK CODE_INLINE]
+    ]
+    [BACKTICK
+      [BACKTICK
+        [IDENTIFIER(LANGUAGE)
+          [BREAKLINE
+            [IDENTIFIER
+              [BACKTICK
+                [BACKTICK
+                  [BACKTICK CODE-FENCED]
+                ]
+              ]
+            ]
+          ]
+        ]
+        [BREAKLINE
+          [IDENTIFIER
+            [BACKTICK
+              [BACKTICK
+                [BACKTICK CODE-FENCED]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+  [IDENTIFIER
+    [COLON
+      [WHITESPACE
+        [IDENTIFIER
+          [EOL
+            [LIST-DEFINITION]
+            [BREAKLINE
+              [COLON
+                [WHITESPACE
+                  [IDENTIFIER
+                    [EOL LIST-DEFINITION]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
 ]
-```
