@@ -1,0 +1,814 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="16107.0" height="1476.0" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<text style='fill: green; font-size: 20px; ; ;' x='4874.0' y='1445.0' text-decoration='' font-family='sans-serif'>IMG-ALT-TITLE-LINK-SIZE</text>
+<text style='fill: green; font-size: 20px; ; ;' x='13351.0' y='1445.0' text-decoration='' font-family='sans-serif'>BLOCKQUOTE-FENCE-CITE-AND-TITLE</text>
+<text style='fill: green; font-size: 20px; ; ;' x='14311.0' y='1445.0' text-decoration='' font-family='sans-serif'>BLOCKQUOTE</text>
+<text style='fill: green; font-size: 14.0px; ; ;' x='14446' y='1454' text-decoration='' font-family='sans-serif'>CITE AND TITLE</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='4954.0' y='1357.0' text-decoration='' font-family='sans-serif'>RPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='4994' y1='1418' x2='4994' y2='1378' />
+<text style='fill: green; font-size: 20px; ; ;' x='6493.0' y='1357.0' text-decoration='' font-family='sans-serif'>IMG-TITLE-LINK-SIZE</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='13450.5' y='1357.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='13535' y1='1418' x2='13535' y2='1378' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14348.0' y='1357.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='14433' y1='1418' x2='14433' y2='1378' />
+<text style='fill: green; font-size: 20px; ; ;' x='14870.0' y='1357.0' text-decoration='' font-family='sans-serif'>BLOCKQUOTE-FENCE-CITE-AND-TITLE</text>
+<text style='fill: green; font-size: 20px; ; ;' x='15830.0' y='1357.0' text-decoration='' font-family='sans-serif'>BLOCKQUOTE</text>
+<text style='fill: green; font-size: 14.0px; ; ;' x='15965' y='1366' text-decoration='' font-family='sans-serif'>CITE AND TITLE</text>
+<text style='fill: green; font-size: 20px; ; ;' x='4394.0' y='1269.0' text-decoration='' font-family='sans-serif'>IMG-ALT-TITLE-SIZE</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='4869.0' y='1269.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(SIZE-HEIGHT)</text>
+<line style='stroke:black; stroke-width:1;' x1='4994' y1='1330' x2='4994' y2='1290' />
+<text style='fill: blue; font-size: 20px; ; ;' x='6553.0' y='1269.0' text-decoration='' font-family='sans-serif'>RPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='6593' y1='1330' x2='6593' y2='1290' />
+<text style='fill: blue; font-size: 20px; ; ;' x='13450.5' y='1269.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='13535' y1='1330' x2='13535' y2='1290' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14348.0' y='1269.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='14433' y1='1330' x2='14433' y2='1290' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14969.5' y='1269.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='15054' y1='1330' x2='15054' y2='1290' />
+<text style='fill: blue; font-size: 20px; ; ;' x='15867.0' y='1269.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='15952' y1='1330' x2='15952' y2='1290' />
+<text style='fill: blue; font-size: 20px; ; ;' x='4449.0' y='1181.0' text-decoration='' font-family='sans-serif'>RPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='4489' y1='1242' x2='4489' y2='1202' />
+<text style='fill: blue; font-size: 20px; ; ;' x='4961.5' y='1181.0' text-decoration='' font-family='sans-serif'>xCHAR</text>
+<line style='stroke:black; stroke-width:1;' x1='4994' y1='1242' x2='4994' y2='1202' />
+<text style='fill: green; font-size: 20px; ; ;' x='5294.0' y='1181.0' text-decoration='' font-family='sans-serif'>IMG-ALT-LINK-SIZE</text>
+<text style='fill: green; font-size: 20px; ; ;' x='6053.0' y='1181.0' text-decoration='' font-family='sans-serif'>IMG-TITLE-SIZE</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='6468.0' y='1181.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(SIZE-HEIGHT)</text>
+<line style='stroke:black; stroke-width:1;' x1='6593' y1='1242' x2='6593' y2='1202' />
+<text style='fill: blue; font-size: 20px; ; ;' x='13450.5' y='1181.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='13535' y1='1242' x2='13535' y2='1202' />
+<text style='fill: green; font-size: 20px; ; ;' x='13739.0' y='1181.0' text-decoration='' font-family='sans-serif'>BLOCKQUOTE-FENCE-TITLE</text>
+<text style='fill: green; font-size: 20px; ; ;' x='14027.0' y='1181.0' text-decoration='' font-family='sans-serif'>BLOCKQUOTE-FENCE-CITE</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='14348.0' y='1181.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='14433' y1='1242' x2='14433' y2='1202' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14969.5' y='1181.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='15054' y1='1242' x2='15054' y2='1202' />
+<text style='fill: blue; font-size: 20px; ; ;' x='15867.0' y='1181.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='15952' y1='1242' x2='15952' y2='1202' />
+<text style='fill: blue; font-size: 20px; ; ;' x='4364.0' y='1093.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(SIZE-HEIGHT)</text>
+<line style='stroke:black; stroke-width:1;' x1='4489' y1='1154' x2='4489' y2='1114' />
+<text style='fill: green; font-size: 20px; ; ;' x='4664.0' y='1093.0' text-decoration='' font-family='sans-serif'>IMG-ALT-TITLE-LINK</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='4874.5' y='1093.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(SIZE-WIDTH)</text>
+<line style='stroke:black; stroke-width:1;' x1='4994' y1='1154' x2='4994' y2='1114' />
+<text style='fill: blue; font-size: 20px; ; ;' x='5344.0' y='1093.0' text-decoration='' font-family='sans-serif'>RPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='5384' y1='1154' x2='5384' y2='1114' />
+<text style='fill: green; font-size: 20px; ; ;' x='5564.0' y='1093.0' text-decoration='' font-family='sans-serif'>IMG-ALT-SIZE</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='6088.0' y='1093.0' text-decoration='' font-family='sans-serif'>RPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='6128' y1='1154' x2='6128' y2='1114' />
+<text style='fill: blue; font-size: 20px; ; ;' x='6560.5' y='1093.0' text-decoration='' font-family='sans-serif'>xCHAR</text>
+<line style='stroke:black; stroke-width:1;' x1='6593' y1='1154' x2='6593' y2='1114' />
+<text style='fill: green; font-size: 20px; ; ;' x='6873.0' y='1093.0' text-decoration='' font-family='sans-serif'>IMG-LINK-SIZE</text>
+<text style='fill: green; font-size: 20px; ; ;' x='7413.0' y='1093.0' text-decoration='' font-family='sans-serif'>CUSTOM-CLASS</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='13480.0' y='1093.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='13535' y1='1154' x2='13535' y2='1114' />
+<text style='fill: blue; font-size: 20px; ; ;' x='13788.5' y='1093.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='13873' y1='1154' x2='13873' y2='1114' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14072.5' y='1093.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='14157' y1='1154' x2='14157' y2='1114' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14377.5' y='1093.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='14433' y1='1154' x2='14433' y2='1114' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14969.5' y='1093.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='15054' y1='1154' x2='15054' y2='1114' />
+<text style='fill: green; font-size: 20px; ; ;' x='15258.0' y='1093.0' text-decoration='' font-family='sans-serif'>BLOCKQUOTE-FENCE-TITLE</text>
+<text style='fill: green; font-size: 20px; ; ;' x='15546.0' y='1093.0' text-decoration='' font-family='sans-serif'>BLOCKQUOTE-FENCE-CITE</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='15867.0' y='1093.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='15952' y1='1154' x2='15952' y2='1114' />
+<text style='fill: green; font-size: 20px; ; ;' x='3376.0' y='1005.0' text-decoration='' font-family='sans-serif'>HR-WORDS</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='4456.5' y='1005.0' text-decoration='' font-family='sans-serif'>xCHAR</text>
+<line style='stroke:black; stroke-width:1;' x1='4489' y1='1066' x2='4489' y2='1026' />
+<text style='fill: blue; font-size: 20px; ; ;' x='4719.0' y='1005.0' text-decoration='' font-family='sans-serif'>RPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='4759' y1='1066' x2='4759' y2='1026' />
+<text style='fill: blue; font-size: 20px; ; ;' x='4930.5' y='1005.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='4994' y1='1066' x2='4994' y2='1026' />
+<text style='fill: blue; font-size: 20px; ; ;' x='5259.0' y='1005.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(SIZE-HEIGHT)</text>
+<line style='stroke:black; stroke-width:1;' x1='5384' y1='1066' x2='5384' y2='1026' />
+<text style='fill: blue; font-size: 20px; ; ;' x='5589.0' y='1005.0' text-decoration='' font-family='sans-serif'>RPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='5629' y1='1066' x2='5629' y2='1026' />
+<text style='fill: blue; font-size: 20px; ; ;' x='6003.0' y='1005.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(SIZE-HEIGHT)</text>
+<line style='stroke:black; stroke-width:1;' x1='6128' y1='1066' x2='6128' y2='1026' />
+<text style='fill: green; font-size: 20px; ; ;' x='6323.0' y='1005.0' text-decoration='' font-family='sans-serif'>IMG-TITLE-LINK</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='6473.5' y='1005.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(SIZE-WIDTH)</text>
+<line style='stroke:black; stroke-width:1;' x1='6593' y1='1066' x2='6593' y2='1026' />
+<text style='fill: blue; font-size: 20px; ; ;' x='6903.0' y='1005.0' text-decoration='' font-family='sans-serif'>RPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='6943' y1='1066' x2='6943' y2='1026' />
+<text style='fill: green; font-size: 20px; ; ;' x='7143.0' y='1005.0' text-decoration='' font-family='sans-serif'>IMG-SIZE</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='7456.0' y='1005.0' text-decoration='' font-family='sans-serif'>COLON</text>
+<line style='stroke:black; stroke-width:1;' x1='7491' y1='1066' x2='7491' y2='1026' />
+<text style='fill: green; font-size: 20px; ; ;' x='7685.0' y='1005.0' text-decoration='' font-family='sans-serif'>CUSTOM-CLASS</text>
+<text style='fill: green; font-size: 20px; ; ;' x='9942.0' y='1005.0' text-decoration='' font-family='sans-serif'>HEADING-6-CENTER</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='13480.0' y='1005.0' text-decoration='' font-family='sans-serif'>BREAKLINE</text>
+<line style='stroke:black; stroke-width:1;' x1='13535' y1='1066' x2='13535' y2='1026' />
+<text style='fill: blue; font-size: 20px; ; ;' x='13788.5' y='1005.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='13873' y1='1066' x2='13873' y2='1026' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14072.5' y='1005.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='14157' y1='1066' x2='14157' y2='1026' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14377.5' y='1005.0' text-decoration='' font-family='sans-serif'>BREAKLINE</text>
+<line style='stroke:black; stroke-width:1;' x1='14433' y1='1066' x2='14433' y2='1026' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14999.0' y='1005.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='15054' y1='1066' x2='15054' y2='1026' />
+<text style='fill: blue; font-size: 20px; ; ;' x='15307.5' y='1005.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='15392' y1='1066' x2='15392' y2='1026' />
+<text style='fill: blue; font-size: 20px; ; ;' x='15591.5' y='1005.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='15676' y1='1066' x2='15676' y2='1026' />
+<text style='fill: blue; font-size: 20px; ; ;' x='15896.5' y='1005.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='15952' y1='1066' x2='15952' y2='1026' />
+<text style='fill: blue; font-size: 20px; ; ;' x='3411.5' y='917.0' text-decoration='' font-family='sans-serif'>EOL</text>
+<line style='stroke:black; stroke-width:1;' x1='3432' y1='978' x2='3432' y2='938' />
+<text style='fill: green; font-size: 20px; ; ;' x='4235.0' y='917.0' text-decoration='' font-family='sans-serif'>IMG-ALT-TITLE</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='4369.5' y='917.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(SIZE-WIDTH)</text>
+<line style='stroke:black; stroke-width:1;' x1='4489' y1='978' x2='4489' y2='938' />
+<text style='fill: blue; font-size: 20px; ; ;' x='4745.5' y='917.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(ONCLICK.LINK)</text>
+<line style='stroke:black; stroke-width:1;' x1='4759' y1='978' x2='4877' y2='938' />
+<line style='stroke:black; stroke-width:1;' x1='4994' y1='978' x2='4877' y2='938' />
+<text style='fill: green; font-size: 20px; ; ;' x='5144.0' y='917.0' text-decoration='' font-family='sans-serif'>IMG-ALT-LINK</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='5351.5' y='917.0' text-decoration='' font-family='sans-serif'>xCHAR</text>
+<line style='stroke:black; stroke-width:1;' x1='5384' y1='978' x2='5384' y2='938' />
+<text style='fill: blue; font-size: 20px; ; ;' x='5504.0' y='917.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(SIZE-HEIGHT)</text>
+<line style='stroke:black; stroke-width:1;' x1='5629' y1='978' x2='5629' y2='938' />
+<text style='fill: blue; font-size: 20px; ; ;' x='6095.5' y='917.0' text-decoration='' font-family='sans-serif'>xCHAR</text>
+<line style='stroke:black; stroke-width:1;' x1='6128' y1='978' x2='6128' y2='938' />
+<text style='fill: blue; font-size: 20px; ; ;' x='6358.0' y='917.0' text-decoration='' font-family='sans-serif'>RPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='6398' y1='978' x2='6398' y2='938' />
+<text style='fill: blue; font-size: 20px; ; ;' x='6529.5' y='917.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='6593' y1='978' x2='6593' y2='938' />
+<text style='fill: blue; font-size: 20px; ; ;' x='6818.0' y='917.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(SIZE-HEIGHT)</text>
+<line style='stroke:black; stroke-width:1;' x1='6943' y1='978' x2='6943' y2='938' />
+<text style='fill: blue; font-size: 20px; ; ;' x='7148.0' y='917.0' text-decoration='' font-family='sans-serif'>RPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='7188' y1='978' x2='7188' y2='938' />
+<text style='fill: blue; font-size: 20px; ; ;' x='7456.0' y='917.0' text-decoration='' font-family='sans-serif'>COLON</text>
+<line style='stroke:black; stroke-width:1;' x1='7491' y1='978' x2='7491' y2='938' />
+<text style='fill: blue; font-size: 20px; ; ;' x='7728.0' y='917.0' text-decoration='' font-family='sans-serif'>COLON</text>
+<line style='stroke:black; stroke-width:1;' x1='7763' y1='978' x2='7763' y2='938' />
+<text style='fill: green; font-size: 20px; ; ;' x='9545.0' y='917.0' text-decoration='' font-family='sans-serif'>HEADING-5-CENTER</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='9984.5' y='917.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='10040' y1='978' x2='10040' y2='938' />
+<text style='fill: green; font-size: 20px; ; ;' x='10157.0' y='917.0' text-decoration='' font-family='sans-serif'>HEADING-6-LEFT</text>
+<text style='fill: green; font-size: 20px; ; ;' x='12206.0' y='917.0' text-decoration='' font-family='sans-serif'>HEADING-6-RIGHT</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='13495.0' y='917.0' text-decoration='' font-family='sans-serif'>RPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='13535' y1='978' x2='13535' y2='938' />
+<text style='fill: blue; font-size: 20px; ; ;' x='13788.5' y='917.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='13873' y1='978' x2='13873' y2='938' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14072.5' y='917.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='14157' y1='978' x2='14157' y2='938' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14392.5' y='917.0' text-decoration='' font-family='sans-serif'>RPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='14433' y1='978' x2='14433' y2='938' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14999.0' y='917.0' text-decoration='' font-family='sans-serif'>BREAKLINE</text>
+<line style='stroke:black; stroke-width:1;' x1='15054' y1='978' x2='15054' y2='938' />
+<text style='fill: blue; font-size: 20px; ; ;' x='15307.5' y='917.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='15392' y1='978' x2='15392' y2='938' />
+<text style='fill: blue; font-size: 20px; ; ;' x='15591.5' y='917.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='15676' y1='978' x2='15676' y2='938' />
+<text style='fill: blue; font-size: 20px; ; ;' x='15896.5' y='917.0' text-decoration='' font-family='sans-serif'>BREAKLINE</text>
+<line style='stroke:black; stroke-width:1;' x1='15952' y1='978' x2='15952' y2='938' />
+<text style='fill: green; font-size: 20px; ; ;' x='175.0' y='829.0' text-decoration='' font-family='sans-serif'>LIST-TASK-DONE-ASTERISK</text>
+<text style='fill: green; font-size: 20px; ; ;' x='458.0' y='829.0' text-decoration='' font-family='sans-serif'>LIST-TASK-PROGRESS-ASTERISK</text>
+<text style='fill: green; font-size: 20px; ; ;' x='794.0' y='829.0' text-decoration='' font-family='sans-serif'>LIST-TASK-DISABLED-ASTERISK</text>
+<text style='fill: green; font-size: 20px; ; ;' x='1117.0' y='829.0' text-decoration='' font-family='sans-serif'>LIST-TASK-NOT-DONE-ASTERISK</text>
+<text style='fill: green; font-size: 20px; ; ;' x='2029.0' y='829.0' text-decoration='' font-family='sans-serif'>LIST-TASK-DONE-HYPHEN</text>
+<text style='fill: green; font-size: 20px; ; ;' x='2296.0' y='829.0' text-decoration='' font-family='sans-serif'>LIST-TASK-PROGRESS-HYPHEN</text>
+<text style='fill: green; font-size: 20px; ; ;' x='2616.0' y='829.0' text-decoration='' font-family='sans-serif'>LIST-TASK-DISABLED-HYPHEN</text>
+<text style='fill: green; font-size: 20px; ; ;' x='2923.0' y='829.0' text-decoration='' font-family='sans-serif'>LIST-TASK-NOT-DONE-HYPHEN</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='3391.0' y='829.0' text-decoration='' font-family='sans-serif'>HYPHEN</text>
+<line style='stroke:black; stroke-width:1;' x1='3432' y1='890' x2='3432' y2='850' />
+<text style='fill: blue; font-size: 20px; ; ;' x='4264.5' y='829.0' text-decoration='' font-family='sans-serif'>RPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='4305' y1='890' x2='4305' y2='850' />
+<text style='fill: blue; font-size: 20px; ; ;' x='4619.25' y='829.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='4489' y1='890' x2='4683' y2='850' />
+<line style='stroke:black; stroke-width:1;' x1='4877' y1='890' x2='4683' y2='850' />
+<text style='fill: blue; font-size: 20px; ; ;' x='5169.0' y='829.0' text-decoration='' font-family='sans-serif'>RPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='5209' y1='890' x2='5209' y2='850' />
+<text style='fill: blue; font-size: 20px; ; ;' x='5264.5' y='829.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(SIZE-WIDTH)</text>
+<line style='stroke:black; stroke-width:1;' x1='5384' y1='890' x2='5384' y2='850' />
+<text style='fill: blue; font-size: 20px; ; ;' x='5596.5' y='829.0' text-decoration='' font-family='sans-serif'>xCHAR</text>
+<line style='stroke:black; stroke-width:1;' x1='5629' y1='890' x2='5629' y2='850' />
+<text style='fill: green; font-size: 20px; ; ;' x='5934.0' y='829.0' text-decoration='' font-family='sans-serif'>IMG-TITLE</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='6008.5' y='829.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(SIZE-WIDTH)</text>
+<line style='stroke:black; stroke-width:1;' x1='6128' y1='890' x2='6128' y2='850' />
+<text style='fill: blue; font-size: 20px; ; ;' x='6364.5' y='829.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(ONCLICK.LINK)</text>
+<line style='stroke:black; stroke-width:1;' x1='6398' y1='890' x2='6496' y2='850' />
+<line style='stroke:black; stroke-width:1;' x1='6593' y1='890' x2='6496' y2='850' />
+<text style='fill: green; font-size: 20px; ; ;' x='6763.0' y='829.0' text-decoration='' font-family='sans-serif'>IMG-LINK</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='6910.5' y='829.0' text-decoration='' font-family='sans-serif'>xCHAR</text>
+<line style='stroke:black; stroke-width:1;' x1='6943' y1='890' x2='6943' y2='850' />
+<text style='fill: blue; font-size: 20px; ; ;' x='7063.0' y='829.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(SIZE-HEIGHT)</text>
+<line style='stroke:black; stroke-width:1;' x1='7188' y1='890' x2='7188' y2='850' />
+<text style='fill: blue; font-size: 20px; ; ;' x='7456.0' y='829.0' text-decoration='' font-family='sans-serif'>COLON</text>
+<line style='stroke:black; stroke-width:1;' x1='7491' y1='890' x2='7491' y2='850' />
+<text style='fill: blue; font-size: 20px; ; ;' x='7728.0' y='829.0' text-decoration='' font-family='sans-serif'>COLON</text>
+<line style='stroke:black; stroke-width:1;' x1='7763' y1='890' x2='7763' y2='850' />
+<text style='fill: green; font-size: 20px; ; ;' x='9148.0' y='829.0' text-decoration='' font-family='sans-serif'>HEADING-4-CENTER</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='9587.5' y='829.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='9643' y1='890' x2='9643' y2='850' />
+<text style='fill: green; font-size: 20px; ; ;' x='9760.0' y='829.0' text-decoration='' font-family='sans-serif'>HEADING-5-LEFT</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='9976.0' y='829.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='10040' y1='890' x2='10040' y2='850' />
+<text style='fill: blue; font-size: 20px; ; ;' x='10183.0' y='829.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='10238' y1='890' x2='10238' y2='850' />
+<text style='fill: green; font-size: 20px; ; ;' x='11862.0' y='829.0' text-decoration='' font-family='sans-serif'>HEADING-5-RIGHT</text>
+<text style='fill: green; font-size: 20px; ; ;' x='12060.0' y='829.0' text-decoration='' font-family='sans-serif'>HEADING-6</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='12239.5' y='829.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='12295' y1='890' x2='12295' y2='850' />
+<text style='fill: blue; font-size: 20px; ; ;' x='13451.0' y='829.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(LINK)</text>
+<line style='stroke:black; stroke-width:1;' x1='13535' y1='890' x2='13535' y2='850' />
+<text style='fill: blue; font-size: 20px; ; ;' x='13818.0' y='829.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='13873' y1='890' x2='13873' y2='850' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14102.0' y='829.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='14157' y1='890' x2='14157' y2='850' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14348.5' y='829.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(LINK)</text>
+<line style='stroke:black; stroke-width:1;' x1='14433' y1='890' x2='14433' y2='850' />
+<text style='fill: green; font-size: 20px; ; ;' x='14578.0' y='829.0' text-decoration='' font-family='sans-serif'>BLOCKQUOTE-FENCE-NONE</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='15014.0' y='829.0' text-decoration='' font-family='sans-serif'>RPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='15054' y1='890' x2='15054' y2='850' />
+<text style='fill: blue; font-size: 20px; ; ;' x='15307.5' y='829.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='15392' y1='890' x2='15392' y2='850' />
+<text style='fill: blue; font-size: 20px; ; ;' x='15591.5' y='829.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='15676' y1='890' x2='15676' y2='850' />
+<text style='fill: blue; font-size: 20px; ; ;' x='15911.5' y='829.0' text-decoration='' font-family='sans-serif'>RPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='15952' y1='890' x2='15952' y2='850' />
+<text style='fill: blue; font-size: 20px; ; ;' x='286.5' y='741.0' text-decoration='' font-family='sans-serif'>EOL</text>
+<line style='stroke:black; stroke-width:1;' x1='307' y1='802' x2='307' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='596.0' y='741.0' text-decoration='' font-family='sans-serif'>EOL</text>
+<line style='stroke:black; stroke-width:1;' x1='616' y1='802' x2='616' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='925.5' y='741.0' text-decoration='' font-family='sans-serif'>EOL</text>
+<line style='stroke:black; stroke-width:1;' x1='946' y1='802' x2='946' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='1252.0' y='741.0' text-decoration='' font-family='sans-serif'>EOL</text>
+<line style='stroke:black; stroke-width:1;' x1='1272' y1='802' x2='1272' y2='762' />
+<text style='fill: green; font-size: 20px; ; ;' x='1707.0' y='741.0' text-decoration='' font-family='sans-serif'>ABBREVIATION</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='2132.5' y='741.0' text-decoration='' font-family='sans-serif'>EOL</text>
+<line style='stroke:black; stroke-width:1;' x1='2153' y1='802' x2='2153' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='2426.0' y='741.0' text-decoration='' font-family='sans-serif'>EOL</text>
+<line style='stroke:black; stroke-width:1;' x1='2446' y1='802' x2='2446' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='2739.5' y='741.0' text-decoration='' font-family='sans-serif'>EOL</text>
+<line style='stroke:black; stroke-width:1;' x1='2760' y1='802' x2='2760' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='3050.0' y='741.0' text-decoration='' font-family='sans-serif'>EOL</text>
+<line style='stroke:black; stroke-width:1;' x1='3070' y1='802' x2='3070' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='3391.0' y='741.0' text-decoration='' font-family='sans-serif'>HYPHEN</text>
+<line style='stroke:black; stroke-width:1;' x1='3432' y1='802' x2='3432' y2='762' />
+<text style='fill: green; font-size: 20px; ; ;' x='4135.0' y='741.0' text-decoration='' font-family='sans-serif'>IMG-ALT</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='4404.625' y='741.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(TITLE)</text>
+<line style='stroke:black; stroke-width:1;' x1='4305' y1='802' x2='4494' y2='762' />
+<line style='stroke:black; stroke-width:1;' x1='4683' y1='802' x2='4494' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='5165.5' y='741.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(ONCLICK.LINK)</text>
+<line style='stroke:black; stroke-width:1;' x1='5209' y1='802' x2='5297' y2='762' />
+<line style='stroke:black; stroke-width:1;' x1='5384' y1='802' x2='5297' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='5509.5' y='741.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(SIZE-WIDTH)</text>
+<line style='stroke:black; stroke-width:1;' x1='5629' y1='802' x2='5629' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='5943.5' y='741.0' text-decoration='' font-family='sans-serif'>RPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='5984' y1='802' x2='5984' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='6248.25' y='741.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='6128' y1='802' x2='6312' y2='762' />
+<line style='stroke:black; stroke-width:1;' x1='6496' y1='802' x2='6312' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='6768.0' y='741.0' text-decoration='' font-family='sans-serif'>RPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='6808' y1='802' x2='6808' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='6823.5' y='741.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(SIZE-WIDTH)</text>
+<line style='stroke:black; stroke-width:1;' x1='6943' y1='802' x2='6943' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='7155.5' y='741.0' text-decoration='' font-family='sans-serif'>xCHAR</text>
+<line style='stroke:black; stroke-width:1;' x1='7188' y1='802' x2='7188' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='7436.0' y='741.0' text-decoration='' font-family='sans-serif'>BREAKLINE</text>
+<line style='stroke:black; stroke-width:1;' x1='7491' y1='802' x2='7491' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='7728.0' y='741.0' text-decoration='' font-family='sans-serif'>COLON</text>
+<line style='stroke:black; stroke-width:1;' x1='7763' y1='802' x2='7763' y2='762' />
+<text style='fill: green; font-size: 20px; ; ;' x='8751.0' y='741.0' text-decoration='' font-family='sans-serif'>HEADING-3-CENTER</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='9190.5' y='741.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='9246' y1='802' x2='9246' y2='762' />
+<text style='fill: green; font-size: 20px; ; ;' x='9363.0' y='741.0' text-decoration='' font-family='sans-serif'>HEADING-4-LEFT</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='9579.0' y='741.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='9643' y1='802' x2='9643' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='9786.0' y='741.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='9841' y1='802' x2='9841' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='10004.5' y='741.0' text-decoration='' font-family='sans-serif'>COLON</text>
+<line style='stroke:black; stroke-width:1;' x1='10040' y1='802' x2='10040' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='10174.5' y='741.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='10238' y1='802' x2='10238' y2='762' />
+<text style='fill: green; font-size: 20px; ; ;' x='11518.0' y='741.0' text-decoration='' font-family='sans-serif'>HEADING-4-RIGHT</text>
+<text style='fill: green; font-size: 20px; ; ;' x='11716.0' y='741.0' text-decoration='' font-family='sans-serif'>HEADING-5</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='11895.5' y='741.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='11951' y1='802' x2='11951' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='12059.0' y='741.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='12114' y1='802' x2='12114' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='12231.0' y='741.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='12295' y1='802' x2='12295' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='13496.5' y='741.0' text-decoration='' font-family='sans-serif'>LPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='13535' y1='802' x2='13535' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='13818.0' y='741.0' text-decoration='' font-family='sans-serif'>BREAKLINE</text>
+<line style='stroke:black; stroke-width:1;' x1='13873' y1='802' x2='13873' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14102.0' y='741.0' text-decoration='' font-family='sans-serif'>BREAKLINE</text>
+<line style='stroke:black; stroke-width:1;' x1='14157' y1='802' x2='14157' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14394.0' y='741.0' text-decoration='' font-family='sans-serif'>LPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='14433' y1='802' x2='14433' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14629.5' y='741.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='14714' y1='802' x2='14714' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14970.0' y='741.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(LINK)</text>
+<line style='stroke:black; stroke-width:1;' x1='15054' y1='802' x2='15054' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='15337.0' y='741.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='15392' y1='802' x2='15392' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='15621.0' y='741.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='15676' y1='802' x2='15676' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='15867.5' y='741.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(LINK)</text>
+<line style='stroke:black; stroke-width:1;' x1='15952' y1='802' x2='15952' y2='762' />
+<text style='fill: blue; font-size: 20px; ; ;' x='251.5' y='653.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='307' y1='714' x2='307' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='561.0' y='653.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='616' y1='714' x2='616' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='890.5' y='653.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='946' y1='714' x2='946' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='1217.0' y='653.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='1272' y1='714' x2='1272' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='1724.5' y='653.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='1780' y1='714' x2='1780' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='2097.5' y='653.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='2153' y1='714' x2='2153' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='2391.0' y='653.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='2446' y1='714' x2='2446' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='2704.5' y='653.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='2760' y1='714' x2='2760' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='3015.0' y='653.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='3070' y1='714' x2='3070' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='3391.0' y='653.0' text-decoration='' font-family='sans-serif'>HYPHEN</text>
+<line style='stroke:black; stroke-width:1;' x1='3432' y1='714' x2='3432' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='4135.0' y='653.0' text-decoration='' font-family='sans-serif'>RPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='4175' y1='714' x2='4175' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='4997.8125' y='653.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='4494' y1='714' x2='5062' y2='674' />
+<line style='stroke:black; stroke-width:1;' x1='5297' y1='714' x2='5062' y2='674' />
+<line style='stroke:black; stroke-width:1;' x1='5629' y1='714' x2='5062' y2='674' />
+<text style='fill: green; font-size: 20px; ; ;' x='5854.5' y='653.0' text-decoration='' font-family='sans-serif'>IMG</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='6058.625' y='653.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(TITLE)</text>
+<line style='stroke:black; stroke-width:1;' x1='5984' y1='714' x2='6148' y2='674' />
+<line style='stroke:black; stroke-width:1;' x1='6312' y1='714' x2='6148' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='6744.5' y='653.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(ONCLICK.LINK)</text>
+<line style='stroke:black; stroke-width:1;' x1='6808' y1='714' x2='6876' y2='674' />
+<line style='stroke:black; stroke-width:1;' x1='6943' y1='714' x2='6876' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='7068.5' y='653.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(SIZE-WIDTH)</text>
+<line style='stroke:black; stroke-width:1;' x1='7188' y1='714' x2='7188' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='7436.0' y='653.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='7491' y1='714' x2='7491' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='7708.0' y='653.0' text-decoration='' font-family='sans-serif'>BREAKLINE</text>
+<line style='stroke:black; stroke-width:1;' x1='7763' y1='714' x2='7763' y2='674' />
+<text style='fill: green; font-size: 20px; ; ;' x='8354.0' y='653.0' text-decoration='' font-family='sans-serif'>HEADING-2-CENTER</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='8793.5' y='653.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='8849' y1='714' x2='8849' y2='674' />
+<text style='fill: green; font-size: 20px; ; ;' x='8966.0' y='653.0' text-decoration='' font-family='sans-serif'>HEADING-3-LEFT</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='9182.0' y='653.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='9246' y1='714' x2='9246' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='9389.0' y='653.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='9444' y1='714' x2='9444' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='9607.5' y='653.0' text-decoration='' font-family='sans-serif'>COLON</text>
+<line style='stroke:black; stroke-width:1;' x1='9643' y1='714' x2='9643' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='9777.5' y='653.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='9841' y1='714' x2='9841' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='10092.75' y='653.0' text-decoration='' font-family='sans-serif'>HASHTAG</text>
+<line style='stroke:black; stroke-width:1;' x1='10040' y1='714' x2='10139' y2='674' />
+<line style='stroke:black; stroke-width:1;' x1='10238' y1='714' x2='10139' y2='674' />
+<text style='fill: green; font-size: 20px; ; ;' x='11174.0' y='653.0' text-decoration='' font-family='sans-serif'>HEADING-3-RIGHT</text>
+<text style='fill: green; font-size: 20px; ; ;' x='11372.0' y='653.0' text-decoration='' font-family='sans-serif'>HEADING-4</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='11551.5' y='653.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='11607' y1='714' x2='11607' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='11715.0' y='653.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='11770' y1='714' x2='11770' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='11887.0' y='653.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='11951' y1='714' x2='11951' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='12050.5' y='653.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='12114' y1='714' x2='12114' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='12259.5' y='653.0' text-decoration='' font-family='sans-serif'>COLON</text>
+<line style='stroke:black; stroke-width:1;' x1='12295' y1='714' x2='12295' y2='674' />
+<text style='fill: green; font-size: 20px; ; ;' x='12403.0' y='653.0' text-decoration='' font-family='sans-serif'>LINK-ANCHOR</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='13651.5' y='653.0' text-decoration='' font-family='sans-serif'>RBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='13535' y1='714' x2='13704' y2='674' />
+<line style='stroke:black; stroke-width:1;' x1='13873' y1='714' x2='13704' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14117.0' y='653.0' text-decoration='' font-family='sans-serif'>RPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='14157' y1='714' x2='14157' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14380.0' y='653.0' text-decoration='' font-family='sans-serif'>RBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='14433' y1='714' x2='14433' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14629.5' y='653.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='14714' y1='714' x2='14714' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='15015.5' y='653.0' text-decoration='' font-family='sans-serif'>LPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='15054' y1='714' x2='15054' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='15337.0' y='653.0' text-decoration='' font-family='sans-serif'>BREAKLINE</text>
+<line style='stroke:black; stroke-width:1;' x1='15392' y1='714' x2='15392' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='15621.0' y='653.0' text-decoration='' font-family='sans-serif'>BREAKLINE</text>
+<line style='stroke:black; stroke-width:1;' x1='15676' y1='714' x2='15676' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='15913.0' y='653.0' text-decoration='' font-family='sans-serif'>LPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='15952' y1='714' x2='15952' y2='674' />
+<text style='fill: blue; font-size: 20px; ; ;' x='243.0' y='565.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='307' y1='626' x2='307' y2='586' />
+<text style='fill: blue; font-size: 20px; ; ;' x='552.5' y='565.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='616' y1='626' x2='616' y2='586' />
+<text style='fill: blue; font-size: 20px; ; ;' x='882.0' y='565.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='946' y1='626' x2='946' y2='586' />
+<text style='fill: blue; font-size: 20px; ; ;' x='1208.5' y='565.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='1272' y1='626' x2='1272' y2='586' />
+<text style='fill: green; font-size: 20px; ; ;' x='1598.5' y='565.0' text-decoration='' font-family='sans-serif'>BOLD</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='1716.0' y='565.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='1780' y1='626' x2='1780' y2='586' />
+<text style='fill: blue; font-size: 20px; ; ;' x='2089.0' y='565.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='2153' y1='626' x2='2153' y2='586' />
+<text style='fill: blue; font-size: 20px; ; ;' x='2382.5' y='565.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='2446' y1='626' x2='2446' y2='586' />
+<text style='fill: blue; font-size: 20px; ; ;' x='2696.0' y='565.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='2760' y1='626' x2='2760' y2='586' />
+<text style='fill: blue; font-size: 20px; ; ;' x='3006.5' y='565.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='3070' y1='626' x2='3070' y2='586' />
+<text style='fill: blue; font-size: 20px; ; ;' x='3368.0' y='565.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='3432' y1='626' x2='3432' y2='586' />
+<text style='fill: green; font-size: 20px; ; ;' x='3655.0' y='565.0' text-decoration='' font-family='sans-serif'>STRIKETHROUGH</text>
+<text style='fill: green; font-size: 20px; ; ;' x='4005.0' y='565.0' text-decoration='' font-family='sans-serif'>SPOILER</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='4534.15625' y='565.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(LINK)</text>
+<line style='stroke:black; stroke-width:1;' x1='4175' y1='626' x2='4619' y2='586' />
+<line style='stroke:black; stroke-width:1;' x1='5062' y1='626' x2='4619' y2='586' />
+<text style='fill: blue; font-size: 20px; ; ;' x='5834.0' y='565.0' text-decoration='' font-family='sans-serif'>RPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='5874' y1='626' x2='5874' y2='586' />
+<text style='fill: blue; font-size: 20px; ; ;' x='6604.3125' y='565.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='6148' y1='626' x2='6668' y2='586' />
+<line style='stroke:black; stroke-width:1;' x1='6876' y1='626' x2='6668' y2='586' />
+<line style='stroke:black; stroke-width:1;' x1='7188' y1='626' x2='6668' y2='586' />
+<text style='fill: blue; font-size: 20px; ; ;' x='7436.0' y='565.0' text-decoration='' font-family='sans-serif'>BREAKLINE</text>
+<line style='stroke:black; stroke-width:1;' x1='7491' y1='626' x2='7491' y2='586' />
+<text style='fill: blue; font-size: 20px; ; ;' x='7708.0' y='565.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='7763' y1='626' x2='7763' y2='586' />
+<text style='fill: green; font-size: 20px; ; ;' x='7957.0' y='565.0' text-decoration='' font-family='sans-serif'>HEADING-1-CENTER</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='8396.5' y='565.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='8452' y1='626' x2='8452' y2='586' />
+<text style='fill: green; font-size: 20px; ; ;' x='8569.0' y='565.0' text-decoration='' font-family='sans-serif'>HEADING-2-LEFT</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='8785.0' y='565.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='8849' y1='626' x2='8849' y2='586' />
+<text style='fill: blue; font-size: 20px; ; ;' x='8992.0' y='565.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='9047' y1='626' x2='9047' y2='586' />
+<text style='fill: blue; font-size: 20px; ; ;' x='9210.5' y='565.0' text-decoration='' font-family='sans-serif'>COLON</text>
+<line style='stroke:black; stroke-width:1;' x1='9246' y1='626' x2='9246' y2='586' />
+<text style='fill: blue; font-size: 20px; ; ;' x='9380.5' y='565.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='9444' y1='626' x2='9444' y2='586' />
+<text style='fill: blue; font-size: 20px; ; ;' x='9844.625' y='565.0' text-decoration='' font-family='sans-serif'>HASHTAG</text>
+<line style='stroke:black; stroke-width:1;' x1='9643' y1='626' x2='9891' y2='586' />
+<line style='stroke:black; stroke-width:1;' x1='9841' y1='626' x2='9891' y2='586' />
+<line style='stroke:black; stroke-width:1;' x1='10139' y1='626' x2='9891' y2='586' />
+<text style='fill: green; font-size: 20px; ; ;' x='10830.0' y='565.0' text-decoration='' font-family='sans-serif'>HEADING-2-RIGHT</text>
+<text style='fill: green; font-size: 20px; ; ;' x='11028.0' y='565.0' text-decoration='' font-family='sans-serif'>HEADING-3</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='11207.5' y='565.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='11263' y1='626' x2='11263' y2='586' />
+<text style='fill: blue; font-size: 20px; ; ;' x='11371.0' y='565.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='11426' y1='626' x2='11426' y2='586' />
+<text style='fill: blue; font-size: 20px; ; ;' x='11543.0' y='565.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='11607' y1='626' x2='11607' y2='586' />
+<text style='fill: blue; font-size: 20px; ; ;' x='11706.5' y='565.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='11770' y1='626' x2='11770' y2='586' />
+<text style='fill: blue; font-size: 20px; ; ;' x='11915.5' y='565.0' text-decoration='' font-family='sans-serif'>COLON</text>
+<line style='stroke:black; stroke-width:1;' x1='11951' y1='626' x2='11951' y2='586' />
+<text style='fill: blue; font-size: 20px; ; ;' x='12158.25' y='565.0' text-decoration='' font-family='sans-serif'>HASHTAG</text>
+<line style='stroke:black; stroke-width:1;' x1='12114' y1='626' x2='12205' y2='586' />
+<line style='stroke:black; stroke-width:1;' x1='12295' y1='626' x2='12205' y2='586' />
+<text style='fill: blue; font-size: 20px; ; ;' x='12430.5' y='565.0' text-decoration='' font-family='sans-serif'>RPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='12471' y1='626' x2='12471' y2='586' />
+<text style='fill: blue; font-size: 20px; ; ;' x='13615.0' y='565.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(TITLE)</text>
+<line style='stroke:black; stroke-width:1;' x1='13704' y1='626' x2='13704' y2='586' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14073.0' y='565.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(LINK)</text>
+<line style='stroke:black; stroke-width:1;' x1='14157' y1='626' x2='14157' y2='586' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14343.5' y='565.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(TITLE)</text>
+<line style='stroke:black; stroke-width:1;' x1='14433' y1='626' x2='14433' y2='586' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14629.5' y='565.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='14714' y1='626' x2='14714' y2='586' />
+<text style='fill: blue; font-size: 20px; ; ;' x='15170.5' y='565.0' text-decoration='' font-family='sans-serif'>RBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='15054' y1='626' x2='15223' y2='586' />
+<line style='stroke:black; stroke-width:1;' x1='15392' y1='626' x2='15223' y2='586' />
+<text style='fill: blue; font-size: 20px; ; ;' x='15636.0' y='565.0' text-decoration='' font-family='sans-serif'>RPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='15676' y1='626' x2='15676' y2='586' />
+<text style='fill: blue; font-size: 20px; ; ;' x='15899.0' y='565.0' text-decoration='' font-family='sans-serif'>RBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='15952' y1='626' x2='15952' y2='586' />
+<text style='fill: green; font-size: 20px; ; ;' x='10.0' y='477.0' text-decoration='' font-family='sans-serif'>LIST-ASTERISK</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='254.0' y='477.0' text-decoration='' font-family='sans-serif'>RBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='307' y1='538' x2='307' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='563.5' y='477.0' text-decoration='' font-family='sans-serif'>RBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='616' y1='538' x2='616' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='893.0' y='477.0' text-decoration='' font-family='sans-serif'>RBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='946' y1='538' x2='946' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='1219.5' y='477.0' text-decoration='' font-family='sans-serif'>RBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='1272' y1='538' x2='1272' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='1577.0' y='477.0' text-decoration='' font-family='sans-serif'>ASTERISK</text>
+<line style='stroke:black; stroke-width:1;' x1='1626' y1='538' x2='1626' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='1744.5' y='477.0' text-decoration='' font-family='sans-serif'>COLON</text>
+<line style='stroke:black; stroke-width:1;' x1='1780' y1='538' x2='1780' y2='498' />
+<text style='fill: green; font-size: 20px; ; ;' x='1880.0' y='477.0' text-decoration='' font-family='sans-serif'>LIST-HYPHEN</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='2100.0' y='477.0' text-decoration='' font-family='sans-serif'>RBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='2153' y1='538' x2='2153' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='2393.5' y='477.0' text-decoration='' font-family='sans-serif'>RBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='2446' y1='538' x2='2446' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='2707.0' y='477.0' text-decoration='' font-family='sans-serif'>RBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='2760' y1='538' x2='2760' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='3017.5' y='477.0' text-decoration='' font-family='sans-serif'>RBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='3070' y1='538' x2='3070' y2='498' />
+<text style='fill: green; font-size: 20px; ; ;' x='3237.0' y='477.0' text-decoration='' font-family='sans-serif'>HR-DEFAULT</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='3376.5' y='477.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='3432' y1='538' x2='3432' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='3712.5' y='477.0' text-decoration='' font-family='sans-serif'>TILDE</text>
+<line style='stroke:black; stroke-width:1;' x1='3741' y1='538' x2='3741' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='4020.0' y='477.0' text-decoration='' font-family='sans-serif'>BANG</text>
+<line style='stroke:black; stroke-width:1;' x1='4048' y1='538' x2='4048' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='4579.65625' y='477.0' text-decoration='' font-family='sans-serif'>LPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='4619' y1='538' x2='4619' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='6186.90625' y='477.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(LINK)</text>
+<line style='stroke:black; stroke-width:1;' x1='5874' y1='538' x2='6271' y2='498' />
+<line style='stroke:black; stroke-width:1;' x1='6668' y1='538' x2='6271' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='7365.0' y='477.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(CLASS-NAME)</text>
+<line style='stroke:black; stroke-width:1;' x1='7491' y1='538' x2='7491' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='7708.0' y='477.0' text-decoration='' font-family='sans-serif'>BREAKLINE</text>
+<line style='stroke:black; stroke-width:1;' x1='7763' y1='538' x2='7763' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='7999.5' y='477.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='8055' y1='538' x2='8055' y2='498' />
+<text style='fill: green; font-size: 20px; ; ;' x='8172.0' y='477.0' text-decoration='' font-family='sans-serif'>HEADING-1-LEFT</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='8388.0' y='477.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='8452' y1='538' x2='8452' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='8595.0' y='477.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='8650' y1='538' x2='8650' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='8813.5' y='477.0' text-decoration='' font-family='sans-serif'>COLON</text>
+<line style='stroke:black; stroke-width:1;' x1='8849' y1='538' x2='8849' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='8983.5' y='477.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='9047' y1='538' x2='9047' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='9522.0625' y='477.0' text-decoration='' font-family='sans-serif'>HASHTAG</text>
+<line style='stroke:black; stroke-width:1;' x1='9246' y1='538' x2='9569' y2='498' />
+<line style='stroke:black; stroke-width:1;' x1='9444' y1='538' x2='9569' y2='498' />
+<line style='stroke:black; stroke-width:1;' x1='9891' y1='538' x2='9569' y2='498' />
+<text style='fill: green; font-size: 20px; ; ;' x='10486.0' y='477.0' text-decoration='' font-family='sans-serif'>HEADING-1-RIGHT</text>
+<text style='fill: green; font-size: 20px; ; ;' x='10684.0' y='477.0' text-decoration='' font-family='sans-serif'>HEADING-2</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='10863.5' y='477.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='10919' y1='538' x2='10919' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='11027.0' y='477.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='11082' y1='538' x2='11082' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='11199.0' y='477.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='11263' y1='538' x2='11263' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='11362.5' y='477.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='11426' y1='538' x2='11426' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='11571.5' y='477.0' text-decoration='' font-family='sans-serif'>COLON</text>
+<line style='stroke:black; stroke-width:1;' x1='11607' y1='538' x2='11607' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='11941.125' y='477.0' text-decoration='' font-family='sans-serif'>HASHTAG</text>
+<line style='stroke:black; stroke-width:1;' x1='11770' y1='538' x2='11988' y2='498' />
+<line style='stroke:black; stroke-width:1;' x1='11951' y1='538' x2='11988' y2='498' />
+<line style='stroke:black; stroke-width:1;' x1='12205' y1='538' x2='11988' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='12386.5' y='477.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(LINK)</text>
+<line style='stroke:black; stroke-width:1;' x1='12471' y1='538' x2='12471' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='13653.0' y='477.0' text-decoration='' font-family='sans-serif'>LBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='13704' y1='538' x2='13704' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14118.5' y='477.0' text-decoration='' font-family='sans-serif'>LPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='14157' y1='538' x2='14157' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14381.5' y='477.0' text-decoration='' font-family='sans-serif'>LBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='14433' y1='538' x2='14433' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14659.0' y='477.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='14714' y1='538' x2='14714' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='15134.0' y='477.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(TITLE)</text>
+<line style='stroke:black; stroke-width:1;' x1='15223' y1='538' x2='15223' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='15592.0' y='477.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(LINK)</text>
+<line style='stroke:black; stroke-width:1;' x1='15676' y1='538' x2='15676' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='15862.5' y='477.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(TITLE)</text>
+<line style='stroke:black; stroke-width:1;' x1='15952' y1='538' x2='15952' y2='498' />
+<text style='fill: blue; font-size: 20px; ; ;' x='62.5' y='389.0' text-decoration='' font-family='sans-serif'>EOL</text>
+<line style='stroke:black; stroke-width:1;' x1='83' y1='450' x2='83' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='274.0' y='389.0' text-decoration='' font-family='sans-serif'>xCHAR</text>
+<line style='stroke:black; stroke-width:1;' x1='307' y1='450' x2='307' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='584.0' y='389.0' text-decoration='' font-family='sans-serif'>SLASH</text>
+<line style='stroke:black; stroke-width:1;' x1='616' y1='450' x2='616' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='905.0' y='389.0' text-decoration='' font-family='sans-serif'>HYPHEN</text>
+<line style='stroke:black; stroke-width:1;' x1='946' y1='450' x2='946' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='1240.0' y='389.0' text-decoration='' font-family='sans-serif'>SPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='1272' y1='450' x2='1272' y2='410' />
+<text style='fill: green; font-size: 20px; ; ;' x='1465.5' y='389.0' text-decoration='' font-family='sans-serif'>ITALIC</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='1577.0' y='389.0' text-decoration='' font-family='sans-serif'>ASTERISK</text>
+<line style='stroke:black; stroke-width:1;' x1='1626' y1='450' x2='1626' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='1727.0' y='389.0' text-decoration='' font-family='sans-serif'>RBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='1780' y1='450' x2='1780' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='1924.5' y='389.0' text-decoration='' font-family='sans-serif'>EOL</text>
+<line style='stroke:black; stroke-width:1;' x1='1945' y1='450' x2='1945' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='2147.5' y='389.0' text-decoration='' font-family='sans-serif'>x</text>
+<line style='stroke:black; stroke-width:1;' x1='2153' y1='450' x2='2153' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='2414.0' y='389.0' text-decoration='' font-family='sans-serif'>SLASH</text>
+<line style='stroke:black; stroke-width:1;' x1='2446' y1='450' x2='2446' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='2719.0' y='389.0' text-decoration='' font-family='sans-serif'>HYPHEN</text>
+<line style='stroke:black; stroke-width:1;' x1='2760' y1='450' x2='2760' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='3038.0' y='389.0' text-decoration='' font-family='sans-serif'>SPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='3070' y1='450' x2='3070' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='3276.5' y='389.0' text-decoration='' font-family='sans-serif'>EOL</text>
+<line style='stroke:black; stroke-width:1;' x1='3297' y1='450' x2='3297' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='3368.0' y='389.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='3432' y1='450' x2='3432' y2='410' />
+<text style='fill: green; font-size: 20px; ; ;' x='3523.0' y='389.0' text-decoration='' font-family='sans-serif'>SUBSCRIPT</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='3712.5' y='389.0' text-decoration='' font-family='sans-serif'>TILDE</text>
+<line style='stroke:black; stroke-width:1;' x1='3741' y1='450' x2='3741' y2='410' />
+<text style='fill: green; font-size: 20px; ; ;' x='3859.0' y='389.0' text-decoration='' font-family='sans-serif'>UNDERLINE</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='4020.0' y='389.0' text-decoration='' font-family='sans-serif'>BANG</text>
+<line style='stroke:black; stroke-width:1;' x1='4048' y1='450' x2='4048' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='4565.65625' y='389.0' text-decoration='' font-family='sans-serif'>RBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='4619' y1='450' x2='4619' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='6232.40625' y='389.0' text-decoration='' font-family='sans-serif'>LPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='6271' y1='450' x2='6271' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='7427.5' y='389.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='7491' y1='450' x2='7491' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='7637.0' y='389.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(CLASS-NAME)</text>
+<line style='stroke:black; stroke-width:1;' x1='7763' y1='450' x2='7763' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='7991.0' y='389.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='8055' y1='450' x2='8055' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='8198.0' y='389.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='8253' y1='450' x2='8253' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='8416.5' y='389.0' text-decoration='' font-family='sans-serif'>COLON</text>
+<line style='stroke:black; stroke-width:1;' x1='8452' y1='450' x2='8452' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='8586.5' y='389.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='8650' y1='450' x2='8650' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='9162.28125' y='389.0' text-decoration='' font-family='sans-serif'>HASHTAG</text>
+<line style='stroke:black; stroke-width:1;' x1='8849' y1='450' x2='9209' y2='410' />
+<line style='stroke:black; stroke-width:1;' x1='9047' y1='450' x2='9209' y2='410' />
+<line style='stroke:black; stroke-width:1;' x1='9569' y1='450' x2='9209' y2='410' />
+<text style='fill: green; font-size: 20px; ; ;' x='10340.0' y='389.0' text-decoration='' font-family='sans-serif'>HEADING-1</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='10519.5' y='389.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='10575' y1='450' x2='10575' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='10683.0' y='389.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='10738' y1='450' x2='10738' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='10855.0' y='389.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='10919' y1='450' x2='10919' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='11018.5' y='389.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='11082' y1='450' x2='11082' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='11227.5' y='389.0' text-decoration='' font-family='sans-serif'>COLON</text>
+<line style='stroke:black; stroke-width:1;' x1='11263' y1='450' x2='11263' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='11660.5625' y='389.0' text-decoration='' font-family='sans-serif'>HASHTAG</text>
+<line style='stroke:black; stroke-width:1;' x1='11426' y1='450' x2='11707' y2='410' />
+<line style='stroke:black; stroke-width:1;' x1='11607' y1='450' x2='11707' y2='410' />
+<line style='stroke:black; stroke-width:1;' x1='11988' y1='450' x2='11707' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='12432.0' y='389.0' text-decoration='' font-family='sans-serif'>LPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='12471' y1='450' x2='12471' y2='410' />
+<text style='fill: green; font-size: 20px; ; ;' x='12908.0' y='389.0' text-decoration='' font-family='sans-serif'>LINK-AUTOMATIC-EMAIL</text>
+<text style='fill: green; font-size: 20px; ; ;' x='13159.0' y='389.0' text-decoration='' font-family='sans-serif'>BLOCKQUOTE</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='14004.75' y='389.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='13704' y1='450' x2='14069' y2='410' />
+<line style='stroke:black; stroke-width:1;' x1='14157' y1='450' x2='14069' y2='410' />
+<line style='stroke:black; stroke-width:1;' x1='14433' y1='450' x2='14069' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14659.0' y='389.0' text-decoration='' font-family='sans-serif'>BREAKLINE</text>
+<line style='stroke:black; stroke-width:1;' x1='14714' y1='450' x2='14714' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='15172.0' y='389.0' text-decoration='' font-family='sans-serif'>LBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='15223' y1='450' x2='15223' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='15637.5' y='389.0' text-decoration='' font-family='sans-serif'>LPAREN</text>
+<line style='stroke:black; stroke-width:1;' x1='15676' y1='450' x2='15676' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='15900.5' y='389.0' text-decoration='' font-family='sans-serif'>LBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='15952' y1='450' x2='15952' y2='410' />
+<text style='fill: blue; font-size: 20px; ; ;' x='27.5' y='301.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='83' y1='362' x2='83' y2='322' />
+<text style='fill: blue; font-size: 20px; ; ;' x='738.25' y='301.0' text-decoration='' font-family='sans-serif'>LBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='307' y1='362' x2='790' y2='322' />
+<line style='stroke:black; stroke-width:1;' x1='616' y1='362' x2='790' y2='322' />
+<line style='stroke:black; stroke-width:1;' x1='946' y1='362' x2='790' y2='322' />
+<line style='stroke:black; stroke-width:1;' x1='1272' y1='362' x2='790' y2='322' />
+<text style='fill: blue; font-size: 20px; ; ;' x='1447.0' y='301.0' text-decoration='' font-family='sans-serif'>ASTERISK</text>
+<line style='stroke:black; stroke-width:1;' x1='1496' y1='362' x2='1496' y2='322' />
+<text style='fill: blue; font-size: 20px; ; ;' x='1570.5' y='301.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='1626' y1='362' x2='1626' y2='322' />
+<text style='fill: blue; font-size: 20px; ; ;' x='1751.5' y='301.0' text-decoration='' font-family='sans-serif'>TERM</text>
+<line style='stroke:black; stroke-width:1;' x1='1780' y1='362' x2='1780' y2='322' />
+<text style='fill: blue; font-size: 20px; ; ;' x='1889.5' y='301.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='1945' y1='362' x2='1945' y2='322' />
+<text style='fill: blue; font-size: 20px; ; ;' x='2560.25' y='301.0' text-decoration='' font-family='sans-serif'>LBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='2153' y1='362' x2='2612' y2='322' />
+<line style='stroke:black; stroke-width:1;' x1='2446' y1='362' x2='2612' y2='322' />
+<line style='stroke:black; stroke-width:1;' x1='2760' y1='362' x2='2612' y2='322' />
+<line style='stroke:black; stroke-width:1;' x1='3070' y1='362' x2='2612' y2='322' />
+<text style='fill: blue; font-size: 20px; ; ;' x='3323.5' y='301.0' text-decoration='' font-family='sans-serif'>HYPHEN</text>
+<line style='stroke:black; stroke-width:1;' x1='3297' y1='362' x2='3364' y2='322' />
+<line style='stroke:black; stroke-width:1;' x1='3432' y1='362' x2='3364' y2='322' />
+<text style='fill: blue; font-size: 20px; ; ;' x='3551.0' y='301.0' text-decoration='' font-family='sans-serif'>TILDE</text>
+<line style='stroke:black; stroke-width:1;' x1='3579' y1='362' x2='3579' y2='322' />
+<text style='fill: blue; font-size: 20px; ; ;' x='3685.5' y='301.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='3741' y1='362' x2='3741' y2='322' />
+<text style='fill: blue; font-size: 20px; ; ;' x='3846.0' y='301.0' text-decoration='' font-family='sans-serif'>UNDERSCORE</text>
+<line style='stroke:black; stroke-width:1;' x1='3916' y1='362' x2='3916' y2='322' />
+<text style='fill: blue; font-size: 20px; ; ;' x='3993.0' y='301.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='4048' y1='362' x2='4048' y2='322' />
+<text style='fill: blue; font-size: 20px; ; ;' x='4539.15625' y='301.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(ALT)</text>
+<line style='stroke:black; stroke-width:1;' x1='4619' y1='362' x2='4619' y2='322' />
+<text style='fill: blue; font-size: 20px; ; ;' x='6218.40625' y='301.0' text-decoration='' font-family='sans-serif'>RBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='6271' y1='362' x2='6271' y2='322' />
+<text style='fill: blue; font-size: 20px; ; ;' x='7592.0' y='301.0' text-decoration='' font-family='sans-serif'>COLON</text>
+<line style='stroke:black; stroke-width:1;' x1='7491' y1='362' x2='7627' y2='322' />
+<line style='stroke:black; stroke-width:1;' x1='7763' y1='362' x2='7627' y2='322' />
+<text style='fill: blue; font-size: 20px; ; ;' x='8019.5' y='301.0' text-decoration='' font-family='sans-serif'>COLON</text>
+<line style='stroke:black; stroke-width:1;' x1='8055' y1='362' x2='8055' y2='322' />
+<text style='fill: blue; font-size: 20px; ; ;' x='8189.5' y='301.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='8253' y1='362' x2='8253' y2='322' />
+<text style='fill: blue; font-size: 20px; ; ;' x='8783.890625' y='301.0' text-decoration='' font-family='sans-serif'>HASHTAG</text>
+<line style='stroke:black; stroke-width:1;' x1='8452' y1='362' x2='8830' y2='322' />
+<line style='stroke:black; stroke-width:1;' x1='8650' y1='362' x2='8830' y2='322' />
+<line style='stroke:black; stroke-width:1;' x1='9209' y1='362' x2='8830' y2='322' />
+<text style='fill: blue; font-size: 20px; ; ;' x='10339.0' y='301.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='10394' y1='362' x2='10394' y2='322' />
+<text style='fill: blue; font-size: 20px; ; ;' x='10511.0' y='301.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='10575' y1='362' x2='10575' y2='322' />
+<text style='fill: blue; font-size: 20px; ; ;' x='10674.5' y='301.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='10738' y1='362' x2='10738' y2='322' />
+<text style='fill: blue; font-size: 20px; ; ;' x='10883.5' y='301.0' text-decoration='' font-family='sans-serif'>COLON</text>
+<line style='stroke:black; stroke-width:1;' x1='10919' y1='362' x2='10919' y2='322' />
+<text style='fill: blue; font-size: 20px; ; ;' x='11348.28125' y='301.0' text-decoration='' font-family='sans-serif'>HASHTAG</text>
+<line style='stroke:black; stroke-width:1;' x1='11082' y1='362' x2='11395' y2='322' />
+<line style='stroke:black; stroke-width:1;' x1='11263' y1='362' x2='11395' y2='322' />
+<line style='stroke:black; stroke-width:1;' x1='11707' y1='362' x2='11395' y2='322' />
+<text style='fill: blue; font-size: 20px; ; ;' x='12418.0' y='301.0' text-decoration='' font-family='sans-serif'>RBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='12471' y1='362' x2='12471' y2='322' />
+<text style='fill: blue; font-size: 20px; ; ;' x='12968.5' y='301.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='13024' y1='362' x2='13024' y2='322' />
+<text style='fill: blue; font-size: 20px; ; ;' x='13171.5' y='301.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='13227' y1='362' x2='13227' y2='322' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14925.375' y='301.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='14069' y1='362' x2='15010' y2='322' />
+<line style='stroke:black; stroke-width:1;' x1='14714' y1='362' x2='15010' y2='322' />
+<line style='stroke:black; stroke-width:1;' x1='15223' y1='362' x2='15010' y2='322' />
+<line style='stroke:black; stroke-width:1;' x1='15676' y1='362' x2='15010' y2='322' />
+<line style='stroke:black; stroke-width:1;' x1='15952' y1='362' x2='15010' y2='322' />
+<text style='fill: blue; font-size: 20px; ; ;' x='372.375' y='213.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='83' y1='274' x2='436' y2='234' />
+<line style='stroke:black; stroke-width:1;' x1='790' y1='274' x2='436' y2='234' />
+<text style='fill: blue; font-size: 20px; ; ;' x='1440.5' y='213.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='1496' y1='274' x2='1496' y2='234' />
+<text style='fill: blue; font-size: 20px; ; ;' x='1577.0' y='213.0' text-decoration='' font-family='sans-serif'>ASTERISK</text>
+<line style='stroke:black; stroke-width:1;' x1='1626' y1='274' x2='1626' y2='234' />
+<text style='fill: blue; font-size: 20px; ; ;' x='1703.0' y='213.0' text-decoration='' font-family='sans-serif'>OPEN-BRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='1780' y1='274' x2='1780' y2='234' />
+<text style='fill: blue; font-size: 20px; ; ;' x='2214.375' y='213.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='1945' y1='274' x2='2278' y2='234' />
+<line style='stroke:black; stroke-width:1;' x1='2612' y1='274' x2='2278' y2='234' />
+<text style='fill: blue; font-size: 20px; ; ;' x='3323.5' y='213.0' text-decoration='' font-family='sans-serif'>HYPHEN</text>
+<line style='stroke:black; stroke-width:1;' x1='3364' y1='274' x2='3364' y2='234' />
+<text style='fill: blue; font-size: 20px; ; ;' x='3524.0' y='213.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='3579' y1='274' x2='3579' y2='234' />
+<text style='fill: blue; font-size: 20px; ; ;' x='3712.5' y='213.0' text-decoration='' font-family='sans-serif'>TILDE</text>
+<line style='stroke:black; stroke-width:1;' x1='3741' y1='274' x2='3741' y2='234' />
+<text style='fill: blue; font-size: 20px; ; ;' x='3860.5' y='213.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='3916' y1='274' x2='3916' y2='234' />
+<text style='fill: blue; font-size: 20px; ; ;' x='4020.0' y='213.0' text-decoration='' font-family='sans-serif'>BANG</text>
+<line style='stroke:black; stroke-width:1;' x1='4048' y1='274' x2='4048' y2='234' />
+<text style='fill: blue; font-size: 20px; ; ;' x='5393.53125' y='213.0' text-decoration='' font-family='sans-serif'>LBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='4619' y1='274' x2='5445' y2='234' />
+<line style='stroke:black; stroke-width:1;' x1='6271' y1='274' x2='5445' y2='234' />
+<text style='fill: blue; font-size: 20px; ; ;' x='7592.0' y='213.0' text-decoration='' font-family='sans-serif'>COLON</text>
+<line style='stroke:black; stroke-width:1;' x1='7627' y1='274' x2='7627' y2='234' />
+<text style='fill: blue; font-size: 20px; ; ;' x='8396.1953125' y='213.0' text-decoration='' font-family='sans-serif'>HASHTAG</text>
+<line style='stroke:black; stroke-width:1;' x1='8055' y1='274' x2='8443' y2='234' />
+<line style='stroke:black; stroke-width:1;' x1='8253' y1='274' x2='8443' y2='234' />
+<line style='stroke:black; stroke-width:1;' x1='8830' y1='274' x2='8443' y2='234' />
+<text style='fill: blue; font-size: 20px; ; ;' x='10330.5' y='213.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='10394' y1='274' x2='10394' y2='234' />
+<text style='fill: blue; font-size: 20px; ; ;' x='10539.5' y='213.0' text-decoration='' font-family='sans-serif'>COLON</text>
+<line style='stroke:black; stroke-width:1;' x1='10575' y1='274' x2='10575' y2='234' />
+<text style='fill: blue; font-size: 20px; ; ;' x='11020.140625' y='213.0' text-decoration='' font-family='sans-serif'>HASHTAG</text>
+<line style='stroke:black; stroke-width:1;' x1='10738' y1='274' x2='11067' y2='234' />
+<line style='stroke:black; stroke-width:1;' x1='10919' y1='274' x2='11067' y2='234' />
+<line style='stroke:black; stroke-width:1;' x1='11395' y1='274' x2='11067' y2='234' />
+<text style='fill: blue; font-size: 20px; ; ;' x='12343.0' y='213.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(VISIBLE-TEXT)</text>
+<line style='stroke:black; stroke-width:1;' x1='12471' y1='274' x2='12471' y2='234' />
+<text style='fill: green; font-size: 20px; ; ;' x='12678.0' y='213.0' text-decoration='' font-family='sans-serif'>LINK-AUTOMATIC-URL</text>
+<text style='fill: blue; font-size: 20px; ; ;' x='12986.0' y='213.0' text-decoration='' font-family='sans-serif'>@CHAR</text>
+<line style='stroke:black; stroke-width:1;' x1='13024' y1='274' x2='13024' y2='234' />
+<text style='fill: blue; font-size: 20px; ; ;' x='13163.0' y='213.0' text-decoration='' font-family='sans-serif'>WHITESPACE</text>
+<line style='stroke:black; stroke-width:1;' x1='13227' y1='274' x2='13227' y2='234' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14925.375' y='213.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='15010' y1='274' x2='15010' y2='234' />
+<text style='fill: blue; font-size: 20px; ; ;' x='1059.1875' y='125.0' text-decoration='' font-family='sans-serif'>ASTERISK</text>
+<line style='stroke:black; stroke-width:1;' x1='436' y1='186' x2='1108' y2='146' />
+<line style='stroke:black; stroke-width:1;' x1='1496' y1='186' x2='1108' y2='146' />
+<line style='stroke:black; stroke-width:1;' x1='1626' y1='186' x2='1108' y2='146' />
+<line style='stroke:black; stroke-width:1;' x1='1780' y1='186' x2='1108' y2='146' />
+<text style='fill: blue; font-size: 20px; ; ;' x='2780.4375' y='125.0' text-decoration='' font-family='sans-serif'>HYPHEN</text>
+<line style='stroke:black; stroke-width:1;' x1='2278' y1='186' x2='2821' y2='146' />
+<line style='stroke:black; stroke-width:1;' x1='3364' y1='186' x2='2821' y2='146' />
+<text style='fill: blue; font-size: 20px; ; ;' x='3631.75' y='125.0' text-decoration='' font-family='sans-serif'>TILDE</text>
+<line style='stroke:black; stroke-width:1;' x1='3579' y1='186' x2='3660' y2='146' />
+<line style='stroke:black; stroke-width:1;' x1='3741' y1='186' x2='3660' y2='146' />
+<text style='fill: blue; font-size: 20px; ; ;' x='3846.0' y='125.0' text-decoration='' font-family='sans-serif'>UNDERSCORE</text>
+<line style='stroke:black; stroke-width:1;' x1='3916' y1='186' x2='3916' y2='146' />
+<text style='fill: blue; font-size: 20px; ; ;' x='4718.265625' y='125.0' text-decoration='' font-family='sans-serif'>BANG</text>
+<line style='stroke:black; stroke-width:1;' x1='4048' y1='186' x2='4747' y2='146' />
+<line style='stroke:black; stroke-width:1;' x1='5445' y1='186' x2='4747' y2='146' />
+<text style='fill: blue; font-size: 20px; ; ;' x='7999.59765625' y='125.0' text-decoration='' font-family='sans-serif'>COLON</text>
+<line style='stroke:black; stroke-width:1;' x1='7627' y1='186' x2='8035' y2='146' />
+<line style='stroke:black; stroke-width:1;' x1='8443' y1='186' x2='8035' y2='146' />
+<text style='fill: blue; font-size: 20px; ; ;' x='10684.0703125' y='125.0' text-decoration='' font-family='sans-serif'>HASHTAG</text>
+<line style='stroke:black; stroke-width:1;' x1='10394' y1='186' x2='10731' y2='146' />
+<line style='stroke:black; stroke-width:1;' x1='10575' y1='186' x2='10731' y2='146' />
+<line style='stroke:black; stroke-width:1;' x1='11067' y1='186' x2='10731' y2='146' />
+<text style='fill: blue; font-size: 20px; ; ;' x='12419.5' y='125.0' text-decoration='' font-family='sans-serif'>LBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='12471' y1='186' x2='12471' y2='146' />
+<text style='fill: blue; font-size: 20px; ; ;' x='12699.0' y='125.0' text-decoration='' font-family='sans-serif'>IDENTIFIER(LINK)</text>
+<line style='stroke:black; stroke-width:1;' x1='12783' y1='186' x2='12783' y2='146' />
+<text style='fill: blue; font-size: 20px; ; ;' x='12968.5' y='125.0' text-decoration='' font-family='sans-serif'>IDENTIFIER</text>
+<line style='stroke:black; stroke-width:1;' x1='13024' y1='186' x2='13024' y2='146' />
+<text style='fill: blue; font-size: 20px; ; ;' x='13140.5' y='125.0' text-decoration='' font-family='sans-serif'>RANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='13227' y1='186' x2='13227' y2='146' />
+<text style='fill: blue; font-size: 20px; ; ;' x='14925.375' y='125.0' text-decoration='' font-family='sans-serif'>LANGLEBRACKET</text>
+<line style='stroke:black; stroke-width:1;' x1='15010' y1='186' x2='15010' y2='146' />
+<text style='fill: blue; font-size: 20px; ; ;' x='7991.78125' y='37.0' text-decoration='' font-family='sans-serif'>BETTERMARK</text>
+<line style='stroke:black; stroke-width:1;' x1='1108' y1='98' x2='8059' y2='58' />
+<line style='stroke:black; stroke-width:1;' x1='2821' y1='98' x2='8059' y2='58' />
+<line style='stroke:black; stroke-width:1;' x1='3660' y1='98' x2='8059' y2='58' />
+<line style='stroke:black; stroke-width:1;' x1='3916' y1='98' x2='8059' y2='58' />
+<line style='stroke:black; stroke-width:1;' x1='4747' y1='98' x2='8059' y2='58' />
+<line style='stroke:black; stroke-width:1;' x1='8035' y1='98' x2='8059' y2='58' />
+<line style='stroke:black; stroke-width:1;' x1='10731' y1='98' x2='8059' y2='58' />
+<line style='stroke:black; stroke-width:1;' x1='12471' y1='98' x2='8059' y2='58' />
+<line style='stroke:black; stroke-width:1;' x1='12783' y1='98' x2='8059' y2='58' />
+<line style='stroke:black; stroke-width:1;' x1='13024' y1='98' x2='8059' y2='58' />
+<line style='stroke:black; stroke-width:1;' x1='13227' y1='98' x2='8059' y2='58' />
+<line style='stroke:black; stroke-width:1;' x1='15010' y1='98' x2='8059' y2='58' />
+</svg>
