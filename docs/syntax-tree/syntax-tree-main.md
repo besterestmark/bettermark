@@ -1,13 +1,13 @@
-## This is the almost completed syntax tree for bmark
+## Image
 
-## Image (FIXME: OUTDATED!)
-
-![image](https://user-images.githubusercontent.com/76597257/126880522-85adaa0b-922d-4c98-9426-fb485a7cbed9.png)
+![image](https://user-images.githubusercontent.com/76597257/126882532-853fc734-82bd-4b82-8443-1719187351ac.png)
 
 ## Credits
 
 - <img src="https://avatars.githubusercontent.com/u/34986581" width="20px" height="20px"/>  [TheGLander](https://github.com/TheGLander) (ʐ̈ MANNNNNNN#2006):
   + Exporting SVG and PNG because my WiFi is bad
+- [yohasebe.com/rsyntaxtree](https://yohasebe.com/rsyntaxtree)
+  + Generating PNG, SVG and PDF
 
 ## Raw syntax
 
