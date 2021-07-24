@@ -1,8 +1,15 @@
 ## This is the very work in progress syntax tree for bettermark
 
+
+
 ## Image
 
-![image](https://user-images.githubusercontent.com/76597257/126864171-c74efcb3-68e5-4746-869b-28a66f86ff23.png)
+![image](https://user-images.githubusercontent.com/76597257/126880522-85adaa0b-922d-4c98-9426-fb485a7cbed9.png)
+
+## Credits
+
+- <img src="https://avatars.githubusercontent.com/u/34986581" width="20px" height="20px"/>  [TheGLander](https://github.com/TheGLander) (ʐ̈ MANNNNNNN#2006):
+  - Exporting SVG and PNG because my WiFi is bad
 
 ## Raw syntax
 
@@ -268,6 +275,38 @@
     ]
   ]
   [COLON
+    [COLON
+      [COLON
+        [WHITESPACE
+          [IDENTIFIER(CLASS-NAME)
+            [BREAKLINE
+              [IDENTIFIER
+                [BREAKLINE
+                  [COLON
+                    [COLON
+                      [COLON CUSTOM-CLASS]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+        [IDENTIFIER(CLASS-NAME)
+          [BREAKLINE
+            [IDENTIFIER
+              [BREAKLINE
+                [COLON
+                  [COLON
+                    [COLON CUSTOM-CLASS]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
     [HASHTAG
       [COLON
         [WHITESPACE
@@ -381,6 +420,177 @@
               [COLON
                 [WHITESPACE
                   [IDENTIFIER HEADING-6-RIGHT]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+  [LBRACKET
+    [IDENTIFIER(VISIBLE-TEXT)
+      [RBRACKET
+        [LPAREN
+          [IDENTIFIER(LINK)
+            [RPAREN LINK-ANCHOR]
+          ]
+        ]
+      ]
+    ]
+  ]
+  [IDENTIFIER(LINK) LINK-AUTOMATIC-URL]
+  [IDENTIFIER
+    [@CHAR
+      [IDENTIFIER LINK-AUTOMATIC-EMAIL] 
+    ]
+  ]
+  [RANGLEBRACKET
+    [WHITESPACE
+      [IDENTIFIER BLOCKQUOTE]
+    ]
+  ]
+  [LANGLEBRACKET
+    [LANGLEBRACKET
+      [LANGLEBRACKET
+        [WHITESPACE
+          [LBRACKET
+            [IDENTIFIER(TITLE)
+              [RBRACKET
+                [LPAREN
+                  [IDENTIFIER(LINK)
+                    [RPAREN
+                      [BREAKLINE
+                        [IDENTIFIER
+                          [LANGLEBRACKET
+                            [LANGLEBRACKET
+                              [LANGLEBRACKET BLOCKQUOTE-FENCE-CITE-AND-TITLE]
+                            ]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+                [BREAKLINE
+                  [IDENTIFIER
+                    [LANGLEBRACKET
+                      [LANGLEBRACKET
+                        [LANGLEBRACKET BLOCKQUOTE-FENCE-TITLE]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+          [LPAREN
+            [IDENTIFIER(LINK)
+              [RPAREN
+                [BREAKLINE
+                  [IDENTIFIER
+                    [LANGLEBRACKET
+                      [LANGLEBRACKET
+                        [LANGLEBRACKET BLOCKQUOTE-FENCE-CITE]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+          [LBRACKET
+            [IDENTIFIER(TITLE)
+              [RBRACKET
+                [LPAREN
+                  [IDENTIFIER(LINK)
+                    [RPAREN
+                      [BREAKLINE
+                        [IDENTIFIER
+                          [LANGLEBRACKET
+                            [LANGLEBRACKET
+                              [LANGLEBRACKET BLOCKQUOTE_CITE_AND_TITLE]
+                            ]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+        [BREAKLINE
+          [IDENTIFIER
+            [LANGLEBRACKET
+              [LANGLEBRACKET
+                [LANGLEBRACKET BLOCKQUOTE-FENCE-NONE]
+              ]
+            ]
+          ]
+        ]
+        [LBRACKET
+          [IDENTIFIER(TITLE)
+            [RBRACKET
+              [LPAREN
+                [IDENTIFIER(LINK)
+                  [RPAREN
+                    [BREAKLINE
+                      [IDENTIFIER
+                        [LANGLEBRACKET
+                          [LANGLEBRACKET
+                            [LANGLEBRACKET BLOCKQUOTE-FENCE-CITE-AND-TITLE]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+              [BREAKLINE
+                [IDENTIFIER
+                  [LANGLEBRACKET
+                    [LANGLEBRACKET
+                      [LANGLEBRACKET BLOCKQUOTE-FENCE-TITLE]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+        [LPAREN
+          [IDENTIFIER(LINK)
+            [RPAREN
+              [BREAKLINE
+                [IDENTIFIER
+                  [LANGLEBRACKET
+                    [LANGLEBRACKET
+                      [LANGLEBRACKET BLOCKQUOTE-FENCE-CITE]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+        [LBRACKET
+          [IDENTIFIER(TITLE)
+            [RBRACKET
+              [LPAREN
+                [IDENTIFIER(LINK)
+                  [RPAREN
+                    [BREAKLINE
+                      [IDENTIFIER
+                        [LANGLEBRACKET
+                          [LANGLEBRACKET
+                            [LANGLEBRACKET BLOCKQUOTE_CITE_AND_TITLE]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
                 ]
               ]
             ]
