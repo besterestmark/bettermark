@@ -2,7 +2,7 @@
 
 ## Image
 
-![image](https://user-images.githubusercontent.com/76597257/126835406-cd514ff1-8f0f-452c-9c2b-ef118042a089.png)
+![image](https://user-images.githubusercontent.com/76597257/126864171-c74efcb3-68e5-4746-869b-28a66f86ff23.png)
 
 ## Raw syntax
 
@@ -259,6 +259,128 @@
                   [IDENTIFIER(SIZE-HEIGHT)
                     [RPAREN IMG-SIZE]
                   ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+  [COLON
+    [HASHTAG
+      [COLON
+        [WHITESPACE
+          [IDENTIFIER HEADING-1-CENTER]
+        ]
+      ]
+      [WHITESPACE
+        [IDENTIFIER HEADING-1-LEFT]
+      ]
+      [HASHTAG
+        [COLON
+          [WHITESPACE
+            [IDENTIFIER HEADING-2-CENTER]
+          ]
+        ]
+        [WHITESPACE
+          [IDENTIFIER HEADING-2-LEFT]
+        ]
+        [HASHTAG
+          [COLON
+            [WHITESPACE
+              [IDENTIFIER HEADING-3-CENTER]
+            ]
+          ]
+          [WHITESPACE
+            [IDENTIFIER HEADING-3-LEFT]
+          ]
+          [HASHTAG
+            [COLON
+              [WHITESPACE
+                [IDENTIFIER HEADING-4-CENTER]
+              ]
+            ]
+            [WHITESPACE
+              [IDENTIFIER HEADING-4-LEFT]
+            ]
+            [HASHTAG
+              [COLON
+                [WHITESPACE
+                  [IDENTIFIER HEADING-5-CENTER]
+                ]
+              ]
+              [WHITESPACE
+                [IDENTIFIER HEADING-5-LEFT]
+              ]
+              [HASHTAG
+                [COLON
+                  [WHITESPACE
+                    [IDENTIFIER HEADING-6-CENTER]
+                  ]
+                ]
+                [WHITESPACE
+                  [IDENTIFIER HEADING-6-LEFT]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+  [HASHTAG
+    [WHITESPACE
+      [IDENTIFIER HEADING-1]
+    ]
+    [COLON
+      [WHITESPACE
+        [IDENTIFIER HEADING-1-RIGHT]
+      ]
+    ]
+    [HASHTAG
+      [WHITESPACE
+        [IDENTIFIER HEADING-2]
+      ]
+      [COLON
+        [WHITESPACE
+          [IDENTIFIER HEADING-2-RIGHT]
+        ]
+      ]
+      [HASHTAG
+        [WHITESPACE
+          [IDENTIFIER HEADING-3]
+        ]
+        [COLON
+          [WHITESPACE
+            [IDENTIFIER HEADING-3-RIGHT]
+          ]
+        ]
+        [HASHTAG
+          [WHITESPACE
+            [IDENTIFIER HEADING-4]
+          ]
+          [COLON
+            [WHITESPACE
+              [IDENTIFIER HEADING-4-RIGHT]
+            ]
+          ]
+          [HASHTAG
+            [WHITESPACE
+              [IDENTIFIER HEADING-5]
+            ]
+            [COLON
+              [WHITESPACE
+                [IDENTIFIER HEADING-5-RIGHT]
+              ]
+            ]
+            [HASHTAG
+              [WHITESPACE
+                [IDENTIFIER HEADING-6]
+              ]
+              [COLON
+                [WHITESPACE
+                  [IDENTIFIER HEADING-6-RIGHT]
                 ]
               ]
             ]
