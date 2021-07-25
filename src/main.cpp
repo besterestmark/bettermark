@@ -3,12 +3,13 @@
 
 #include <iostream>
 #include <string>
-/* #include <thread> */
+#include <thread>
 #include "parser.hpp"
 #include "simio.hpp"
 
 #include "argh.h"
 
+#define echo std::cout <<
 
 int main(int argc, const char** argv) {
 
@@ -20,12 +21,19 @@ int main(int argc, const char** argv) {
   argh::parser cmdl(argc, argv);
 
 
-  const size_t vecsize = cmdl.pos_args().size();
-  if ( vecsize > 2 ){
-    for( size_t i =1; i<vecsize;i++ ){
-      Writer( cmdl.pos_args()[i] , cmdl[{ "-s", "--syntax" }]  );
-      /* std::thread *tk = new std::thread(Writer,  cmdl.pos_args()[i], cmdl[{ "-s", "--syntax" }]  ); */
+  const size_t iVecsize = cmdl.pos_args().size()-1;
+  std::thread *tr[iVecsize];
+
+
+  if ( iVecsize > 1 ){
+    for( size_t i =1; i<=iVecsize;i++ ){
+      tr[i-1] = new std::thread(Writer,  cmdl.pos_args()[i], cmdl[{ "-s", "--syntax" }]  ); 
      }
+
+    for( std::thread *write:tr ){
+      write->join();
+     }
+
   }
   else{
     std::string file_c = Readfile( cmdl.pos_args()[1].c_str()  );

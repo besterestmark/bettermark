@@ -33,10 +33,9 @@
 void LineConverter(std::string *buf, std::string line, size_t llen, ActiveState *as, uint8_t startIndex, bool *no_exp)
 {
   size_t index = line.find_first_of("*_`^~!");
-  printf("%zu", index);
   if (index != std::string::npos) {
     *no_exp = false;
-    if (index > startIndex) buf -> append(line.substr(startIndex, index));
+    if (index > startIndex) buf->append(line.substr(startIndex, index));
     else index = startIndex;
 
     for (size_t i = index; i <= llen; i++) {
@@ -44,53 +43,53 @@ void LineConverter(std::string *buf, std::string line, size_t llen, ActiveState 
 
       if (c == '*'){
         if ((i == llen)?false:line[i+1] == '*' ) {
-          if (as -> BOLD) buf -> append("</strong>");
-          else            buf -> append("<strong>");
-          as -> BOLD =! as -> BOLD;
+          if (as->BOLD) buf -> append("</strong>");
+          else            buf->append("<strong>");
+          as->BOLD =! as -> BOLD;
         }
         else if ((i == 0)?false:line[i-1] != '*') {
-          if (as -> ITALIC) buf -> append("</em>");
-          else              buf -> append("<em>");
-          as -> ITALIC =! as -> ITALIC; 
+          if (as->ITALIC) buf -> append("</em>");
+          else              buf->append("<em>");
+          as->ITALIC =! as -> ITALIC; 
         }
       }
       else if (c == '~') {
         if ((i == llen)?false:line[i+1] == '~' ) {
-          if (as -> STRIKETHROUGH) buf -> append("</s>");
-          else                     buf -> append("<s>");
-          as -> STRIKETHROUGH =! as -> STRIKETHROUGH;
+          if (as->STRIKETHROUGH) buf -> append("</s>");
+          else                     buf->append("<s>");
+          as->STRIKETHROUGH =! as -> STRIKETHROUGH;
         }
         else if ((i==0)?false:line[i-1]!='~' ) {
-          if (as -> SUBSCRIPT) buf -> append("</sub>");
-          else                 buf -> append("<sub>");
-          as -> SUBSCRIPT =! as -> SUBSCRIPT;
+          if (as->SUBSCRIPT) buf -> append("</sub>");
+          else                 buf->append("<sub>");
+          as->SUBSCRIPT =! as -> SUBSCRIPT;
         }
       }
       else if (c == '!' && line[i+1]=='!') {
-        if (as -> SPOILER) buf -> append("</sub>");
-        else               buf -> append("<span class=\"spoiler\">");
-        as -> SPOILER =! as -> SPOILER;
+        if (as->SPOILER) buf -> append("</sub>");
+        else               buf->append("<span class=\"spoiler\">");
+        as->SPOILER =! as -> SPOILER;
         i++;
       }
       else if (c == '^') {
-        if (as -> SUPERSCRIPT) buf -> append("</sup>");
+        if (as->SUPERSCRIPT) buf -> append("</sup>");
         else                   buf->append("<sup>");
-        as -> SUPERSCRIPT =! as -> SUPERSCRIPT;
+        as->SUPERSCRIPT =! as -> SUPERSCRIPT;
       }
       else if (c == '`') {
-        if(as -> CODE_INLINE) buf->append("</code>");
+        if(as->CODE_INLINE) buf->append("</code>");
         else                  buf->append("<code>");
-        as -> CODE_INLINE =! as -> CODE_INLINE;
+        as->CODE_INLINE =! as -> CODE_INLINE;
       }
       else if (c == '_') {
-        if(as -> UNDERLINE) buf->append("</u>");
+        if(as->UNDERLINE) buf->append("</u>");
         else                buf->append("<u>");
-        as -> UNDERLINE =! as -> UNDERLINE;
+        as->UNDERLINE =! as -> UNDERLINE;
       }
-      else buf -> push_back(c);
+      else buf->push_back(c);
     }
   }
-  else buf -> append(line.substr(startIndex, llen));
+  else buf->append(line.substr(startIndex, llen));
 }
 
 // FIXME: Explain what this thing is
@@ -105,8 +104,8 @@ std::string FenceConverter(const std::string *kText)
 
   std::string line;
   while (true) {
-    if ((end = kText -> find("\n", start)) == std::string::npos) { 
-      if (!(line = kText -> substr(start)).empty()) rb += line;
+    if ((end = kText->find("\n", start)) == std::string::npos) { 
+      if (!(line = kText->substr(start)).empty()) rb += line;
       return rb;
     }
 
