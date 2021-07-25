@@ -1,8 +1,13 @@
-## This is the very work in progress syntax tree for bettermark
-
 ## Image
 
-![image](https://user-images.githubusercontent.com/76597257/126864171-c74efcb3-68e5-4746-869b-28a66f86ff23.png)
+![image](https://user-images.githubusercontent.com/76597257/126882532-853fc734-82bd-4b82-8443-1719187351ac.png)
+
+## Credits
+
+- <img src="https://avatars.githubusercontent.com/u/34986581" width="20px" height="20px"/>  [TheGLander](https://github.com/TheGLander) (ʐ̈ MANNNNNNN#2006):
+  + Exporting SVG and PNG because my WiFi is bad
+- [yohasebe.com/rsyntaxtree](https://yohasebe.com/rsyntaxtree)
+  + Generating PNG, SVG and PDF
 
 ## Raw syntax
 
@@ -268,6 +273,38 @@
     ]
   ]
   [COLON
+    [COLON
+      [COLON
+        [WHITESPACE
+          [IDENTIFIER(CLASS-NAME)
+            [BREAKLINE
+              [IDENTIFIER
+                [BREAKLINE
+                  [COLON
+                    [COLON
+                      [COLON CUSTOM-CLASS]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+        [IDENTIFIER(CLASS-NAME)
+          [BREAKLINE
+            [IDENTIFIER
+              [BREAKLINE
+                [COLON
+                  [COLON
+                    [COLON CUSTOM-CLASS]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
     [HASHTAG
       [COLON
         [WHITESPACE
@@ -389,5 +426,310 @@
       ]
     ]
   ]
+  [LBRACKET
+    [IDENTIFIER(VISIBLE-TEXT)
+      [RBRACKET
+        [LPAREN
+          [IDENTIFIER(LINK)
+            [RPAREN LINK-ANCHOR]
+          ]
+        ]
+      ]
+    ]
+  ]
+  [IDENTIFIER(LINK) LINK-AUTOMATIC-URL]
+  [IDENTIFIER
+    [@CHAR
+      [IDENTIFIER LINK-AUTOMATIC-EMAIL] 
+    ]
+  ]
+  [RANGLEBRACKET
+    [WHITESPACE
+      [IDENTIFIER BLOCKQUOTE]
+    ]
+  ]
+  [LANGLEBRACKET
+    [LANGLEBRACKET
+      [LANGLEBRACKET
+        [WHITESPACE
+          [LBRACKET
+            [IDENTIFIER(TITLE)
+              [RBRACKET
+                [LPAREN
+                  [IDENTIFIER(LINK)
+                    [RPAREN
+                      [BREAKLINE
+                        [IDENTIFIER
+                          [LANGLEBRACKET
+                            [LANGLEBRACKET
+                              [LANGLEBRACKET BLOCKQUOTE-FENCE-CITE-AND-TITLE]
+                            ]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+                [BREAKLINE
+                  [IDENTIFIER
+                    [LANGLEBRACKET
+                      [LANGLEBRACKET
+                        [LANGLEBRACKET BLOCKQUOTE-FENCE-TITLE]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+          [LPAREN
+            [IDENTIFIER(LINK)
+              [RPAREN
+                [BREAKLINE
+                  [IDENTIFIER
+                    [LANGLEBRACKET
+                      [LANGLEBRACKET
+                        [LANGLEBRACKET BLOCKQUOTE-FENCE-CITE]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+          [LBRACKET
+            [IDENTIFIER(TITLE)
+              [RBRACKET
+                [LPAREN
+                  [IDENTIFIER(LINK)
+                    [RPAREN
+                      [BREAKLINE
+                        [IDENTIFIER
+                          [LANGLEBRACKET
+                            [LANGLEBRACKET
+                              [LANGLEBRACKET BLOCKQUOTE-CITE-AND-TITLE]
+                            ]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+        [BREAKLINE
+          [IDENTIFIER
+            [LANGLEBRACKET
+              [LANGLEBRACKET
+                [LANGLEBRACKET BLOCKQUOTE-FENCE-NONE]
+              ]
+            ]
+          ]
+        ]
+        [LBRACKET
+          [IDENTIFIER(TITLE)
+            [RBRACKET
+              [LPAREN
+                [IDENTIFIER(LINK)
+                  [RPAREN
+                    [BREAKLINE
+                      [IDENTIFIER
+                        [LANGLEBRACKET
+                          [LANGLEBRACKET
+                            [LANGLEBRACKET BLOCKQUOTE-FENCE-CITE-AND-TITLE]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+              [BREAKLINE
+                [IDENTIFIER
+                  [LANGLEBRACKET
+                    [LANGLEBRACKET
+                      [LANGLEBRACKET BLOCKQUOTE-FENCE-TITLE]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+        [LPAREN
+          [IDENTIFIER(LINK)
+            [RPAREN
+              [BREAKLINE
+                [IDENTIFIER
+                  [LANGLEBRACKET
+                    [LANGLEBRACKET
+                      [LANGLEBRACKET BLOCKQUOTE-FENCE-CITE]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+        [LBRACKET
+          [IDENTIFIER(TITLE)
+            [RBRACKET
+              [LPAREN
+                [IDENTIFIER(LINK)
+                  [RPAREN
+                    [BREAKLINE
+                      [IDENTIFIER
+                        [LANGLEBRACKET
+                          [LANGLEBRACKET
+                            [LANGLEBRACKET BLOCKQUOTE-CITE-AND-TITLE]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+  [PLUS
+    [WHITESPACE
+      [IDENTIFIER
+        [EOL LIST-PLUS]
+      ]
+      [LBRACKET
+      [x
+        [RBRACKET
+          [WHITESPACE
+            [IDENTIFIER
+              [EOL LIST-TASK-DONE-PLUS]
+            ]
+          ]
+        ]
+      ]
+      [SLASH
+        [RBRACKET
+          [WHITESPACE
+            [IDENTIFIER
+              [EOL LIST-TASK-PROGRESS-PLUS]
+            ]
+          ]
+        ]
+      ]
+      [HYPHEN
+        [RBRACKET
+          [WHITESPACE
+            [IDENTIFIER
+              [EOL LIST-TASK-DISABLED-PLUS]
+            ]
+          ]
+        ]
+      ]  
+      [SPACE
+        [RBRACKET
+          [WHITESPACE
+            [IDENTIFIER
+              [EOL LIST-TASK-NOT-DONE-PLUS]
+            ]
+          ]
+        ]
+      ]     
+    ]
+    [PLUS
+      [PLUS
+        [IDENTIFIER(SUMMARY)
+          [BREAKLINE
+            [IDENTIFIER
+              [PLUS
+                [PLUS
+                  [PLUS COLLAPSIBLE]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+  [DOLLARSIGN
+    [IDENTIFIER
+      [DOLLARSIGN MATH-INLINE]
+    ]
+    [DOLLARSIGN
+      [IDENTIFIER
+        [DOLLARSIGN
+          [DOLLARSIGN MATH-BLOCK]
+        ]
+      ]
+    ]
+  ]
+  [IDENTIFIER(NUMBER)
+    [SLASH
+      [IDENTIFIER(NUMBER) FRACTION]
+    ]
+  ]
+  [CARET
+    [IDENTIFIER
+      [CARET SUPERSCRIPT]
+    ]
+  ]
+  [SLASH
+    [SLASH
+      [IDENTIFIER COMMENT]
+    ]
+  ]
+  [BACKTICK
+    [IDENTIFIER
+      [BACKTICK CODE_INLINE]
+    ]
+    [BACKTICK
+      [BACKTICK
+        [IDENTIFIER(LANGUAGE)
+          [BREAKLINE
+            [IDENTIFIER
+              [BACKTICK
+                [BACKTICK
+                  [BACKTICK CODE-FENCED]
+                ]
+              ]
+            ]
+          ]
+        ]
+        [BREAKLINE
+          [IDENTIFIER
+            [BACKTICK
+              [BACKTICK
+                [BACKTICK CODE-FENCED]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+  [IDENTIFIER
+    [COLON
+      [WHITESPACE
+        [IDENTIFIER
+          [EOL
+            [LIST-DEFINITION]
+            [BREAKLINE
+              [COLON
+                [WHITESPACE
+                  [IDENTIFIER
+                    [EOL LIST-DEFINITION]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
 ]
-```
