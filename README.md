@@ -57,7 +57,7 @@ $ make
 
 ## Contributing
 
-The project is licensed under MPL-2.0, so feel free to fork and open pull requests after reading [CONTRIBUTING.md](https://github.com/besterestmark/bettermark/blob/master/CONTRIBUTING.MD)
+The project is licensed under MPL-2.0, so feel free to fork and open pull requests after reading [CONTRIBUTING.md](https://github.com/besterestmark/bettermark/blob/master/CONTRIBUTING.MD).
 
 ## Credits
 
