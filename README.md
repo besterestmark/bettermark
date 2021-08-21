@@ -48,11 +48,10 @@ Bettermark is faster than cmark and supports more features [stats coming soon].
 ## Building/Installing
 
 ```bash
-$ mkdir build
+$ cmake -B build
 $ cd build
-$ cmake ..
-$ mv ./compile_commands.json ../ 
 $ make
+# make install
 ```
 
 ## Contributing
