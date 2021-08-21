@@ -24,7 +24,7 @@ struct ActiveState{
 
 
 
-void LineConverter(std::string *buf, std::string line, ActiveState *as, uint8_t startIndex, bool *no_exp);
-std::string FenceConverter(const std::string *text);
+auto LineConverter(std::string *buf, std::string line, ActiveState *as, uint8_t startIndex, bool *no_exp) noexcept -> void;
+auto FenceConverter(const std::string *text) noexcept -> std::string;
 #endif
 

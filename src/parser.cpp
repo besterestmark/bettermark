@@ -1,5 +1,6 @@
-#include <cstdio>
 #include <string>
+
+#include <fstream>
 #include "parser.hpp"
 #include "simio.hpp"
 
@@ -30,7 +31,8 @@
 
 // FIXME: Explain what this is :c
 
-void LineConverter(std::string *buf, std::string line, size_t llen, ActiveState *as, uint8_t startIndex, bool *no_exp)
+// Converts a mark literal in a string and add it to buffer
+inline auto LineConverter(std::string *buf, std::string line, size_t llen, ActiveState *as, uint8_t startIndex, bool *no_exp) -> void
 {
   size_t index = line.find_first_of("*_`^~!");
   if (index != std::string::npos) {
@@ -92,30 +94,22 @@ void LineConverter(std::string *buf, std::string line, size_t llen, ActiveState 
   else buf->append(line.substr(startIndex, llen));
 }
 
-// FIXME: Explain what this thing is
-
-std::string FenceConverter(const std::string *kText)
+// Read multiple lines and convert tokens to markdown by holding flags without prior parsing for speeds
+auto FenceConverter(const std::string *kFilename) noexcept -> std::string
 {
   std::string rb; 					// The string to which content is added to return
   ActiveState active_state; // Stores all the currently active fencestates
 
-  size_t start = 0;
-  size_t end;
-
   std::string line;
-  while (true) {
-    if ((end = kText->find("\n", start)) == std::string::npos) { 
-      if (!(line = kText->substr(start)).empty()) rb += line;
-      return rb;
-    }
 
-    line = kText->substr(start, end - start); // Go to the next line
+  std::ifstream in(kFilename->c_str(), std::ios::in | std::ios::binary);
+  while(std::getline(in, line))
+  {
     const size_t llen = line.size()-1;        // Indexable length of string
 
     // If the line is empty, skip it              
     if (llen==std::string::npos) {
       rb += "\n";
-      start = end + 1;
       continue;
     }
 
@@ -130,13 +124,13 @@ std::string FenceConverter(const std::string *kText)
 
     // Don't check for other states if code blocks is active
     if (!active_state.CODE_FENCED) {
-      
+
       /* 
-      *+++ summary
-      * collapsible content
-      *+++
-      */
-      
+       *+++ summary
+       * collapsible content
+       *+++
+       */
+
       if (BEGIN3(line, '+')) {
         if (active_state.COLLAPSIBLE) rb += "</details>\n";
         else {
@@ -148,13 +142,13 @@ std::string FenceConverter(const std::string *kText)
           }
         }
       } 
-      
+
       /*
-      *::: classname
-      * content in div
-      *:::
-      */
-      
+       *::: classname
+       * content in div
+       *:::
+       */
+
       else if (BEGIN3(line, ':')) {
         if (active_state.CUSTOM_CLASS) rb += "</div>\n";
         else {
@@ -193,7 +187,7 @@ std::string FenceConverter(const std::string *kText)
         if (!active_state.UNORDERED_LIST)               rb += "<ul>\n";
         rb += "<li>";
         LineConverter(&rb, line, llen, &active_state, 2, &no_exp);
-        
+
         rb += "</li>\n";
         active_state.UNORDERED_LIST = true;
       }
@@ -215,8 +209,8 @@ std::string FenceConverter(const std::string *kText)
                       if (llen > 7)  rb += "<h6 align=\"left\">" + line.substr(8, llen)+"</h6>\n";     // :######
                     }
                   } else {
-                      if (line[6]==':') {
-                        if (llen > 7)  rb += "<h5 align=\"center\">" + line.substr(8, llen)+"</h5>\n";  // :#####:
+                    if (line[6]==':') {
+                      if (llen > 7)  rb += "<h5 align=\"center\">" + line.substr(8, llen)+"</h5>\n";  // :#####:
                     }
                     else {
                       if (llen > 6)  rb += "<h5 align=\"left\">" + line.substr(7, llen)+"</h5>\n";      // :#####
@@ -239,8 +233,8 @@ std::string FenceConverter(const std::string *kText)
                 }
               }
             } else {
-                if (line[3]==':') {
-                  if (llen > 4)        rb += "<h2 align=\"center\">"+line.substr(5, llen)+"</h2>\n";  // :##:
+              if (line[3]==':') {
+                if (llen > 4)        rb += "<h2 align=\"center\">"+line.substr(5, llen)+"</h2>\n";  // :##:
               }                                                                                       // 
               else {                                                                                  // 
                 if (llen > 3)        rb += "<h2 align=\"left\">"+line.substr(4, llen)+"</h2>\n";        // :##
@@ -332,7 +326,7 @@ std::string FenceConverter(const std::string *kText)
       }
 
     } else no_exp=true;
-    
+
     /*
      * Code blocks
      *```python
@@ -359,6 +353,6 @@ std::string FenceConverter(const std::string *kText)
       if(active_state.CODE_FENCED) rb += line+"\n";           // If code blocks are found, just add the line without any checks
       else                         rb += "<p>"+line+"</p>\n"; // If there's content on the line, turn it into a <p>aragraph
     }
-    start = end + 1;
   }
+  return rb;
 }

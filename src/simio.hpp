@@ -3,6 +3,5 @@
 #define SIMIO_HPP_
 
 #include <string>
-std::string Readfile(const char *kFilename);
-void Writer(const std::string kFilename, const bool kSyntax);
+/* auto Writer(const std::string kFilename, const bool kSyntax) noexcept -> void; */
 #endif
